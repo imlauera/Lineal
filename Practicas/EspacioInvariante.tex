@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{tgadventor}
+{\fontfamily{qag}\selectfont 
+\title{Espacios invariantes}
+\begin{document}
+
+\maketitle
+\section{Rinconmatemático}
+
+$
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  3 & -5 & 2 \\
+\end{bmatrix} \\
+\left [
+\begin{array}{ccc}
+  \alpha_1 \\
+  \alpha_2 \\
+  \alpha_3
+\end{array} 
+\right ] = 
+\left [
+  \begin{array}{ccc}
+    \alpha_1 \\
+    \alpha_2 \\
+    3\alpha_1-5\alpha_2+2\alpha_3
+  \end{array}
+\right ]
+$ \\ \\
+Sustituyendo este transformado en la ecuación de $V_1$ obtenemos: \\ \\
+$3\alpha_1 - 5\alpha_2 + 3\alpha_1 - 5 \alpha_2 + 2\alpha_3 = 6\alpha_1 - 10\alpha_2 + 
+2\alpha_3 = 0 \Leftrightarrow 3\alpha_1 - 5\alpha_2 + \alpha_3 = 0$ \\ \\
+Es decir, el transformado de todo vector de $V_1$ está en $V_1$, en consecuencia ya
+tenemos un subespacio invariante de dimensión 2.
+}
+
+
+
+\end{document}

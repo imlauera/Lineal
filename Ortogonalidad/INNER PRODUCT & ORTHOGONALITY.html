@@ -1,0 +1,1393 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="http://www.math.drexel.edu/~jwd25/LA_FALL_06/lectures/lecture9A_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://www.math.drexel.edu/~jwd25/LA_FALL_06/lectures/lecture9A_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>INNER PRODUCT &amp; ORTHOGONALITY </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>James Donnelly</o:Author>
+  <o:LastAuthor>James Donnelly</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2006-11-17T21:08:00Z</o:Created>
+  <o:LastSaved>2006-11-17T21:08:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>813</o:Words>
+  <o:Characters>4639</o:Characters>
+  <o:Company>Drexel University</o:Company>
+  <o:Lines>38</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5442</o:CharactersWithSpaces>
+  <o:Version>11.6568</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>6 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>3</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas>false</w:ValidateAgainstSchemas>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotUnderlineInvalidXML/>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-outline-level:1;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-outline-level:2;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-outline-level:3;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:normal;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:13.5pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.25pt;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:24.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:18.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Paragraph, li.Paragraph, div.Paragraph
+	{mso-style-name:Paragraph;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-indent:21.0pt;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.Indent, li.Indent, div.Indent
+	{mso-style-name:Indent;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:1.5in;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1668947168;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-876056792 -1284475308 -723984008 2081961102 -2101858298 -1664057196 424706392 -1345299262 -599481344 196360076;}
+@list l0:level1
+	{mso-level-number-format:image;
+	list-style-image:url("lecture9A_files/image001.wmz");
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-bidi-font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body style="tab-interval:.5in;text-justify-trim:punctuation" lang="EN-US">
+
+<div class="Section1">
+
+<p class="MsoNormal"><u><span style="font-size:20.0pt;color:blue">INNER PRODUCT
+&amp; ORTHOGONALITY</span></u> </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="font-size:18.0pt;color:red">Definition</span></u><span style="font-size:18.0pt">: The <i><span style="color:maroon">Inner or
+"Dot" Product </span></i><span style="color:black">of</span> the
+vectors: </span><sub><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:9pt;
+ height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image003.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1025" width="12" height="26"><!--[endif]--></sub><span style="font-size:18.0pt"><span style="mso-spacerun:yes">&nbsp;</span>, </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image005.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image006.gif" v:shapes="_x0000_i1026" width="12" height="26"><!--[endif]--></sub><span style="font-size:18.0pt"><span style="mso-spacerun:yes">&nbsp;</span>is defined as
+follows.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:175.5pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image007.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image008.gif" v:shapes="_x0000_i1027" width="234" height="84"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: The <i><span style="color:maroon">length</span></i> of a vector is the square root of the
+dot product of a vector with itself.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:198.75pt;height:65.25pt'>
+ <v:imagedata src="lecture9A_files/image009.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image010.gif" v:shapes="_x0000_i1028" width="265" height="87"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: The <i><span style="color:maroon">norm</span></i> of the vector <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1029" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image011.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image006.gif" v:shapes="_x0000_i1029" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is a vector <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image012.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1030" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>of unit length that points in the same
+direction as <sub><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image013.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image006.gif" v:shapes="_x0000_i1031" width="12" height="26"><!--[endif]--></sub>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1032" type="#_x0000_t75"
+ style='width:73.5pt;height:42pt'>
+ <v:imagedata src="lecture9A_files/image014.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image015.gif" v:shapes="_x0000_i1032" width="98" height="56"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: The
+distance between two vectors is the length of their difference.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1033" type="#_x0000_t75"
+ style='width:284.25pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image016.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image017.gif" v:shapes="_x0000_i1033" width="379" height="29"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 1 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: Two
+vectors are <i><span style="color:maroon">orthogonal</span></i> to each other
+if their inner product is zero. That means that the projection of one vector
+onto the other "collapses" to a point. So the distances from <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image018.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1034" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>to <sub><!--[if gte vml 1]><v:shape id="_x0000_i1035"
+ type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image019.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image006.gif" v:shapes="_x0000_i1035" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>or from <sub><!--[if gte vml 1]><v:shape id="_x0000_i1036"
+ type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image020.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1036" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>to <sub><!--[if gte vml 1]><v:shape id="_x0000_i1037"
+ type="#_x0000_t75" style='width:18pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image021.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image022.gif" v:shapes="_x0000_i1037" width="24" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;&nbsp;</span>should be identical if they are orthogonal
+(perpendicular) to each other.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1038" type="#_x0000_t75"
+ style='width:331.5pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image023.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image024.gif" v:shapes="_x0000_i1038" width="442" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1039" type="#_x0000_t75"
+ style='width:219.75pt;height:27.75pt'>
+ <v:imagedata src="lecture9A_files/image025.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image026.gif" v:shapes="_x0000_i1039" width="293" height="37"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1040" type="#_x0000_t75"
+ style='width:306.75pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image027.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image028.gif" v:shapes="_x0000_i1040" width="409" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1041" type="#_x0000_t75"
+ style='width:311.25pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image029.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image030.gif" v:shapes="_x0000_i1041" width="415" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1042" type="#_x0000_t75"
+ style='width:306.75pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image031.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image032.gif" v:shapes="_x0000_i1042" width="409" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1043" type="#_x0000_t75"
+ style='width:297pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image033.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image034.gif" v:shapes="_x0000_i1043" width="396" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1044" type="#_x0000_t75"
+ style='width:4in;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image035.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image036.gif" v:shapes="_x0000_i1044" width="384" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The two distances are thus only the same if the two vectors
+have zero projection one on another. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 2 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 1</span></u>:
+Determine if <sub><!--[if gte vml 1]><v:shape id="_x0000_i1045" type="#_x0000_t75"
+ style='width:69.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image037.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image038.gif" v:shapes="_x0000_i1045" width="93" height="134"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>and <sub><!--[if gte vml 1]><v:shape id="_x0000_i1046"
+ type="#_x0000_t75" style='width:69.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image039.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image040.gif" v:shapes="_x0000_i1046" width="93" height="134"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>are orthogonal.</p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1047" type="#_x0000_t75"
+ style='width:238.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image041.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image042.gif" v:shapes="_x0000_i1047" width="318" height="134"><!--[endif]--></sub></p>
+
+<p class="MsoNormal">The vectors are orthogonal because <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1048" type="#_x0000_t75" style='width:53.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image043.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image044.gif" v:shapes="_x0000_i1048" width="71" height="26"><!--[endif]--></sub><span style="font-size:18.0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 2</span></u>: Verify
+the parallelogram law for vectors</p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:18.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+font-weight:normal;mso-bidi-font-weight:bold"><span style="mso-list:Ignore"><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image002.gif" alt="*" width="10" height="21"><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:18.0pt">and </span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1049"
+ type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image045.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image006.gif" v:shapes="_x0000_i1049" width="12" height="26"><!--[endif]--></sub><span style="font-size:18.0pt"><span style="mso-spacerun:yes">&nbsp;</span>in </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1050" type="#_x0000_t75" style='width:21pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image046.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image047.gif" v:shapes="_x0000_i1050" width="28" height="34"><!--[endif]--></sub><span style="font-size:18.0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;font-weight:normal;
+mso-bidi-font-weight:bold"><span style="mso-list:Ignore"><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image002.gif" alt="*" width="9" height="19"><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1051" type="#_x0000_t75"
+ style='width:366pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image048.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image049.gif" v:shapes="_x0000_i1051" width="488" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1052" type="#_x0000_t75"
+ style='width:291pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image050.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image051.gif" v:shapes="_x0000_i1052" width="388" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1053" type="#_x0000_t75"
+ style='width:291pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image052.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image053.gif" v:shapes="_x0000_i1053" width="388" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Add the last two equations and the parallelogram law in
+n-space is confirmed.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 3 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 3</span></u>: Let <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1054" type="#_x0000_t75" style='width:184.5pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image054.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image055.gif" v:shapes="_x0000_i1054" width="246" height="29"><!--[endif]--></sub>.
+Show that if <sub><!--[if gte vml 1]><v:shape id="_x0000_i1055" type="#_x0000_t75"
+ style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image056.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1055" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is orthogonal to each of the vectors <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1056" type="#_x0000_t75" style='width:12.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image058.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image059.gif" v:shapes="_x0000_i1056" width="17" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>, then it is orthogonal to every vector in
+"W".</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1057" type="#_x0000_t75"
+ style='width:98.25pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image060.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image061.gif" v:shapes="_x0000_i1057" width="131" height="84"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1058" type="#_x0000_t75"
+ style='width:56.25pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image062.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image063.gif" v:shapes="_x0000_i1058" width="75" height="29"><!--[endif]--></sub></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1059" type="#_x0000_t75"
+ style='width:155.25pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image064.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image065.gif" v:shapes="_x0000_i1059" width="207" height="84"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: If<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1060"
+ type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image066.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1060" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is orthogonal to every vector in a subspace
+"W", then it is said to be orthogonal to "W". The set of
+all such vectors is called the <i><span style="color:maroon">orthogonal
+complement</span></i> of "W".</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Theorem</span></u>: Let
+"A" be an m x n matrix. Then the orthogonal complement of the row
+space of "A" is the null space of "A", and the orthogonal
+complement of the column space of "A" is the null space of <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1061" type="#_x0000_t75" style='width:21pt;height:27pt'>
+ <v:imagedata src="lecture9A_files/image068.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image069.gif" v:shapes="_x0000_i1061" width="28" height="36"><!--[endif]--></sub><span style="font-size:18.0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Page 4
+of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">If <sub><!--[if gte vml 1]><v:shape id="_x0000_i1062"
+ type="#_x0000_t75" style='width:55.5pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image070.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image071.gif" v:shapes="_x0000_i1062" width="74" height="26"><!--[endif]--></sub>,
+then <sub><!--[if gte vml 1]><v:shape id="_x0000_i1063" type="#_x0000_t75"
+ style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image072.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1063" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is orthogonal to every row in "A"
+because the dot product between each row in "A" and the vector <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1064" type="#_x0000_t75" style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image073.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1064" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is zero. Since the rows of "A" span
+row space , <sub><!--[if gte vml 1]><v:shape id="_x0000_i1065" type="#_x0000_t75"
+ style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image074.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1065" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>, is orthogonal to <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1066" type="#_x0000_t75" style='width:56.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image075.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image076.gif" v:shapes="_x0000_i1066" width="75" height="26"><!--[endif]--></sub>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Since <sub><!--[if gte vml 1]><v:shape id="_x0000_i1067"
+ type="#_x0000_t75" style='width:135pt;height:27pt'>
+ <v:imagedata src="lecture9A_files/image077.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image078.gif" v:shapes="_x0000_i1067" width="180" height="36"><!--[endif]--></sub>, if
+<sub><!--[if gte vml 1]><v:shape id="_x0000_i1068" type="#_x0000_t75" style='width:64.5pt;
+ height:27pt'>
+ <v:imagedata src="lecture9A_files/image079.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image080.gif" v:shapes="_x0000_i1068" width="86" height="36"><!--[endif]--></sub>,
+then <sub><!--[if gte vml 1]><v:shape id="_x0000_i1069" type="#_x0000_t75"
+ style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image081.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1069" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-spacerun:yes">&nbsp;</span>is
+orthogonal to every column in "A".</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: A set of
+vectors is said to be an<i><span style="color:maroon"> orthogonal set</span></i>
+if each and every pair of different vectors in the set is orthogonal. Also, an
+orthogonal set of "p" vectors spans a p-space and is an orthogonal
+basis for that space. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 4</span></u>:
+Determine if the given set of vectors is orthogonal.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1070" type="#_x0000_t75"
+ style='width:39.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image082.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image083.gif" v:shapes="_x0000_i1070" width="53" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1071"
+ type="#_x0000_t75" style='width:30.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image084.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image085.gif" v:shapes="_x0000_i1071" width="41" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1072"
+ type="#_x0000_t75" style='width:39.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image086.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image087.gif" v:shapes="_x0000_i1072" width="53" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">There are three distinct pairs.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1073" type="#_x0000_t75"
+ style='width:170.25pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image088.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image089.gif" v:shapes="_x0000_i1073" width="227" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">They are not orthogonal.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 5 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Theorem</span></u>: Let { <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1074" type="#_x0000_t75" style='width:81.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image090.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image091.gif" v:shapes="_x0000_i1074" width="109" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>} be an orthogonal basis for "W".
+Then each <sub><!--[if gte vml 1]><v:shape id="_x0000_i1075" type="#_x0000_t75"
+ style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image092.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1075" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>in "W" has a unique representation
+as a linear combination of that basis. If, <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1076" type="#_x0000_t75" style='width:98.25pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image093.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image094.gif" v:shapes="_x0000_i1076" width="131" height="84"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>, then <sub><!--[if gte vml 1]><v:shape id="_x0000_i1077"
+ type="#_x0000_t75" style='width:81.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image095.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image096.gif" v:shapes="_x0000_i1077" width="109" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 5</span></u>: Show
+that that {<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1078" type="#_x0000_t75" style='width:39.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image097.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image098.gif" v:shapes="_x0000_i1078" width="53" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>} is an orthogonal basis and express <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1079" type="#_x0000_t75" style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image099.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1079" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>as a linear combination of that set.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1080" type="#_x0000_t75"
+ style='width:76.5pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image100.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image101.gif" v:shapes="_x0000_i1080" width="102" height="62"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1081"
+ type="#_x0000_t75" style='width:67.5pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image102.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image103.gif" v:shapes="_x0000_i1081" width="90" height="62"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1082"
+ type="#_x0000_t75" style='width:69pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image104.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image105.gif" v:shapes="_x0000_i1082" width="92" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1083" type="#_x0000_t75"
+ style='width:149.25pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image106.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image107.gif" v:shapes="_x0000_i1083" width="199" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">They are orthogonal and thus span 2-space. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1084" type="#_x0000_t75"
+ style='width:119.25pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image108.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image109.gif" v:shapes="_x0000_i1084" width="159" height="29"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1085" type="#_x0000_t75"
+ style='width:81.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image110.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image111.gif" v:shapes="_x0000_i1085" width="109" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1086" type="#_x0000_t75"
+ style='width:166.5pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image112.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image113.gif" v:shapes="_x0000_i1086" width="222" height="62"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1087"
+ type="#_x0000_t75" style='width:157.5pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image114.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image115.gif" v:shapes="_x0000_i1087" width="210" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 6 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1088" type="#_x0000_t75"
+ style='width:197.25pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image116.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image117.gif" v:shapes="_x0000_i1088" width="263" height="62"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1089"
+ type="#_x0000_t75" style='width:179.25pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image118.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image119.gif" v:shapes="_x0000_i1089" width="239" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1090" type="#_x0000_t75"
+ style='width:132.75pt;height:42pt'>
+ <v:imagedata src="lecture9A_files/image120.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image121.gif" v:shapes="_x0000_i1090" width="177" height="56"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 6</span></u>: Compute
+the orthogonal projection of</p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1091" type="#_x0000_t75"
+ style='width:30.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image122.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image123.gif" v:shapes="_x0000_i1091" width="41" height="62"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>onto the line thru <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1092" type="#_x0000_t75" style='width:39.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image124.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image125.gif" v:shapes="_x0000_i1092" width="53" height="62"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>and the origin<span style="font-size:18.0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The orthogonal projection of <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1093" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image126.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1093" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;&nbsp;</span>onto <sub><!--[if gte vml 1]><v:shape id="_x0000_i1094"
+ type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image127.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1094" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;&nbsp;</span>is given by <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1095" type="#_x0000_t75" style='width:109.5pt;height:42pt'>
+ <v:imagedata src="lecture9A_files/image128.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image129.gif" v:shapes="_x0000_i1095" width="146" height="56"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>and <sub><!--[if gte vml 1]><v:shape id="_x0000_i1096"
+ type="#_x0000_t75" style='width:91.5pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image130.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image131.gif" v:shapes="_x0000_i1096" width="122" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is the component orthogonal to <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1097" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image132.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1097" width="12" height="26"><!--[endif]--></sub>.
+Therefore, in our specific example we have <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1098" type="#_x0000_t75" style='width:60.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image133.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image134.gif" v:shapes="_x0000_i1098" width="81" height="62"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>and <sub><!--[if gte vml 1]><v:shape id="_x0000_i1099"
+ type="#_x0000_t75" style='width:69.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image135.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image136.gif" v:shapes="_x0000_i1099" width="93" height="62"><!--[endif]--></sub>. </p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1100" type="#_x0000_t75"
+ style='width:363pt;height:96pt'>
+ <v:imagedata src="lecture9A_files/image137.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image138.gif" v:shapes="_x0000_i1100" width="484" height="128"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1101" type="#_x0000_t75"
+ style='width:96.75pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image139.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image140.gif" v:shapes="_x0000_i1101" width="129" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 7 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 7</span></u>: Let
+"U" and "V" be orthogonal matrices.</p>
+
+<p class="MsoNormal">Explain why "UV" is an orthogonal matrix. (That
+is, explain why "UV" is invertible and its inverse is<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1102"
+ type="#_x0000_t75" style='width:50.25pt;height:27pt'>
+ <v:imagedata src="lecture9A_files/image141.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image142.gif" v:shapes="_x0000_i1102" width="67" height="36"><!--[endif]--></sub><span style="font-size:20.0pt;font-weight:normal">.</span> </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">An orthogonal matrix, "U", is a square invertible
+matrix such that : <sub><!--[if gte vml 1]><v:shape id="_x0000_i1103" type="#_x0000_t75"
+ style='width:1in;height:27pt'>
+ <v:imagedata src="lecture9A_files/image143.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image144.gif" v:shapes="_x0000_i1103" width="96" height="36"><!--[endif]--></sub><span style="font-size:18.0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1104" type="#_x0000_t75"
+ style='width:213.75pt;height:27pt'>
+ <v:imagedata src="lecture9A_files/image145.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image146.gif" v:shapes="_x0000_i1104" width="285" height="36"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">But , <sub><!--[if gte vml 1]><v:shape id="_x0000_i1105"
+ type="#_x0000_t75" style='width:118.5pt;height:27pt'>
+ <v:imagedata src="lecture9A_files/image147.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image148.gif" v:shapes="_x0000_i1105" width="158" height="36"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Therefore , "(UV)" is an orthogonal matrix.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:red">Definition</span></u>: Let
+"W" be a subspace of <sub><!--[if gte vml 1]><v:shape id="_x0000_i1106"
+ type="#_x0000_t75" style='width:21pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image149.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image047.gif" v:shapes="_x0000_i1106" width="28" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>then each <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1107" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image150.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1107" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>in <sub><!--[if gte vml 1]><v:shape id="_x0000_i1108"
+ type="#_x0000_t75" style='width:21pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image151.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image047.gif" v:shapes="_x0000_i1108" width="28" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>can be written uniquely in this form: <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1109" type="#_x0000_t75" style='width:91.5pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image152.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image153.gif" v:shapes="_x0000_i1109" width="122" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>where <sub><!--[if gte vml 1]><v:shape id="_x0000_i1110"
+ type="#_x0000_t75" style='width:36pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image154.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image155.gif" v:shapes="_x0000_i1110" width="48" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is in "W" and <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1111" type="#_x0000_t75" style='width:7.5pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image156.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image157.gif" v:shapes="_x0000_i1111" width="10" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>is orthogonal to the subspace, "W".
+If { <sub><!--[if gte vml 1]><v:shape id="_x0000_i1112" type="#_x0000_t75"
+ style='width:81.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image158.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image091.gif" v:shapes="_x0000_i1112" width="109" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>} is any orthogonal basis of "W",
+then this is the orthogonal decomposition of <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1113" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image159.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1113" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1114"
+ type="#_x0000_t75" style='width:159pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image160.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image161.gif" v:shapes="_x0000_i1114" width="212" height="84"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>and <sub><!--[if gte vml 1]><v:shape id="_x0000_i1115"
+ type="#_x0000_t75" style='width:91.5pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image162.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image131.gif" v:shapes="_x0000_i1115" width="122" height="34"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 8</span></u>: Assume
+that<span style="mso-spacerun:yes">&nbsp; </span>{ <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1116" type="#_x0000_t75" style='width:87.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image163.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image164.gif" v:shapes="_x0000_i1116" width="117" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>} is an orthogonal basis for <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1117" type="#_x0000_t75" style='width:20.25pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image165.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image166.gif" v:shapes="_x0000_i1117" width="27" height="34"><!--[endif]--></sub>.
+Write <sub><!--[if gte vml 1]><v:shape id="_x0000_i1118" type="#_x0000_t75"
+ style='width:8.25pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image167.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image057.gif" v:shapes="_x0000_i1118" width="11" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>as the sum of two vectors, one in Span { <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1119" type="#_x0000_t75" style='width:63.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image168.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image169.gif" v:shapes="_x0000_i1119" width="85" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>} and the other in </p>
+
+<p class="MsoNormal">Span { <sub><!--[if gte vml 1]><v:shape id="_x0000_i1120"
+ type="#_x0000_t75" style='width:15.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image170.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image171.gif" v:shapes="_x0000_i1120" width="21" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>}. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 8 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1121" type="#_x0000_t75"
+ style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image172.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image173.gif" v:shapes="_x0000_i1121" width="102" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1122"
+ type="#_x0000_t75" style='width:67.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image174.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image175.gif" v:shapes="_x0000_i1122" width="90" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1123"
+ type="#_x0000_t75" style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image176.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image177.gif" v:shapes="_x0000_i1123" width="102" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1124"
+ type="#_x0000_t75" style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image178.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image179.gif" v:shapes="_x0000_i1124" width="102" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1125"
+ type="#_x0000_t75" style='width:69pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image180.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image181.gif" v:shapes="_x0000_i1125" width="92" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1126" type="#_x0000_t75"
+ style='width:158.25pt;height:63pt'>
+ <v:imagedata src="lecture9A_files/image182.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image183.gif" v:shapes="_x0000_i1126" width="211" height="84"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1127" type="#_x0000_t75"
+ style='width:198.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image184.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image185.gif" v:shapes="_x0000_i1127" width="265" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1128"
+ type="#_x0000_t75" style='width:133.5pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image186.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image187.gif" v:shapes="_x0000_i1128" width="178" height="142"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1129" type="#_x0000_t75"
+ style='width:181.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image188.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image189.gif" v:shapes="_x0000_i1129" width="242" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1130"
+ type="#_x0000_t75" style='width:124.5pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image190.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image191.gif" v:shapes="_x0000_i1130" width="166" height="142"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 9 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1131" type="#_x0000_t75"
+ style='width:189.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image192.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image193.gif" v:shapes="_x0000_i1131" width="253" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1132"
+ type="#_x0000_t75" style='width:133.5pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image194.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image195.gif" v:shapes="_x0000_i1132" width="178" height="142"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1133" type="#_x0000_t75"
+ style='width:292.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image196.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image197.gif" v:shapes="_x0000_i1133" width="390" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1134" type="#_x0000_t75"
+ style='width:90pt;height:25.5pt'>
+ <v:imagedata src="lecture9A_files/image198.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image199.gif" v:shapes="_x0000_i1134" width="120" height="34"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1135" type="#_x0000_t75"
+ style='width:297pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image200.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image201.gif" v:shapes="_x0000_i1135" width="396" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1136" type="#_x0000_t75"
+ style='width:126pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image202.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image203.gif" v:shapes="_x0000_i1136" width="168" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 10 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1137" type="#_x0000_t75"
+ style='width:158.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image204.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image205.gif" v:shapes="_x0000_i1137" width="211" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1138" type="#_x0000_t75"
+ style='width:126.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image206.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image207.gif" v:shapes="_x0000_i1138" width="169" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 9</span></u>: Find the
+orthogonal projection of<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1139" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image208.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1139" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>onto the subspace spanned by the orthogonal
+vectors <sub><!--[if gte vml 1]><v:shape id="_x0000_i1140" type="#_x0000_t75"
+ style='width:39.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image209.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image098.gif" v:shapes="_x0000_i1140" width="53" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span><span style="font-size:20.0pt;font-weight:
+normal">.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1141" type="#_x0000_t75"
+ style='width:67.5pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image210.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image211.gif" v:shapes="_x0000_i1141" width="90" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1142"
+ type="#_x0000_t75" style='width:76.5pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image212.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image213.gif" v:shapes="_x0000_i1142" width="102" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1143"
+ type="#_x0000_t75" style='width:69.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image214.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image215.gif" v:shapes="_x0000_i1143" width="93" height="98"><!--[endif]--></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1144" type="#_x0000_t75"
+ style='width:194.25pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image216.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image217.gif" v:shapes="_x0000_i1144" width="259" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1145"
+ type="#_x0000_t75" style='width:192pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image218.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image219.gif" v:shapes="_x0000_i1145" width="256" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 11 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1146" type="#_x0000_t75"
+ style='width:203.25pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image220.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image221.gif" v:shapes="_x0000_i1146" width="271" height="98"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1147"
+ type="#_x0000_t75" style='width:210pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image222.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image223.gif" v:shapes="_x0000_i1147" width="280" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1148" type="#_x0000_t75"
+ style='width:220.5pt;height:46.5pt'>
+ <v:imagedata src="lecture9A_files/image224.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image225.gif" v:shapes="_x0000_i1148" width="294" height="62"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1149" type="#_x0000_t75"
+ style='width:183pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image226.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image227.gif" v:shapes="_x0000_i1149" width="244" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1150" type="#_x0000_t75"
+ style='width:186.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image228.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image229.gif" v:shapes="_x0000_i1150" width="249" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1151" type="#_x0000_t75"
+ style='width:96.75pt;height:73.5pt'>
+ <v:imagedata src="lecture9A_files/image230.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image231.gif" v:shapes="_x0000_i1151" width="129" height="98"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 12 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 10</span></u>: Let
+"W" be the subspace spanned by the <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1152" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image232.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image004.gif" v:shapes="_x0000_i1152" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;&nbsp;</span>and write <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1153" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image233.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1153" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>as the sum of a vector in "W" and a
+vector orthogonal to "W".</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1154" type="#_x0000_t75"
+ style='width:69.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image234.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image235.gif" v:shapes="_x0000_i1154" width="93" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1155"
+ type="#_x0000_t75" style='width:67.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image236.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image237.gif" v:shapes="_x0000_i1155" width="90" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1156"
+ type="#_x0000_t75" style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image238.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image239.gif" v:shapes="_x0000_i1156" width="102" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1157" type="#_x0000_t75"
+ style='width:116.25pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image240.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image241.gif" v:shapes="_x0000_i1157" width="155" height="142"><!--[endif]--><span style="mso-spacerun:yes">&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1158"
+ type="#_x0000_t75" style='width:133.5pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image242.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image243.gif" v:shapes="_x0000_i1158" width="178" height="142"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1159"
+ type="#_x0000_t75" style='width:125.25pt;height:106.5pt'>
+ <v:imagedata src="lecture9A_files/image244.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image245.gif" v:shapes="_x0000_i1159" width="167" height="142"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1160" type="#_x0000_t75"
+ style='width:164.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image246.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image247.gif" v:shapes="_x0000_i1160" width="219" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1161"
+ type="#_x0000_t75" style='width:181.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image248.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image249.gif" v:shapes="_x0000_i1161" width="242" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1162" type="#_x0000_t75"
+ style='width:182.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image250.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image251.gif" v:shapes="_x0000_i1162" width="243" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>Page 13 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1163" type="#_x0000_t75"
+ style='width:267.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image252.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image253.gif" v:shapes="_x0000_i1163" width="357" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1164" type="#_x0000_t75"
+ style='width:262.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image254.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image255.gif" v:shapes="_x0000_i1164" width="350" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1165" type="#_x0000_t75"
+ style='width:87.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image256.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image257.gif" v:shapes="_x0000_i1165" width="117" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1166"
+ type="#_x0000_t75" style='width:201pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image258.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image259.gif" v:shapes="_x0000_i1166" width="268" height="134"><!--[endif]--></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1167" type="#_x0000_t75"
+ style='width:118.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image260.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image261.gif" v:shapes="_x0000_i1167" width="158" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 14 of 15 </p>
+
+<b><span style="font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><br style="mso-special-character:line-break;
+page-break-before:always" clear="all">
+</span></b>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><u><span style="color:blue">Example # 11</span></u>: Find
+the closest point to y in the subspace "W" spanned by<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1168"
+ type="#_x0000_t75" style='width:15.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image262.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image263.gif" v:shapes="_x0000_i1168" width="21" height="29"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>&amp; <sub><!--[if gte vml 1]><v:shape id="_x0000_i1169"
+ type="#_x0000_t75" style='width:15.75pt;height:21.75pt'>
+ <v:imagedata src="lecture9A_files/image264.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image265.gif" v:shapes="_x0000_i1169" width="21" height="29"><!--[endif]--></sub>. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1170" type="#_x0000_t75"
+ style='width:60.75pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image266.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image267.gif" v:shapes="_x0000_i1170" width="81" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1171"
+ type="#_x0000_t75" style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image268.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image269.gif" v:shapes="_x0000_i1171" width="102" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--[if gte vml 1]><v:shape id="_x0000_i1172"
+ type="#_x0000_t75" style='width:76.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image270.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image271.gif" v:shapes="_x0000_i1172" width="102" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The orthogonal projection of<span style="mso-spacerun:yes">&nbsp;
+</span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1173" type="#_x0000_t75"
+ style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image272.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1173" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>onto "W" is the closest point in
+"W" to<span style="mso-spacerun:yes">&nbsp; </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1174" type="#_x0000_t75" style='width:9pt;height:19.5pt'>
+ <v:imagedata src="lecture9A_files/image273.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image067.gif" v:shapes="_x0000_i1174" width="12" height="26"><!--[endif]--></sub><span style="mso-spacerun:yes">&nbsp;</span>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1175" type="#_x0000_t75"
+ style='width:182.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image274.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image275.gif" v:shapes="_x0000_i1175" width="243" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape
+ id="_x0000_i1176" type="#_x0000_t75" style='width:181.5pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image276.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image277.gif" v:shapes="_x0000_i1176" width="242" height="134"><!--[endif]--></sub></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1177" type="#_x0000_t75"
+ style='width:164.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image278.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image279.gif" v:shapes="_x0000_i1177" width="219" height="134"><!--[endif]--><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[if gte vml 1]><v:shape id="_x0000_i1178"
+ type="#_x0000_t75" style='width:164.25pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image280.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image281.gif" v:shapes="_x0000_i1178" width="219" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1179" type="#_x0000_t75"
+ style='width:261pt;height:100.5pt'>
+ <v:imagedata src="lecture9A_files/image282.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="INNER%20PRODUCT%20&amp;%20ORTHOGONALITY_files/image283.gif" v:shapes="_x0000_i1179" width="348" height="134"><!--[endif]--><o:p></o:p></sub></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Page 15 of 15</p>
+
+</div>
+
+
+
+
+</body></html>

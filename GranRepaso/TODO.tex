@@ -1,0 +1,2431 @@
+%% LyX 2.3.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=0.05\textwidth,bmargin=0.05\textwidth,lmargin=0.05\textwidth}
+\usepackage{xcolor}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
+ {hyperref}
+\begin{document}
+
+\subsection*{Práctica 4: Autovectores y Autovalores}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Sea $T\in\mathcal{L}(\mathbb{K}^{2},\mathbb{K}^{2})$ definida por
+$T(u,v)=(v,u)$ para $u,v\in\mathbb{K}.$Calular los autovalores y
+sus autovectores asociados para $T$.
+\item Sea $T\in\mathcal{L}(\mathbb{K}^{3},\mathbb{K}^{3})$ definida por
+$T(u,v,w)=(2u,0,5w)$ para $u,v,w\in\mathbb{K}.$Calcular los autovalores
+y sus autovectores asociados para $T$.
+\item Para $n\in\mathbb{N}$ sea $T\in\mathcal{L}(\mathbb{K}^{n},\mathbb{K}^{n})$
+definida por 
+\[
+T(x_{1},\dots,x_{n})=(x_{1}+\dots+x_{n}\dots+x_{n}),x_{1},\dots,x_{n}\in\mathbb{K}.
+\]
+\\
+Calular los autovalores y sus autovectores asociados para $T$.
+\end{enumerate}
+
+\paragraph*{Recordatorio:$Ax=T(x,y)=A\begin{bmatrix}x\protect\\
+y
+\end{bmatrix}.$$T(e_{1})=A(e_{1})$}
+
+\paragraph*{Soluciones}
+\begin{enumerate}
+\item $A=\begin{bmatrix}0 & 1\\
+1 & 0
+\end{bmatrix}.$$B=A-\lambda I=\begin{bmatrix}-\lambda & 1\\
+1 & -\lambda
+\end{bmatrix}.$$|B|=\lambda^{2}-1=(\lambda-1)(\lambda+1)=0\Longleftrightarrow\lambda=1\lor\lambda=-1$.
+\begin{enumerate}
+\item $\lambda=1:$$B=\begin{bmatrix}-1 & 1\\
+1 & -1
+\end{bmatrix}.B\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}=0\Longleftrightarrow x\in\langle\{1,1\}\rangle.$Ya que $1\cdot\begin{pmatrix}-1\\
+1
+\end{pmatrix}+\text{1\ensuremath{\cdot}}\begin{pmatrix}1\\
+-1
+\end{pmatrix}=\begin{pmatrix}0\\
+0
+\end{pmatrix}$.
+\item $\lambda=-1:B=\begin{bmatrix}\text{1} & 1\\
+1 & 1
+\end{bmatrix}.Bx=0\Longleftrightarrow x\in\langle\{1,-1\}\rangle$.
+\end{enumerate}
+\item $A=\begin{pmatrix}2 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 5
+\end{pmatrix}.B=A-\lambda I=\begin{pmatrix}2-\lambda & 0 & 0\\
+0 & -\lambda & 0\\
+0 & 0 & 5-\lambda
+\end{pmatrix}.$$|B|=(2-\lambda)(-\lambda)(5-\lambda)=0\Longleftrightarrow\lambda=2\lor\lambda=0\lor\lambda=5.$
+\end{enumerate}
+\begin{itemize}
+\item $\lambda=2:B=\begin{bmatrix}0 & 0 & 0\\
+0 & -2 & 0\\
+0 & 0 & 3
+\end{bmatrix}.B\begin{bmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{bmatrix}=0\Longleftrightarrow x\in\langle\{1,0,0\}\rangle.$
+\item $\lambda=0:B=\begin{bmatrix}2 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 5
+\end{bmatrix}.$$B\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}=0\Longleftrightarrow x\in\langle\{0,1,0\}\rangle.$
+\item $\lambda=5:B=\begin{bmatrix}-3 & 0 & 0\\
+0 & -5 & 0\\
+0 & 0 & 0
+\end{bmatrix}.$$B\begin{bmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{bmatrix}=0\Longleftrightarrow x\in\langle\{0,0,1\}\rangle.$
+\end{itemize}
+\item Encontrar los autovalores y autovectores asociados para los operadores
+lineales sobre $\mathbb{K}^{2}$dados por las siguientes matrices.
+\begin{enumerate}
+\item $A=\begin{bmatrix}3 & 0\\
+8 & -1
+\end{bmatrix}$.
+\item $B=\begin{bmatrix}10 & -9\\
+4 & -2
+\end{bmatrix}$.
+\item $C=\begin{bmatrix}1 & 0\\
+0 & 1
+\end{bmatrix}$.
+\item $D=\begin{bmatrix}0 & 0\\
+0 & 0
+\end{bmatrix}$.
+\end{enumerate}
+
+\paragraph{Soluciones:}
+\item Encontrar el autoespacio correspondiente de cada autovalor
+\begin{enumerate}
+\item $A=\begin{bmatrix}4 & -2\\
+-3 & 9
+\end{bmatrix},\lambda=10$
+\item $B=\begin{bmatrix}4 & 2 & 3\\
+-1 & 1 & -3\\
+2 & 4 & 9
+\end{bmatrix},\lambda=3$
+\end{enumerate}
+
+\paragraph*{Soluciones:}
+\begin{enumerate}
+\item $A-\lambda I=\begin{bmatrix}-6 & -2\\
+-3 & -1
+\end{bmatrix}.Hx=0\Longleftrightarrow x\in\langle\{\frac{-1}{3},1)\}\rangle.$
+\item ....
+\end{enumerate}
+\item Para cada matriz dada, encontrar los autovalores para el operador
+T sobre $K^{n}$sin realizar cálculos. Describir los autovectores
+$v\in\mathbb{K}^{n}$asociados a cada autovalor $\lambda$analizando
+las soluciones de la ecuación matricial $(A-\lambda I)v=0$.
+\begin{enumerate}
+\item $A=\begin{bmatrix}-\frac{1}{3} & 0 & 0 & 0\\
+0 & -\text{\ensuremath{\frac{1}{3}}} & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & \frac{1}{2}
+\end{bmatrix}$
+\item $B=\begin{bmatrix}1 & 3 & 7 & 11\\
+0 & \frac{1}{2} & 3 & 8\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & 2
+\end{bmatrix}$
+\end{enumerate}
+\textbf{Sabemos}: $det(A)=\lambda_{1}\cdots\lambda_{n}$ y $tr(A)=\lambda_{1}+\cdots+\lambda_{n}$.
+
+\textbf{Soluciones}:
+\begin{enumerate}
+\item $\lambda_{1}=-\frac{1}{3},\lambda_{2}=2,\lambda_{3}=\frac{1}{2}$.\\
+$v_{1}=(x_{1},x_{2},0,0),v_{2}=(0,0,x_{3},0),v_{3}=(0,0,0,x_{4})$.
+Tenemos dos autovectores con un mismo autovalor ya que hay dos autovalores
+repetidos, que nos dan dos columnas nulas al hacer $A-(-\frac{1}{3})\lambda I=0$,
+por lo tanto el espacio nulo de esa matriz posee dos soluciones no
+triviales.\\
+$A+\frac{1}{3}\lambda I=$$\begin{bmatrix}-\frac{1}{3}+\frac{1}{3} & 0 & 0 & 0\\
+0 & -\text{\ensuremath{\frac{1}{3}+\frac{1}{3}}} & 0 & 0\\
+0 & 0 & 1+\text{\ensuremath{\frac{1}{3}}} & 0\\
+0 & 0 & 0 & \frac{1}{2}+\frac{1}{3}
+\end{bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & \frac{4}{3} & 0\\
+0 & 0 & 0 & \frac{5}{6}
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}
+\end{bmatrix}=\begin{pmatrix}0\\
+0\\
+0\\
+0
+\end{pmatrix}$\\
+$X\in\Bigg\langle\Bigg\{\begin{pmatrix}1\\
+0\\
+0\\
+0
+\end{pmatrix},\begin{pmatrix}0\\
+1\\
+0\\
+0
+\end{pmatrix}\Bigg\}\text{\ensuremath{\Bigg\rangle}}$.
+\item $\lambda_{1}=1,\lambda_{2}=\frac{1}{2},\lambda_{3}=0,\lambda_{4}=2$.
+\end{enumerate}
+\item Sea V un espacio vectorial de dimensión finita sobre $\mathbb{K}$y
+$T\in\mathcal{L}(V)$. Un espacio vectorial U se dice invariante bajo
+T si $T(U)\subset U.$Supongamos que $U_{1},U_{2}$son dos subespacios
+invariantes bajo T. Probar que $U_{1}\cap U_{2}$también es invariante
+bajo T.
+
+\uline{Solución} Sea $v\in\mathcal{\mathcal{U}}_{1}\cap\mathcal{U}_{2}\Rightarrow v\in\mathcal{U}_{1}\land v\in\mathcal{\mathcal{U}}_{2}\Rightarrow T(v)\in\mathcal{U}_{1}\land T(v)\in\mathcal{U}_{2}\Rightarrow T(v)\in\mathcal{U}_{1}\cap\mathcal{U}_{2}.$
+\item Sea V un espacio de dimensión finita sobre $\mathbb{K},T\in\mathcal{L}(V)$
+inversible y $\lambda\in\mathbb{K}-\{0\}$. Probar que $\lambda$
+es autovalor de A si y sólo si $\lambda^{-1}$es autovalor de $T^{-1}$.\\
+\\
+\textbf{Solución }Sea\textbf{ $x\in V/T(x)=\lambda x\Longleftrightarrow Ax=\lambda x\Longleftrightarrow A^{-1}Ax=A^{-1}\lambda x\Longleftrightarrow x=A^{-1}\lambda x\Longleftrightarrow\lambda^{-1}x=A^{-1}x$.}
+\item Sea $V$ un espacio de dimensión finita sobre $\mathbb{K},$$A\in\mathcal{M}(\mathbb{K})$
+matriz inversible y $\lambda\in\mathbb{K}$. Probar que $\lambda$
+es autovalor de A si y sólo si $\lambda$ es autovalor de $A^{t}$.\\
+\\
+\textbf{Solución} Notemos que $(A-\lambda I)^{t}=A^{t}-\lambda I$
+luego como $|X|=|X|^{t}$ resulta:
+\[
+|A-\lambda I|=|(A-\lambda I)^{t}|=|A^{t}-\lambda I|
+\]
+\item Sea $V$ un espacio de dimensión finita sobre $\mathbb{K}$ y sea
+$T\in\mathcal{L}(V)$ con la propiedad de que todo $v\in V-\{0\}$
+es un autovector asociado al mismo autovalor para $T$. Probar que
+$T$ debe ser igual a un escalar por la identidad en $V$.
+\item Completar
+\item Sea $A=\begin{bmatrix}5 & -2 & 6 & -1\\
+0 & 3 & h & 0\\
+0 & 0 & 5 & 4\\
+0 & 0 & 0 & 1
+\end{bmatrix}$. Encontrar $h$ tal que el autoespacio correspondiente a $\lambda=5$
+sea bidimensional.\\
+\\
+\textbf{Solución} $A-\lambda I=\begin{bmatrix}0 & -2 & 6 & -1\\
+0 & -2 & h & 0\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & -4
+\end{bmatrix}.$ $|A-\lambda I|=det\Bigg(\begin{bmatrix}0 & -2 & 6 & -1\\
+0 & -2 & h & 0\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & -4
+\end{bmatrix}\Bigg)\Longleftrightarrow det\Bigg(\begin{bmatrix}0 & -2 & 6 & -1\\
+0 & -2-(-2) & h-6 & 0\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & -4
+\end{bmatrix}\Bigg)\Longleftrightarrow det\Bigg(\begin{bmatrix}0 & -2 & 6 & -1\\
+0 & 0 & h-6 & 0\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & -4
+\end{bmatrix}\Bigg)$.\\
+Luego para $h=6$ resultara $(A-\lambda I)x=0\Longleftrightarrow\begin{bmatrix}0 & -1 & -3 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 4\\
+0 & 0 & 0 & 0
+\end{bmatrix}x=\begin{pmatrix}0\\
+0\\
+0\\
+0
+\end{pmatrix}\Longleftrightarrow x=\begin{bmatrix}x_{1}\\
+3x_{3}\\
+x_{3}\\
+0
+\end{bmatrix}$ es decir, si y sólo si $x\in\langle\{(1,0,0,0),(0,3,1,0)\}\rangle.$
+\item En cada uno de los siguientes items, sea $A=PDP^{-1}$ y calcule $A^{4}$.
+\begin{enumerate}
+\item $P=\begin{bmatrix}2 & 3\\
+4 & 1
+\end{bmatrix},D=\begin{bmatrix}2 & 0\\
+0 & 1
+\end{bmatrix}.$\textbf{}\\
+\textbf{}\\
+\textbf{Solución} $A^{4}=PDP^{-1}PDP^{-1}\dots PDP^{-1}=PD^{4}P^{-1}.$
+\\
+\\
+Luego $A^{4}=P\begin{bmatrix}16 & 0\\
+0 & 1
+\end{bmatrix}P^{-1}=\begin{bmatrix}32 & 3\\
+64 & 1
+\end{bmatrix}\begin{bmatrix}-\frac{1}{10} & \frac{3}{10}\\
+\frac{2}{5} & -\frac{1}{5}
+\end{bmatrix}=\begin{bmatrix}-2 & 9\\
+-6 & 19
+\end{bmatrix}.$
+\item $P=\begin{bmatrix}1 & 0\\
+3 & 1
+\end{bmatrix},D=\begin{bmatrix}a & 0\\
+0 & b
+\end{bmatrix}.$\\
+\\
+\textbf{Solución $A^{4}=P\begin{bmatrix}a^{4} & 0\\
+0 & b^{4}
+\end{bmatrix}P^{-1}=\begin{bmatrix}a^{4} & 0\\
+3a^{4} & b^{4}
+\end{bmatrix}\begin{bmatrix}1 & 0\\
+-3 & 1
+\end{bmatrix}=\begin{bmatrix}a^{4} & 0\\
+3a^{4}-3b^{4} & b^{4}
+\end{bmatrix}.$}
+\item Completar.
+\end{enumerate}
+\item Diagonalizar las siguientes matrices:
+\begin{enumerate}
+\item $A=\begin{bmatrix}2 & 3\\
+4 & 1
+\end{bmatrix}$.
+\item $B=\begin{bmatrix}4 & 0 & -2\\
+2 & 5 & 4\\
+0 & 0 & 5
+\end{bmatrix}$.
+\item $C=\begin{bmatrix}-7 & -16 & 4\\
+6 & 13 & -2\\
+12 & 16 & 1
+\end{bmatrix}$.
+\item $E=\begin{bmatrix}4 & 0 & 0 & 0\\
+0 & 4 & 0 & 0\\
+0 & 0 & 2 & 0\\
+1 & 0 & 0 & 2
+\end{bmatrix}$.
+\end{enumerate}
+
+\paragraph{Soluciones}
+\begin{enumerate}
+\item $|A-\lambda I|=\begin{vmatrix}2-\lambda & 3\\
+4 & 1-\lambda
+\end{vmatrix}=(2-\lambda)(1-\lambda)-12=\lambda^{2}-3\lambda-10=(x-5)(x+2).$$\lambda=5:(A-\lambda I)x=0\Longleftrightarrow\begin{bmatrix}-3 & 3\\
+4 & -4
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}=0\Longleftrightarrow\begin{bmatrix}-3 & 3\\
+0 & 0
+\end{bmatrix}x=0\Longleftrightarrow x\in\langle\{(1,1\}\rangle$.\\
+\\
+$\lambda=-2:(A-\lambda I)x=0\Longleftrightarrow\begin{bmatrix}4 & 3\\
+4 & 3
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}=0\Longleftrightarrow x\in\langle\{(-\frac{3}{4},1)\}\rangle$. \\
+Luego $A=PDP^{-1}=\begin{bmatrix}1 & -\frac{3}{4}\\
+1 & 1
+\end{bmatrix}\begin{bmatrix}5 & 0\\
+0 & -2
+\end{bmatrix}P^{-1}$.
+\item $|B-\lambda I|=\begin{vmatrix}4-\lambda & 0 & -2\\
+2 & 5-\lambda & 4\\
+0 & 0 & 5-\lambda
+\end{vmatrix}=(4-\lambda)(5-\lambda)^{2}$\\
+$\lambda=5:(B-\lambda I)x=0\Longleftrightarrow\begin{bmatrix}-1 & 0 & -2\\
+2 & 0 & 4\\
+0 & 0 & 0
+\end{bmatrix}x=0\Leftrightarrow x\in\langle\{(-2,0,1),(0,1,0)\}\rangle.$\\
+$\lambda=4:(B-\lambda I)x=0\Longleftrightarrow\begin{bmatrix}0 & 0 & -2\\
+2 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}x=0\Longleftrightarrow x\in\langle\{(-\frac{1}{2},1,0)\}\rangle.$\\
+Luego $B=PDP^{-1}=\begin{bmatrix}-2 & 0 & -\frac{1}{2}\\
+0 & 1 & 1\\
+1 & 0 & 0
+\end{bmatrix}\begin{bmatrix}5 & 0 & 0\\
+0 & 5 & 0\\
+0 & 0 & 4
+\end{bmatrix}P^{-1}.$
+\item Completar.
+\item $|E-\lambda I|=\begin{vmatrix}4-\lambda & 0 & 0 & 0\\
+0 & 4-\lambda & 0 & 0\\
+0 & 0 & 2-\lambda & 0\\
+0 & 0 & 0 & 2-\lambda
+\end{vmatrix}=0\Longleftrightarrow(4-\lambda)^{2}(2-\lambda)^{2}=0.$\\
+$\lambda=4:(E-4I)x=0\Leftrightarrow\begin{bmatrix}0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & -2 & 0\\
+1 & 0 & 0 & -2
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}
+\end{pmatrix}=0\Longleftrightarrow x\in\langle\{(0,1,0,0),(2,0,0,1)\}\rangle.$\\
+$\lambda=2:(E-2I)x=0\Longleftrightarrow\begin{bmatrix}2 & 0 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0
+\end{bmatrix}x=0\Leftrightarrow x\in\langle\{(0,0,0,1),(0,0,1,0)\}\rangle.$\\
+Luego $E=PDP^{-1}=\begin{bmatrix}2 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+1 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}4 & 0 & 0 & 0\\
+0 & 4 & 0 & 0\\
+0 & 0 & 2 & 0\\
+0 & 0 & 0 & 2
+\end{bmatrix}P^{-1}.$\\
+$DIM(N(A))=n\text{º de columnas}-rang(A).$
+\end{enumerate}
+\item Sea $A$ una matriz $3\times3$con dos autovalores. Cada autoespacio
+es unidimensional. Determinar si $A$ es diagonalizable jusutificando
+la respuesta.
+\item Demostrar que si A es tanto diagonalizable como invertible, también
+lo es $A^{-1}$.\\
+\textbf{Solución $A=PDP^{-1}\Longleftrightarrow AA^{-1}=PDP^{-1}A^{-1}\Longleftrightarrow I=PDP^{-1}A^{-1}\Longleftrightarrow$}\\
+\textbf{$P^{-1}=DP^{-1}A^{-1}\Longleftrightarrow D^{-1}P^{-1}=P^{-1}A^{-1}\Longleftrightarrow PD^{-1}P^{-1}=A^{-1}$.}
+\item 
+\begin{enumerate}
+\item Describir una matriz $2\times2$ distinta de cero que sea inversible
+pero no diagonalizable.
+\item Describir una matriz $2\times2$ distinta de cero que sea diagonalizable
+pero no inversible.
+\end{enumerate}
+\textbf{Soluciones}:
+\begin{enumerate}
+\item $A=\begin{bmatrix}1 & 0\\
+1 & 1
+\end{bmatrix}.A^{-1}=\begin{bmatrix}1 & 0\\
+-1 & 1
+\end{bmatrix}.$
+\item $B=\begin{bmatrix}1 & 1\\
+2 & 2
+\end{bmatrix}.$\\
+\\
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Formas de Jordan: Teoría}
+
+Un operador T puede expresarse en la forma canónica de Jordan si sus
+polinomios minimales y característico se factorizan en polinomios
+lineales. Esto siempre es posible si $\mathbb{K}=\mathbb{C}$. En
+cualquier caso podemos extender el cuerpo $\mathbb{K}$ a uno en el
+cual los polinimios minimales y característicos puedan factorizarse
+en factores lineales, entocnes en un sentido amplio cualquier operador
+tiene una forma canónica de Jordan. Análogamente, toda matriz es semejante
+a una matriz en forma canónica de Jordan.\\
+\textbf{Teorema 10 }Sea $T:V\rightarrow V$ un operador lineal cuyos
+polinomios minimal y característico son respectivamente:\\
+\[
+p(t)=det(T-tI)=(t-\lambda I)^{n_{1}}\cdots(t-\lambda_{r})^{n_{r}}
+\]
+\[
+m(t)=(t-\lambda_{1})^{m_{1}}\cdots(t-\lambda_{r})^{m_{r}},
+\]
+donde los $\lambda_{i}$ son esacalares distintos. Entonces T tiene
+una representación matricial diagonal por bloques cuyos elementos
+diagonales son de la forma:\\
+\[
+J=\begin{bmatrix}\lambda_{i} & 1 & 0 & \cdots & 0 & 0\\
+0 & \lambda_{i} & 1 & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & 0 & \cdots & \lambda_{i} & 1\\
+0 & 0 & 0 & \cdots & 0 & \lambda_{i}
+\end{bmatrix}
+\]
+\\
+Para cada $\lambda_{i}$ los bloques correspondientes a $J_{ij}$
+tienen las siguientes propiedades:
+\begin{enumerate}
+\item Existe al menos un $J_{ij}$ de orden $m_{i}$ , los demás $J_{ij}$
+son de orden $\leq m_{i}.$
+\item La suma de los órdenes de los $J_{ij}$ es $n_{i}$.
+\item \textcolor{orange}{La cantidad de $J_{ij}$ es igual a la multiplicidad
+geométrica de $\lambda_{i}$ (es decir la dimensión de su autoespacio).}
+\item La cantidad de $J_{ij}$ de cada orden posible está determinado únicamente
+por T.
+\end{enumerate}
+A la matriz J se la llama \textcolor{purple}{forma canónica de Jordan}.\\
+\\
+\textbf{Demos:} Por el Teorema 7, T se puede descomponer en operadores
+$T_{1},\cdots,T_{r},$ esto es $T=T_{1}\bigoplus\cdots T_{r}$, donde
+$(t-\lambda_{i})^{m_{i}}$ es el polinomio minimal de $T_{i}$. Luego
+en particular
+
+\[
+(T_{1}-\lambda_{i}I)^{m_{1}}=0,\cdots,(T_{r}-\lambda_{r}I)^{m_{r}}=0.
+\]
+\\
+Sea $N_{i}=T_{i}=\lambda_{i}I$, entonces para cada $i=1,\cdots,r\quad T_{i}=N_{i}+\lambda_{i}I,$
+con $N_{i}^{m_{i}}=0$. Esto es, $T_{i}$ es la suma del operador
+$\lambda_{i}I$ y un operador nilpotente $N_{i}$, el cual es tiene
+ídnice $m_{i}$ ya que $(t-\lambda_{i})^{m_{i}}$es el polinomio minimal
+de $T_{i}$.\\
+Ahora, podemos elegir una base tal que $N_{i}$ esté en su forma canónica.
+En este base $T_{i}=N_{i}+\lambda_{i}I$ se representa por una matriz
+diagonal por bloques $M_{i}$, cuyos elementos de la diagonal son
+las matrices $J_{ij}$. La suma directa de las matricers $M_{i}$
+es una matriz J que es una forma canónica de Jordan y por el Teo.
+4 es una representación matricial de T.\\
+Por último, veamos que los bloques $J_{ij}$ satisfacen las propiedades
+requeridas:
+\begin{enumerate}
+\item Se obtiene por ser $N_{i}$ de índice $m_{i}$.
+\item Vale porque T y J tiene el mismo polinomio característico.
+\item Vale pues la $dim(nul(N_{i}))=dim(nul(T_{i}-\lambda_{i}I))$ es igual
+a la dimensión del autoespacio correspondiente a $\lambda_{i}$.
+\item Vale por estar los $T_{i}$ (y los $N_{i})$ determinados únicamente
+por T.
+\end{enumerate}
+\textcolor{brown}{\uline{Observación}} $J_{ij}=\lambda_{i}I+N_{i}$\\
+El polinomio mínimo se calcula cuando por ejemplo si elevas la matriz
+varias veces $(A-\lambda I)=0$ o cuando después de elevar la matriz
+varias veces te da la misma multiplicidad del autovalor, tal que cuando
+elegís el vector en el paso siguiente te da 0 en esa potencia $(A-\lambda I)^{4}w_{4}=0$.
+(Eso determina el minimal polynomial). No simpre tenés que buscar
+la matriz tal que $(A-\lambda I)^{n}=0$.\\
+
+
+\subsection{Ejemplo Jordan}
+
+$A=\begin{bmatrix}2 & 0 & 0\\
+1 & 2 & 0\\
+0 & 0 & -1
+\end{bmatrix}$\\
+\\
+Polinomio característico: $det(A-\lambda I)=(2-\lambda)^{2}(-1-\lambda)$\\
+Autovalores: $\lambda_{1}=2\land m_{1}=2$ y $\lambda_{2}=-1\land m_{1}=1$\\
+\\
+$v_{1}(2)=nul(A-2I)=\Bigg\{\begin{bmatrix}0\\
+x\\
+0
+\end{bmatrix}\Bigg\}$\\
+$v_{2}(2)=nul((A-2I)^{2})=\Bigg\{\begin{bmatrix}x\\
+y\\
+0
+\end{bmatrix}\Bigg\}$; $dim(v_{2}(1))=2=m_{1}$\\
+El otro autovalor:\\
+$v_{1}(-1)=nul(A+I)=\Bigg\{\begin{bmatrix}0\\
+0\\
+z
+\end{bmatrix}\Bigg\}$\\
+\\
+Buscamos un vector: $w_{2}\in v_{2}(2)-v_{1}(2)=\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}$\\
+\textcolor{red}{Siempre empezamos del más chico hasta el más grande,$w_{1}=(A-2I)w_{2},w_{2}=(A-2I)^{2}w_{3}$}\\
+$w_{1}=(A-2I)w_{2}\Longrightarrow\begin{bmatrix}0 & 0 & 0\\
+1 & 0 & 0\\
+0 & 0 & -3
+\end{bmatrix}\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}\Longrightarrow w_{1}=\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}$\\
+\\
+El número de bloques es igual a la dimensión del $nul(A-\lambda I)$\\
+Tenemos que calcular $(A-\lambda I)^{n}$ hasta que tengamos la misma
+multiplicidad del autovalor y el vector que elegimos tiene que cumplir
+que la siguiente potencia debería tener la misma dimensión. (La potencia
+n es la longitud del bloque)\\
+Hasta ahora tenemos nuestro bloque de $2\times2$. Para el siguiente
+bloque (de tamaño 1), podemos usar cualquier autovector que no esté
+en el autoespacio del bloque $2\times2$, así que elegimos:\\
+$w_{3}=\begin{bmatrix}0\\
+0\\
+1
+\end{bmatrix}$\\
+\\
+Luego $\{v_{1},v_{2}\}$ es una base de $v_{2}(2)$\\
+\\
+$\mathcal{B}=\{w_{1},w_{2},w_{3}\}\Rightarrow B=\Bigg\{\underbrace{\begin{bmatrix}0\\
+1\\
+0
+\end{bmatrix}}_{w_{1}},\underbrace{\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}}_{w_{2}},\underbrace{\begin{bmatrix}0\\
+0\\
+1
+\end{bmatrix}}_{w_{3}}\Bigg\}$ \\
+\\
+$Aw_{1}=\begin{bmatrix}2 & 0 & 0\\
+1 & 2 & 0\\
+0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}0\\
+1\\
+0
+\end{bmatrix}=\begin{bmatrix}0\\
+2\\
+0
+\end{bmatrix}_{B}=2w_{1}$\\
+\\
+$Aw_{2}=\begin{bmatrix}2 & 0 & 0\\
+1 & 2 & 0\\
+0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}=\begin{bmatrix}2\\
+1\\
+0
+\end{bmatrix}_{B}=2w_{2}+w_{1}$\\
+\\
+$Aw_{3}=\begin{bmatrix}2 & 0 & 0\\
+1 & 2 & 0\\
+0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}0\\
+0\\
+1
+\end{bmatrix}=\begin{bmatrix}0\\
+0\\
+-1
+\end{bmatrix}_{B}=-w_{3}$\\
+\\
+$J=\begin{bmatrix}2 & 1 & 0\\
+0 & 2 & 0\\
+0 & 0 & -1
+\end{bmatrix}$\\
+\\
+$J=P^{-1}AP=P^{-1}A\begin{bmatrix}0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1
+\end{bmatrix}$\\
+\\
+\textcolor{blue}{Observación}: No importa el orden de los bloques
+de Jordan, porque representa simplemente un renombre de las $v_{i}$
+al hacer la base.\\
+\\
+\\
+\textbf{La lógica base de Jordan xd:}\\
+Sea A una matriz $4\times4$ con un vector propio $\lambda$ de multiplicidad
+4. Describa las posibles formas de Jordan dependiendo de las multiplicidades
+geométrices.\\
+\textbf{Solución:}\\
+\textbf{$\begin{bmatrix}4 & 0 & 0 & 0\\
+0 & 4 & 0 & 0\\
+0 & 0 & 4 & 0\\
+0 & 0 & 0 & 4
+\end{bmatrix}$} Multiplicidad geométrica = 4 = multiplicidad algebraica luego, la
+matriz es diagonalizable.\\
+\\
+La dimensión del autovector de $\lambda_{i}$, se le dice \textbf{multiplicidad
+geométrica }de $\lambda_{i}$.\\
+\\
+Es decir si la multiplicidad geométrica es 3 entonces hay 3 autovectores.\\
+\\
+$\begin{bmatrix}4 & 0\\
+0 & \begin{bmatrix}4 & 1 & 0\\
+0 & 4 & 1\\
+0 & 0 & 4
+\end{bmatrix}
+\end{bmatrix}$\\
+multiplicidad geométrica 2 = \\
+u {*} cadena de longitud 3 corresponde a un bloque de tamaño 3x3\\
+$v\rightarrow v_{1}\rightarrow v_{2}$ = Genera dos vectores más para
+completar la multiplicidad.\\
+\\
+1 autovector: $\begin{bmatrix}4 & 1 & 0 & 0\\
+0 & 4 & 1 & 0\\
+0 & 0 & 4 & 1\\
+0 & 0 & 0 & 4
+\end{bmatrix}$ \\
+Multiplicidad geométrica = 1 o sea 1 autovector y genero 3 más para
+formar la matriz Jordan.\\
+es decir: $u\rightarrow u_{1}\rightarrow u_{2}\rightarrow u_{3}$\\
+\\
+$\begin{bmatrix}\begin{bmatrix}4 & 1\\
+0 & 4
+\end{bmatrix} & 0\\
+0 & \begin{bmatrix}4 & 1\\
+0 & 4
+\end{bmatrix}
+\end{bmatrix}$\\
+\\
+Multiplicidad geométrica = 2\\
+$\begin{cases}
+u & \rightarrow u_{1}\\
+v & \rightarrow v_{1}
+\end{cases}$longitud 2 corresponden a 2 bloques de tamaño $2\times2$.\\
+Necesito generar dos vectores más para completar la M.\\
+\\
+\\
+\textcolor{brown}{Aclaraciones varias: cuando armamos la matriz jordan
+al vector que tenemos que buscar que debería estar en el último autoespacio
+generado lo llamaremos $u_{1}$ a los demás vectores $u_{2},u_{3}$
+lo generaremos a partir de $u_{2}=(A-\lambda I)u_{1}$ y $u_{3}=(A-\lambda I)^{2}u_{1}$,
+hasta hallar la base en caso de que nos falte un vector, tendríamos
+que ver a que autoespacio generado anteriormente ya sea $E_{1},\cdots,E_{n}$
+debería pertenecer, y debería completar la base (super importante).}\\
+\textcolor{brown}{}\\
+\textcolor{brown}{Empezas del $u_{1},u_{2},u_{3}$ siempre agregas
+hacia la derecha y después los tomas todo al revés es decir al formar
+las columnas de P tomá del último hacia el primero.}\\
+\textcolor{brown}{}\\
+\textcolor{red}{Primero tenemos que elevar la matriz $(A-\lambda I)^{n}$
+hasta conseguir que la dimensión del espacio nulo de la misma sea
+igual a la multiplicidad algebraica del autovalor. Ahora tenemos que
+buscar un vector que esté en el último espacio nulo(que tiene la misma
+dimensión que la multiplicidad geométrica ese autovalor) y que no
+este en el anterior. Luego procederemos a calcular la imágen de ese
+vector en los demás espacio nulos.}\\
+\textcolor{red}{Al calcular la matriz jordan de orden 4 por ejemplo
+de multiplicidad algebraica 2 con dos bloques de $2\times2$ tenés
+que tomar un $u$ y un $v$ los dos tienen que ser elementos que pertenezan
+al último autoespacio pero no al anterior y que sean l.i. (tenés que
+ampliar la base de E1 hasta llegar a la dimensión del útlimo subespacio,
+completando con un autovalor de $E_{1}$ si hace falta), y a partir
+de ellos tenés que generar las imágenes en el autoespacio anterior.}\\
+\textcolor{red}{\url{https://www.youtube.com/watch?v=5eOPx9QMTi4}
+minuto 7:35}\\
+\textcolor{red}{y \url{https://www.youtube.com/watch?v=IDGp0WcOaHI}}
+
+\subsection*{Jordan 3x3}
+
+$A=\begin{bmatrix}1 & -2 & 3\\
+0 & 2 & 0\\
+0 & -2 & 1
+\end{bmatrix}$$|A-\lambda I|=(\lambda-2)(\lambda-1)^{2}$\\
+\\
+Autovectores: $\lambda_{1}=1,\ m_{1}=2$\\
+$\lambda_{2}=2,\ m_{2}=1$\\
+\\
+$nul(A-2I)=\begin{pmatrix}-8\\
+1\\
+-2
+\end{pmatrix}=m_{2}$\\
+\\
+$E_{1}=nul(A-I)=\Bigg\{\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}\Bigg\}$\\
+\\
+$E_{2}=nul(A-I)^{2}=\Bigg\{\begin{bmatrix}1\\
+0\\
+2
+\end{bmatrix},\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}\Bigg\}$\\
+\\
+$\{0\}\subseteq E_{1}\subseteq E_{2}=R^{2}$\\
+\\
+Tomo un $u_{1}\in E_{2}-E_{1}$, es decir, que esté en $E_{2}$ pero
+no en $E_{1}$ luego calculo la imágen de $u_{1}$ en $E_{1}$, es
+decir $u_{2}=(A-I)u_{1}$:\\
+\begin{align*}
+u & \rightarrow u_{2}\\
+v
+\end{align*}
+Luego $u_{1}=\begin{bmatrix}1\\
+0\\
+2
+\end{bmatrix}$ $u_{2}=\begin{bmatrix}0 & -2 & 3\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{bmatrix}\begin{pmatrix}1\\
+0\\
+2
+\end{pmatrix}=\begin{bmatrix}6\\
+0\\
+0
+\end{bmatrix}$\\
+\\
+Luego la base es $\Bigg\{\begin{bmatrix}1\\
+0\\
+2
+\end{bmatrix},\begin{bmatrix}6\\
+0\\
+0
+\end{bmatrix},\begin{bmatrix}-8\\
+1\\
+-2
+\end{bmatrix}\Bigg\}$ , ahora escribimos la base al revés, del último al primero: $P=\begin{bmatrix}-8 & 6 & 1\\
+1 & 0 & 0\\
+-2 & 0 & 2
+\end{bmatrix},J=\begin{bmatrix}2 & 0 & 0\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}$\\
+Resultado: \url{https://www.wolframalpha.com/input/?i=%28inverse+%7B%7B-8%2C6%2C1%7D%2C%7B1%2C0%2C0%7D%2C%7B-2%2C0%2C2%7D%7D%29*%7B%7B1%2C-2%2C3%7D%2C%7B0%2C2%2C0%7D%2C%7B0%2C-2%2C1%7D%7D*%7B%7B-8%2C6%2C1%7D%2C%7B1%2C0%2C0%7D%2C%7B-2%2C0%2C2%7D%7D}\\
+\\
+Para matrices en donde tengas que a partir de 2 vectores en el último
+subespacio generar dos imágenes tenés éste video https://www.youtube.com/watch?v=k-ILtVBFn-Y\\
+\\
+\textbf{Jordan orden 5.}\\
+\textbf{}\\
+\textbf{$A=\begin{bmatrix}1 & -1 & -1 & -1 & -1\\
+1 & 3 & 1 & 1 & 1\\
+0 & 0 & 2 & 0 & 0\\
+0 & 0 & 0 & 1 & -1\\
+0 & 0 & 0 & 1 & 3
+\end{bmatrix}$.}\\
+\textbf{}\\
+\textbf{$|A-\lambda I|=(2-\lambda)^{5}$}\\
+\textbf{}\\
+\textbf{$\lambda=5,\quad u=5$}\\
+Primero empezamos generando el primer espacio, del autovalor. Luego
+dependiendo de la dimensión seguiremos calculando las potencias hasta
+llegar a al multiplicidad del autovalor.\\
+$E_{1}=ker(A-2I)=\begin{bmatrix}-1 & -1 & -1 & -1 & -1\\
+1 & 1 & 1 & 1 & 1\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1 & -1\\
+0 & 0 & 0 & 1 & 1
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}
+\end{pmatrix}$\\
+\\
+$rang(A-2I)=\begin{bmatrix}0 & 0 & 0 & 0 & 0\\
+1 & 1 & 1 & 1 & 1\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1 & -1\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}
+\end{pmatrix}=$\\
+\\
+$E_{1}=\Bigg\langle\Bigg\{\begin{bmatrix}0\\
+0\\
+0\\
+-1\\
+1
+\end{bmatrix},\begin{bmatrix}-1\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix},\begin{bmatrix}-1\\
+0\\
+1\\
+0\\
+0
+\end{bmatrix}\Bigg\}\Bigg\rangle$. Tenemos 3 autovectores por lo tanto tendremos 3 bloques de Jordan.\\
+\\
+$E_{2}=ker(A-2I)^{2}=\begin{bmatrix}0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}$. $dim(E_{2})=5$\\
+\\
+$\underbrace{0\quad E_{1}}_{3}\underbrace{\quad E_{2}}_{2}=\mathbb{R}^{5}$,
+(los números abajo son la diferencia de las dimensiones de los espacios
+nulos)\\
+\\
+Entonces tenemos que tomar dos vectores en $E_{2}$ y encontrar su
+imágen en $E_{1}$ hasta completar la base de $\mathbb{R}^{5}$.\\
+$\begin{cases}
+u & \rightarrow(A-2I)u\\
+v & \rightarrow(A-2I)v\\
+w & (para\ completar\ la\ base)
+\end{cases}$\\
+\\
+El vector $u$ es un vector que pertenece a $E_{2}=R^{5}$ pero no
+a $E_{1}$.\\
+$u=\begin{bmatrix}1\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}$, $v=\begin{bmatrix}0\\
+0\\
+0\\
+1\\
+0
+\end{bmatrix}$\\
+\\
+$\begin{cases}
+u & \rightarrow(A-2I)u=(-1,1,0,0,0)\\
+v & \rightarrow(A-2I)v=(-1,1,0,-1,1)\\
+w & =(-1,0,1,0,0)
+\end{cases}$\\
+\\
+$\mathcal{B}=\{u,\underbrace{(A-2I)u}_{esto\ representa\ la\ im\acute{a}gen\ de\ u\ en\ la\ base\ E_{1}},v,(A-2I)v,w\}$\\
+\\
+Luego la matriz de paso es, el último hasta el primero, primero escribimos
+el último vector de la base anterior:\\
+\\
+$P=\begin{bmatrix}-1 & -1 & 0 & -1 & 1\\
+0 & 1 & 0 & 1 & 0\\
+1 & 0 & 0 & 0 & 0\\
+0 & -1 & 1 & 0 & 0\\
+0 & 1 & 0 & 0 & 0
+\end{bmatrix}$\\
+\\
+\\
+Despues para formar la matriz Jordan, podés hacer tipo $[Av_{0}]_{B}$
+pero si te das cuenta es intuitivo y podés calcularlo sin hacer eso,
+primero los autovalores van siempre en la diagonal, ahora tenemos
+que ver a que autovalor corresponde cada vector de la matriz de paso,
+sabemos por la multiplicidad geométrica (la dimensión de $E_{1})$
+que posee 3 bloques, hay casos en los que vas a tener dos autovalores
+con dimensiones distintas cada una la suma de los dos es la cantidad
+de bloques, en este ejercicio sólo tenemos un autovalor. El primer
+vector corresponde al autovalor 2 pero es independiente de las otras,
+es decir no tuviste que generar nada no te da problema, en el segundo
+como a partir de ese vector generaste otro va un 1, entonces \\
+$J=\begin{bmatrix}2 & 0 & 0 & 0 & 0\\
+0 & 2 & 1 & 0 & 0\\
+0 & 0 & 2 & 0 & 0\\
+0 & 0 & 0 & 2 & 1\\
+0 & 0 & 0 & 0 & 2
+\end{bmatrix}$ para demostrar otra forma si hacemos $[Av_{0}]_{B}=(-1,-1,0,0,0)+(-1,1,2,0,0)=(-2,0,2,0,0)=2v_{0}(v_{0}\ es\ la\ primer\ columna\ de\ P,as\acute{\imath}\ con\ la\ demas)=(2,0,0,0,0)$
+\\
+(que es la primer columna de Jordan)\\
+$[Av_{1}]_{B}=(-1,-1,0,0,0)+(-1,3,0,0,0)+(1,-1,0,-1,-1)+(-1,1,0,-1,3)=(-2,2,0,-2,-2)=2v_{1}=(0,2,0,0,0)$\\
+$\vdots$\\
+\\
+así con los demás pero no hace falta se puede deducir la matriz Jordan
+sin hacer todos esos cálculos.
+
+\section*{Práctica 6: FORMAS DE JORDAN}
+\begin{enumerate}
+\item Sea $T:V\rightarrow V$ una transformación lineal. Mostrar que cada
+uno de los siguientes subespacios son invariantes por $T$:
+\[
+a)\{0\}\quad b)V\quad c)nul(T)\quad d)img(T)
+\]
+\\
+\textbf{Soluciones}
+\begin{enumerate}
+\item $W=\{0\}\subseteq_{se}V$. \\
+Sea $w=0\in W$, $T(0)=0\in W$, $\{0\}$ es invariante por $T$.
+\item $V\subseteq_{se}V$. \\
+Sea $v\in V\Rightarrow T(v)\underbrace{\in}_{T:V\rightarrow V}V$
+. Luego $V$ es invariante por $T$.
+\item $nul(T)\subseteq_{se}V$.\\
+Sea $w\in nul(T)$, $T(w)\underbrace{=}_{w\in nul(T)}0\underbrace{\in}_{T(0)=0\ pues\ T\ lineal}nul(T)$.
+\item $im(T)\subseteq_{se}V$.\\
+Sea $w\in im(T)\subset V,$ ¿$T(w)\in im(T)$?\\
+Tomando $v=w$ resulta $im(T)$ invariante por $T$.
+\end{enumerate}
+\item Sea $\{W_{i}\}$ una colección de subespacios de un espacio vectorial
+V invariantes por T. Mostrar que $W={\displaystyle \bigcap_{i}W_{i}}$
+también es invariante por T.\\
+\\
+Sea $w\in W\underbrace{\Rightarrow}_{w={\displaystyle \bigcap_{i}W_{i}}}w\in W_{i}$
+$\forall i\underbrace{\Longrightarrow}_{W_{i}\ inv.\times T}T(w)\in W_{i}\ \forall i\Longrightarrow T(w)\in{\displaystyle \bigcap_{i}W_{i}}$.
+\item Hallar todos los subespacios invariantes de $A={\displaystyle \begin{bmatrix}2 & -5\\
+1 & -2
+\end{bmatrix}}$considerada como operador lineal sobre $\mathbb{R}^{2}$.\\
+$T:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}/T(x)=Ax$ con $A=\begin{pmatrix}2 & -5\\
+\text{\ensuremath{1}} & \text{\ensuremath{-2}}
+\end{pmatrix}$.
+\begin{itemize}
+\item Por (1) $\{0\},\mathbb{R}^{2},nul(A),col(A)$ ser subespacios invariantes.
+\item Por otro lado, los vectores propios de un operador lineal $T:V\rightarrow V$
+pueden caracterizarse como generadores de subespacios invariantes
+de $T$ de dimensión 1.\\
+Supongamos $T(v)=\lambda v,v\not=0$ entonces $W=\{\alpha v:\alpha\in\mathbb{K}\}$
+es invariante por T pues $T(\alpha v)=\alpha T(v)=\alpha(\lambda v)=(\alpha\lambda)v\in W$.\\
+Recíprocamente, supongamos $dim(U)=1$, $U=\langle u\rangle$ y U
+invariante por T. Entonces, como $T(u)\in U$, resulta $T(u)=\beta U$
+para algún $\beta\in\mathbb{K}$, con lo que resulta un autovector
+de $T$.\\
+Pensando matricialmente, debemos hallar los $v\not=0\mid Av=\lambda v$
+y luego $W_{i}=\langle v_{i}\rangle$ serán los subespacios de $\mathbb{R}^{2}$
+invariantes por $T$ de dim 1.\\
+\\
+$(A-\lambda I)v=0\Longleftrightarrow\begin{bmatrix}2-\lambda & -5\\
+1 & -2-\lambda
+\end{bmatrix}\begin{pmatrix}v_{1}\\
+v_{2}
+\end{pmatrix}=\begin{pmatrix}0\\
+0
+\end{pmatrix}\Longleftrightarrow\begin{cases}
+(2-\lambda)v_{1}-5v_{2}= & 0\\
+v_{1}-(2+\lambda)v_{2}= & 0
+\end{cases}$\\
+$\Rightarrow v_{1}=(2+\lambda)v_{2}\land(2-\lambda)(2+\lambda)v_{2}-5v_{2}=0\Rightarrow(-1-\lambda^{2})v_{2}=0$$\Rightarrow v_{2}=0$
+si esto ocurre $v_{1}=0$ y $v=0$. \textbf{Absurdo}! ($v$ autovector).\\
+Ya analizamos todas las posibilidades de subespacios de $\mathbb{R}^{2}$
+invariantes por T, ya que estos son o bien de dimensión 1 o 2.\\
+Por lo tanto, los únicos subespacios invariantes de A son $\{0\}$
+y $\mathbb{R}^{2}$.
+\end{itemize}
+\item Sea $\hat{T}$ la restricción de un operador T a un subespacio invariante
+$W$, es decir $\hat{T}w=Tw,\forall w\in W.$ Probar que para todo
+polinomio $p(t),f(\hat{T})w=f(T)w$.\\
+$T:V\rightarrow V,\quad W\subseteq_{se}V$ invariante por $T$ y $\hat{T}=T\mid_{w}$
+ie, $\hat{T}w=Tw,\forall w\in W$.\\
+\\
+Veamos que para todo polinomio $p(t),\quad p(\hat{T})(w)=p(T)(w)$
+\begin{itemize}
+\item Si $p(t)=0$ o $p(t)=cte$ el resultado vale
+\item Lo probamos por inducción sobre el grado del polinomio.\\
+$n=1,\quad p(t)=a_{1}t+a_{0}$\\
+$p(\hat{T})(w)=(a_{1}\hat{T})(w)+a_{0}=a_{1}(\hat{T}(w))+a_{0}=a_{1}(T(w))+a_{0}=(a_{1}T)(w)+a_{0}=p(T)(w)$.
+\end{itemize}
+Supongamos que vale para $n-1$
+
+Lo probamos para $n$\\
+$p(t)=a_{n}t^{n}+a_{n-1}t^{n-1}\cdots+a_{1}t+a_{0}.$ Luego, 
+
+$p(\hat{T})(w)=(a_{n}\hat{T}^{n}+a_{n-1}\hat{T}^{n-1}+\cdots+a_{1}\hat{T}^{1}+a_{0}\underbrace{I}_{\hat{T}^{0}})(w)=$\\
+$=(a_{n}\hat{T}^{n-1})(\hat{T}(w))+(a_{n-1}\hat{T}^{n1}+\cdots+a_{0}I)(w)\underbrace{=}_{HI}$
+
+$=(a_{n}T^{n-1})(\hat{T}(w))+(a_{n-1}T^{n-1}+\cdots+a_{0}I)(w)\underbrace{=}_{T(w)=\hat{T}(w)}$
+
+$=(a_{n}T)(T(w))+(a_{n-1}T^{n-1}+\cdots+a_{0}I)(w)=p(T)(w)$\\
+
+$\therefore$Vale $\forall n\in\mathbb{N}$.
+\item Sea $T:V\rightarrow V,T\in\mathcal{L}(V)$. Supongamos que para todo
+$v\in V$ se tiene que $T^{k}v=0$ pero $T^{k-1}v\not=0$. Probar
+que:
+\begin{enumerate}
+\item $S=\{T^{k-1},\dots,Tv,v\}$ es linealmente independiente.
+\item El subespacio $W=\langle X\rangle$ es invariante por $T$.
+\end{enumerate}
+$T:V\rightarrow V,T\in\mathcal{L}(V)\ \forall v\in V\ T^{k}(v)=0$
+pero $T^{k-1}(v)\not=0$.
+\begin{enumerate}
+\item Probar que $S=\{T^{k-1}(v),\cdots,T(v),v\}$ es linealmente independite.\\
+Consideremos$\alpha_{0}v+a_{1}T(v)+\cdots+a_{t-1}T^{k-1}(v)=0$\\
+$a_{0}v+{\displaystyle \sum_{i=1}^{k-1}\alpha_{i}T^{i}(v)=0}$\\
+Luego $T^{k-1}(\alpha_{0}v+{\displaystyle \sum_{i=1}^{k-1}\alpha_{i}T^{i}(v))=T^{k-1}(0)\underbrace{=}_{T^{k-1}lineal}0\underbrace{\Longrightarrow}_{T^{k-1}lineal}}$\\
+$\alpha_{0}T^{k-1}(v)+{\displaystyle \sum_{i=1}^{k-1}\alpha_{i}\underbrace{T^{i-1}(\underbrace{T^{k}(v}_{=0})}_{=0}=0}$\\
+$\Longrightarrow\alpha_{0}T^{k-1}(v)=0\quad\land\quad T^{k-1}(v)\not=0\Longrightarrow\alpha_{0}=0$\\
+Teniendo en cuenta que $\alpha_{0}=0,$ de (1) tenemos\\
+$\alpha_{1}T(v)+\cdots+\alpha_{k-1}T^{k-1}(v)=0$\\
+Aplicamos $T^{k-2}$ y con un razonamiento análogo al anterior obtenemos
+$\alpha_{1}=0$\\
+Aplicamos iterativamente este procedimiento resulta\\
+$\alpha_{i}=0\quad\forall i=0\rightarrow k-1$\\
+$\therefore$ S es un conjunto de vectores linealmente independiente.
+\item $W=\langle S\rangle$ es invariante por T.\\
+\\
+Sea $w\in W$, luego $w={\displaystyle \sum_{i=0}^{k-1}\alpha_{i}T^{i}(v)}$.\\
+\\
+Ahora bien $T(w)\underbrace{=}_{T\ lineal}{\displaystyle \sum_{i=0}^{k-1}}\alpha_{i}T^{i+1}(v)\underbrace{=}_{T^{k}(v)=0}{\displaystyle \sum_{i=0}^{k-2}\alpha_{i}T^{i+1}(v)}=$\\
+$={\displaystyle \sum_{i=1}^{k-1}\alpha_{i-1}T^{i}(v)\underbrace{\in}_{W\ subesp.}W}$.\\
+$\therefore$ W es invariante por $T$.
+\end{enumerate}
+\item Sea $T\in\mathcal{L}(V)$, probar que
+\begin{enumerate}
+\item $\{0\}=nul(T^{0})\subset nul(T^{1})\subset\dots\subset nul(T^{k})\subset nul(T^{k+1})\subset\dots$
+\item $nul(T^{m})=nul(T^{m+1})\Rightarrow nul(T^{m})=nul(T^{m+1})=nul(T^{m+2})=...$
+\item Si $dimV=n$ luego $nul(T^{n})=nul(T^{n+1})=\dots$.
+\end{enumerate}
+\textbf{Soluciones}
+\begin{enumerate}
+\item $\{0\}=nul(T^{0})\subset nul(T^{1})\subset\cdots\subset nul(T^{k})\subset nul(T^{k+1})\subset\cdots$\\
+Primero observemos que $nul(T^{0})=nul(I)=\{v\in V\mid Iv=0\}=\{v\in V\mid v=0\}=\{0\}$\\
+Ahora bien, veamos que $nul(T^{k})\subset nul(T^{k+1})\quad\forall k\in\mathbb{N}_{0}$\\
+Sea $v\in nul(T^{k})\Rightarrow T^{k}(v)=0.$ Aplicamos $T$ y así\\
+$T(T^{k}(v))=T(0)=0\Leftrightarrow v\in nul(T^{k-e1})$\\
+$\therefore$ $nul(T^{k})\subset nul(T^{k+1})\quad\forall k\in\mathbb{N}_{0}$.
+\item Sea $nul(T^{n})=nul(T^{n+1}),$ luego $nul(T^{n})=nul(T^{n+1})=nul(T^{n+2})=\cdots$\\
+Consideramos $nul(T^{n+i-1})$ veamos que $nul(T^{mn-1})=nul(T^{n+i})\quad\forall i\in k\in\mathbb{N}_{0}$\\
+Lo probamos por inducción
+\end{enumerate}
+\begin{itemize}
+\item Si $i=1$ vale por hipótesis.
+\item Suponemos que vale para algún $i=nul(T^{n+i-1})=nul(T^{n+i})$
+\item Lo probamos para $i+1$\\
+$nul(T^{n+i+1})=\{v\in V\mid T^{n+i+1}(v)=0\}=\{v\in V\mid T^{n+i}(T(v))=0\}=$\\
+$\underbrace{=}_{HI}\{v\in V\mid T^{n+i-1}(T(v))=0\}=\{v\in V\mid T^{n+i}(v)=0\}=nul(T^{n+i})$.
+\end{itemize}
+\item Sea $T\in\mathcal{L}(V)$, $dim(V)=n,$ luego $V=nul(T^{n})\oplus img(T^{n})$.
+\item Determinar todas las posibles formas canónicas de Jordan para una
+matriz de orden 5 cuyo polinomio minimal es $m(t)=(t-2)^{2}$.\\
+\textbf{Solución}\\
+\textbf{$n(t)=(t-2)^{2}$ }existe al menos un bloque de orden $2\times2$
+y los demás bloques correspondientes a $\lambda=2$ son de orden $\leq2$.
+\item Determinar todas las posibles formas canónicas de Jordan para una
+matriz con polinomio característico $p_{A}(t)=(t+2)^{3}(t-7)^{2}$.
+En cada caso determinar el polinomio minimal $m(t)$.\\
+\\
+$p_{A}(t)=\underbrace{(t+2)^{3}}_{-2\ aparece\ 3\ veces\ en\ la\ diag\ princial}\times\overbrace{(t-7)^{2}}^{7\ aparece\ 2\ veces\ en\ la\ diag\ principal}$
+
+Los posibles formas canónicass de Jordan con sus polinomios minimales
+son:\\
+\\
+
+\end{enumerate}
+
+\subsection*{Práctica 2: Espacios Vectoriales}
+\begin{enumerate}
+\item Sea $\langle S\rangle$ el subespacio generado por un subconjunto
+$S$ de $V$. Demos las siguientes propiedades:
+\begin{enumerate}
+\item Si $S\subset T,$ entonces $\langle S\rangle\subset\langle T\rangle.$
+\item $S\subset\langle S\rangle.$
+\item Si $S\subset T$ y T es un subespacio de V, entonces $\langle S\rangle\subset T.$
+Es decir $\langle S\rangle$ es el menor subespacio de V que contiene
+a S.
+\item $S$ es un subespacio de V si y sólo si $\langle S\rangle=S$.
+\item Si $\langle S\rangle=\mathcal{U},$ entonces $\langle\mathcal{U}\rangle=\mathcal{U}$.
+\item Sea $W\subset V$. Entonces 
+\begin{enumerate}
+\item $\langle S\cap W\rangle\subset\langle S\rangle\cap\langle W\rangle,$
+\item $\langle S\cup W\rangle\subset\langle S\rangle+\langle W\rangle.$
+\end{enumerate}
+\item Valen las contenciones inversas en los ítems $a)$ y $f)$.
+\end{enumerate}
+\textbf{SOLUCIONES:}
+\begin{enumerate}
+\item Sea $s\in\langle S\rangle\Longrightarrow{\displaystyle \sum_{v\in S}\alpha_{v}v}$
+y como $v\in S\Rightarrow v\in T$.
+\item Sea $s\in S\Longrightarrow{\displaystyle s=1s+\sum_{v\in S-s}0v},$
+por lo que resulta $s\in\langle S\rangle$.
+\item Sea $s\in\langle S\rangle$ luego ${\displaystyle \sum_{v\in S}\alpha_{v}v}$
+como $v\in S\Rightarrow v\in T$ y como T es un subespacio se cumple
+la clausura bajo de la suma y del producto entonces $s\in T$.
+\item $\Leftarrow)$ Trivial pues si S es un subespacio de V cumple la clausura
+bajo la suma y el producto luego, $\langle S\rangle=S$.\\
+$\Rightarrow)$ S es un subespacio $\Rightarrow S\subseteq\langle S\rangle.$
+$S\subseteq S$ y $S$ es un subespacio de V por lo tanto$\langle S\rangle\subseteq S$.
+\item $\Longrightarrow)$
+\end{enumerate}
+\begin{itemize}
+\item $\langle U\rangle\subseteq U$\\
+Si $\langle S\rangle=U\Longrightarrow S\subseteq U=\langle S\rangle$
+y U es un subespacio de v. (No estoy seguro).
+\item $U\subseteq\langle U\rangle$
+\end{itemize}
+\item Analizar si los siguientes vectores son linealmente independientes.
+\begin{enumerate}
+\item $(1,1,0,0);(1,0,1,0);(0,0,1,1);(0,1,0,1)$
+\item $(1,1,0);(1,0,0);(0,1,1);(x,y,z)$ para $x,y,z$ cualesquiera.
+\end{enumerate}
+\textbf{Soluciones:}
+\begin{enumerate}
+\item $\alpha(1,1,0,0)+\beta(1,0,1,0)+\gamma(0,0,1,1)+\delta(0,1,0,1)=0\Longrightarrow\alpha=\beta=\gamma=\delta=0$.\\
+$=(\alpha+\beta,\alpha+\delta,\beta+\gamma,\gamma+\delta)=0$. O podemos
+hacer reducción por filas sobre los vectores.\\
+\textbf{$\begin{bmatrix}1 & 1 & 0 & 0\\
+1 & 0 & 0 & 1\\
+0 & 1 & 1 & 0\\
+\text{0} & \text{0} & \text{1} & \text{1}
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 1 & 0 & 0\\
+0 & -1 & 0 & 1\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0
+\end{bmatrix}.$ }Luego como tenemos una columna nula, el rango de esta matriz es
+3 (el rango son las filas no nulas luego de la eliminación de filas),
+$\alpha+\beta=0,-\beta+\delta=0,\gamma+\delta=0$ ( es decir tengo
+que encontrar una solución no trivial, que no sean todos los escalares
+nulos, tal que el sistema me de la solución nula. Por ejemplo $-1(1,1,0,0)+1(1,0,1,0)-1(0,0,1,1)+1(0,1,0,1)$.
+\item Claramente para $(x,y,z)=(1,0,0)$ resulta $0=1(1,1,0)+0(1,0,0)+0(0,1,1)-1(x,y,z)$,
+luego no son linealmente independientes.
+\end{enumerate}
+\item Sea $P=\{(x,y,z,t)\in\mathbb{R}^{4}:x-2y+z-t=0\}$. Verificar que
+P es un espacio vectorial y hallar 3 vectores linealmente independientes
+en P.\\
+En efecto, sean $u=(x_{1},y_{1},z_{1},t_{1})\in P$, $v=(x_{2},y_{2},z_{,2},t_{2})\in P$
+y $\alpha\in\mathbb{K}.$ Luego:
+\begin{itemize}
+\item Sabemos que $x_{1}-2y_{1}+z_{1}-t_{1}=0$ y $x_{2}-2y_{2}+z_{2}-t_{2}=0$
+y sumando ambas ecuaciones: $(x_{1}+x_{2})-2(y_{1}+y_{2})+(z_{1}+z_{2})-(t_{1}+t_{2})=0$
+por lo que $u+v=(x_{1}+x_{2},y_{1}+y_{2},z_{1}+z_{2}+t_{1}+t_{2})\in P$.
+\item $\alpha u=(\alpha x_{1},\alpha y_{1},\alpha z_{1},\alpha t_{1})\in P$
+pues multiplicando ambos lados por $\alpha$ tenemos que $\alpha x_{1}-2(\alpha y_{1})+\alpha z_{1}-\alpha t_{1}=0$.
+\item Para encontrar los vectores que generan esos espacios podemos reescribir
+la ecuación como $x=2y-z+t$. Luego tenemos que $\begin{bmatrix}2y-z+t\\
+y\\
+z\\
+t
+\end{bmatrix},$ sacando factor común $y\begin{bmatrix}2\\
+1\\
+0\\
+0
+\end{bmatrix}+z\begin{bmatrix}-1\\
+0\\
+1\\
+0
+\end{bmatrix}+t\begin{bmatrix}1\\
+0\\
+0\\
+1
+\end{bmatrix},$ que son los 3 vectores linealmente independientes que generan a P.
+También debemos recordar que si estamos hablando de vectores de $\mathbb{R}^{n}$
+y ya tenemos una simple condición/ecuación que deben cumplir los vectores
+el subespacio va a tener una dimensión menor a n. 
+\end{itemize}
+\item Si $\{v_{1},v_{2},v_{3}\}\subset V$ es un conjunto l.i., probar que
+$\{v_{1}+v_{2},v_{1}+v_{3},v_{2}+v_{3}\}$ también es l.i.\\
+Suponemos que $\text{\ensuremath{\alpha v_{1}+\beta v_{2}+\gamma v_{3}=0\Rightarrow\alpha=\beta=\gamma=0}.}$Ahora
+vamos a ver que $\{v_{1}+v_{2},v_{1}+v_{3},v_{2}+v_{3}\}$ también
+es l.i., para ello tenemos que probar que la única solución nula sea
+que todos los escalares sean ceros.\\
+$\alpha(v_{1}+v_{2})+\beta(v_{1}+v_{3})+\gamma(v_{2}+v_{3})=0\Rightarrow\alpha v_{1}+\alpha v_{2}+\beta v_{1}+\beta v_{3}+\gamma v_{2}+\gamma v_{3}=0\Rightarrow$\\
+$(\alpha+\beta)v_{1}+(\alpha+\gamma)v_{2}+(\beta+\gamma)v_{3}=0$
+y como V es linealmente independiente tenemos que resolver $\alpha_{1}+\alpha_{2}=0,\alpha_{1}+\alpha_{3}=0$
+y $\alpha_{2}+\alpha_{3}=0$ por lo que resolviendo el sistema obtenemos
+$\alpha_{1}=\alpha_{2}=\alpha_{3}=0$.
+\item Sea V un espacio vectorial de dimensión finta y W un subespacio de
+V tal que $dim(V)=dim(W)$. Probar que $V=W$.
+\item Sea $A=\{(1,-3,2)^{t},(2,4,1)^{t},(3,1,3)^{t},(1,1,1)\subset\mathbb{R}^{3},$
+obtener:
+\begin{enumerate}
+\item Una base de $\mathbb{R}^{3}$ contenida en A.
+\item Las componentes de los vectores de la base canónica de $\mathbb{R}^{3}$
+en la base obtenida en el apartado anterior.
+\end{enumerate}
+\textbf{Soluciones:}
+\begin{enumerate}
+\item $\begin{bmatrix}1 & 2 & 3\\
+1 & 4 & 1\\
+1 & 1 & 3
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 2 & 3\\
+0 & 10 & 10\\
+0 & -3 & -3
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 2 & 3\\
+0 & 1 & 1\\
+0 & 0 & 2
+\end{bmatrix}$. \\
+$B=\Bigg\langle\Bigg\{\begin{bmatrix}1\\
+1\\
+1
+\end{bmatrix},\begin{bmatrix}2\\
+4\\
+1
+\end{bmatrix},\begin{bmatrix}3\\
+1\\
+3
+\end{bmatrix}\Bigg\}\Bigg\rangle$
+\item $\alpha(1,1,1)+\beta(2,4,1)+\gamma(3,1,3)=(\alpha+2\beta+3\gamma,-3\alpha+4\beta+\gamma,2\alpha+\beta+3\gamma)=0.$\\
+$[1,0,0]_{B}=(\alpha+2\beta+3\gamma,\alpha+4\beta+\gamma,\alpha+\beta+3\gamma)$.\\
+\\
+$1=\alpha+2\beta+3\gamma$\\
+\textbf{$0=\alpha+4\beta+\gamma$}\\
+$0=\alpha+\beta+3\gamma$\\
+\\
+Ahora sólo despejamos las variables y listo o también podemos hacer
+la matriz aumentada y luego aplicar reducción por filas para llegar
+a la solución.\\
+$[1,0,0]_{B}=(-\frac{11}{2},1,\frac{3}{2})$\\
+$[0,1,0]_{B}=(\frac{3}{2},0,-\frac{1}{2})$\\
+$[0,0,1]_{B}=(5,-1,-1)$
+\end{enumerate}
+\item Sea $S=\langle\{(1,-1,1)^{t},(2,1,0)^{t},(4,-1,2)^{t}\}\rangle\subset\mathbb{R}^{3}.$
+Obtener una base de S.\\
+No es linealmente independiente ya que $(0,0,0)=2(1,-1,1)+1(2,1,0)-1(4,-1,2).$\\
+Esto significa que un vector puede ser escrito como combinación lineal
+de otros, lo pedemos ver en la ecuación anterior simplemente despejando
+algún vector.\\
+Entonces sacaremos un vector del conjunto tomaremos como base de S:
+$\langle\{1,-1,1\},(2,1,0)\rangle,$ podemos verificar que son l.i.
+multiplicandolo a cada vector por un escalares $a_{1},a_{2},a_{3}$
+y ver si la única solución que posee es cuando todos los escalares
+se hacen 0. O haciendo eliminación por filas y que no nos quede ninguna
+fila nula.
+\item Encontrar la dimensión de:
+\begin{enumerate}
+\item el espacio de todos los vectores de $\mathbb{R}^{4}$ cuyas componentes
+suman cero.
+\item el espacio nulo de la matriz $I\in\mathcal{M}_{4\times4}$.
+\item el espacio de matrices simétricas $3\times3$. Hallar una base.
+\end{enumerate}
+\textbf{Soluciones:}
+\begin{enumerate}
+\item $A=\Bigg\{\begin{bmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}
+\end{bmatrix}\in\mathbb{R}^{4}:x_{1}+x_{2}+x_{3}+x_{4}=0\Bigg\},$ entonces se cumple que $x_{1}+x_{2}+x_{3}+x_{4}=0\Rightarrow x_{1}=-x_{2}-x_{3}-x_{4}$
+luego \\
+$\begin{bmatrix}-x_{2}-x_{3}-x_{4}\\
+x_{2}\\
+x_{3}\\
+x_{4}
+\end{bmatrix},$ sacando factor común obtendremos 3 vectores que van a ser la base
+de este subespacio. Y como la dimensión es la cantidad de elementos
+de la base, entonces la dimensión es 3.
+\item $N(I)=0$ ya que usando el teorema de la dimensión $DIM(N(A))=n-r$.
+(nº de columnas - rango = número de filas no nulas luego de la eliminación
+por filas a una matriz escalonada). En este caso la matriz identidad
+tiene rango 4 y el número de columna es 4, luego el nulo de la matriz
+identidad es 0.
+\item $DIM\Bigg(\Bigg\langle\Bigg\{\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix},\begin{bmatrix}0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix},\begin{bmatrix}0 & 0 & 1\\
+0 & 0 & 0\\
+1 & 0 & 0
+\end{bmatrix},\begin{bmatrix}0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{bmatrix},\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix},\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{bmatrix}\Bigg\}\Bigg\rangle\Bigg\}=6$
+\end{enumerate}
+\item Describir los cuatro espacios asociados a las siguientes matrices:\\
+\[
+a)A=\begin{bmatrix}0 & 1 & 4 & 0\\
+0 & 2 & 8 & 0
+\end{bmatrix}\quad b)B=\begin{bmatrix}0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+\\
+\textbf{Soluciones:}
+\begin{enumerate}
+\item Primero hacemos reducción por filas para ver cual es el rango(nº de
+filas no nulas) de A y $A^{t}$ y cuáles columnas son linealmente
+independientes. $A=\begin{bmatrix}0 & 1 & 4 & 0\\
+0 & 2 & 8 & 0
+\end{bmatrix}\rightarrow\begin{bmatrix}0 & 1 & 4 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}$. Como el rango es 1, luego el espacio columna está generado por sólo
+un vector de la matriz, que se toma desde la matriz original, no del
+resultado de la reducción por filas.\\
+$A^{T}=\begin{bmatrix}0 & 0\\
+1 & 2\\
+4 & 8\\
+0 & 0
+\end{bmatrix}\underbrace{\rightarrow}_{F_{3}=F_{3}-4F_{2}}\begin{bmatrix}0 & 0\\
+1 & 2\\
+0 & 0\\
+0 & 0
+\end{bmatrix}$, el rango de esta matriz coincide con el rango del espacio columna
+de A, es decir, es 1.\\
+\\
+Recordemos que $RowSpace(A)=C(A^{T})$ y $dim(C(A))=dim(C(A^{T}))$\\
+$dim(C(A))=1;dim(C(A^{T}))=1;dim(N(A))=n(cant\ de\ columnas)-r(rango)=4-1=3;dim(N(A^{T}))=m(n\ de\ filas)-r(rango)=2-1=1$\\
+\\
+$\begin{bmatrix}0 & 0\\
+1 & 2\\
+0 & 0\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}
+\end{bmatrix}=\begin{bmatrix}0\\
+0
+\end{bmatrix}\Longrightarrow N(A^{T})=\Bigg\langle\begin{bmatrix}-2\\
+1
+\end{bmatrix}\Bigg\rangle$\\
+\\
+$\begin{bmatrix}0 & 1 & 4 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}
+\end{pmatrix}=\begin{bmatrix}0\\
+0
+\end{bmatrix}\Rightarrow N(A)=\Bigg\langle\Bigg\{\begin{bmatrix}0\\
+-4\\
+1\\
+0
+\end{bmatrix},\begin{bmatrix}1\\
+0\\
+0\\
+0
+\end{bmatrix},\begin{bmatrix}0\\
+0\\
+0\\
+1
+\end{bmatrix}\Bigg\}\Bigg\rangle$\\
+\\
+Como la dimensión de $C(A)=1$ entonces tomamos un vector de la matriz
+original, análogamente con $C(A^{T})$.\\
+$C(A)=\Bigg\langle\begin{bmatrix}1\\
+2
+\end{bmatrix}\Bigg\rangle$\\
+\\
+$C(A^{T})=\Bigg\langle\begin{bmatrix}0\\
+1\\
+4\\
+0
+\end{bmatrix}\Bigg\rangle$
+\end{enumerate}
+\item Sea $B_{1}=\{v_{1},v_{2}v_{3}\}$ una base para un espacio vectorial
+V. (Este ejercicio no lo hice yo)
+\begin{enumerate}
+\item Demostrar que $B_{2}=\{v_{1},v_{1}+v_{2},v_{1}+v_{2}+v_{3}\}$ también
+es una base.
+\item Hallar la matriz de cambio de base $A/[v]_{B_{1}}=A[v]_{B_{2}}$
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item Para que $B_{2}$ sea una base tenemos que verificar que sean linealmente
+independientes y que la dimensión sea la misma. \\
+\[
+dim(V)=3=|B_{1}|=|B_{2}|
+\]
+\\
+Ahora para comprobar que es linealmente independiente hacemos:\\
+$\alpha(v_{1})+\beta(v_{1}+v_{2})+\gamma(v_{1}+v_{2}+v_{3})=0$ y
+sólo deberíamos obtener la solución donde todos los escalares sean
+ceros. $\Longrightarrow(\alpha+\beta+\gamma)v_{3}+(\beta+\gamma)v_{2}+(\gamma)v_{3}=0$
+y como sabemos que $B_{1}$ es linealmente independiente entonces
+tenemos que resolver $0=(\alpha+\beta+\gamma)=(\beta+\gamma)=\gamma.$\\
+Luego $\gamma=0\Rightarrow\beta=0$ y $\alpha=0$. Por lo que hemos
+probado que también es una base de $V$.
+\item $[v]_{B_{1}}=A[v]_{B_{2}}$\\
+\\
+Recordemos que la matriz de cambio de base está formada por:\\
+\[
+P_{B_{1}\leftarrow B_{2}}\begin{bmatrix}[v_{1}]_{B_{1}} & [v_{1}+v_{2}]_{B_{1}} & [v_{1}+v_{2}+v_{3}]_{B_{1}}\end{bmatrix}
+\]
+\\
+\\
+$[v_{1}]_{B_{1}}=1v_{1}+0v_{2}+0v_{3}$\\
+$[v_{1}+v_{2}]_{B_{1}}=1v_{1}+1v_{2}+0v_{3}$\\
+$[v_{1}+v_{2}+v_{3}]_{B_{1}}=1v_{1}+1v_{2}+1v_{3}$\\
+\\
+Copiando las coordenadas anteriormente calculadas obtenemos: $\begin{bmatrix}1 & 1 & 1\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}$
+\end{enumerate}
+\item Dar en cada caso una matriz que cumpla las condiciones dados o jutificar
+porque no existe.
+\begin{enumerate}
+\item Su espacio columna está generado por los vectores $(1,0,0)^{t},(0,0,1)^{t}$
+y su espacio fila está generado por $(1,1)^{t},(1,2)^{t}$.
+\item Su espacio columna tiene al vector $(1,1,1)^{t}$ como base y su espacio
+fila tiene como base al vector $(1,2,1)^{t}$.
+\item Su espacio columna contiene a los vectores $(1,1,0)^{t},(1,0,1)^{t}$
+pero no al vector $(1,1,1)^{t}$.
+\item Su espacio columna contiene a $(1,2,1)^{t},$su espacio nulo contiene
+a $(-1,0,1)^{t}$ y tiene determinante $-1$.
+\end{enumerate}
+$\quad$\\
+
+\begin{enumerate}
+\item $C(A)=\begin{bmatrix}1 & 0\\
+0 & 0\\
+0 & 1
+\end{bmatrix},A^{T}=\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1
+\end{bmatrix};C(A^{T})=\begin{bmatrix}1 & 1\\
+1 & 2
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 1\\
+0 & 1
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0\\
+0 & 1
+\end{bmatrix}$,\\
+\\
+$C(A^{T})=\langle\{(1,0)^{t},(0,1)^{t}\}\rangle=\langle\{(1,1)^{t},(1,2)^{t}\}\rangle$\\
+podemos tomar la matriz $A=\begin{bmatrix}1 & 0\\
+0 & 0\\
+0 & 1
+\end{bmatrix},$ ya que $C(A^{T})=\langle\{(1,1)^{t},(1,2)^{t}\}\rangle=\langle\{(1,0)^{t},(0,1)^{t}\}\rangle$.
+\item $C(A)=\Bigg\langle\begin{bmatrix}1\\
+1\\
+1
+\end{bmatrix}\Bigg\rangle,C(A^{T})=\Bigg\langle\begin{bmatrix}1\\
+2\\
+1
+\end{bmatrix}\Bigg\rangle$. Repasando teoremas tenemos que obligatoriamente debe pasar que $dim(C(A))=dim(C(A^{T}))=rango$
+y $N(A)=n-r=n-1$\\
+\\
+$A=\begin{bmatrix}1 & 2 & 1\\
+1 & 2 & 1\\
+1 & 2 & 1
+\end{bmatrix},A^{T}=\begin{bmatrix}1 & 1 & 1\\
+2 & 2 & 2\\
+1 & 1 & 1
+\end{bmatrix}$\\
+\item $(1,1,1)=a_{1}(1,1,0)+a_{2}(1,0,1)\Rightarrow$\\
+\\
+$\begin{cases}
+a_{1}+a_{2} & =1\\
+a_{1} & =1\\
+a_{2} & =1
+\end{cases}\Longrightarrow a_{1}+a_{2}\not=1$\\
+\\
+Es decir, los 3 vectores son linealmente independientes.\\
+\\
+Luego no existe ninguna combinación lineal de los vectores $(1,1,0)$
+y $(1,0,1)$ que de como resultado al vector $(1,1,1)$.\\
+Nos bastaría con tomar la matriz $A=\begin{bmatrix}1 & 1\\
+1 & 0\\
+0 & 1
+\end{bmatrix}$
+\item Si $N(A)=0\Rightarrow A$ posee columnas independientes y $dim(A)\not=0$.
+\\
+Ahora si tenemos $N(A)\not=\emptyset$ entonces si o si $dim(A)=0$
+ya que las columnas no son independientes. \\
+\\
+En este caso se nos pide una matriz en la que el nulo de la matriz
+contiene un vector (lo que implicaría que los vectores son l.d.) y
+a su vez nos pide que su determinante sea $|A|\not=0$, lo cual no
+es posible, ya que si el determinante es $|A|\not=0$ implicaría que
+sus columnas son independientes por lo tanto el espacio nulo debería
+contener solo al $\{0\}$.
+\end{enumerate}
+\item Sea $V=\Bigg\{{\displaystyle \sum_{i=0}^{n}a_{i}x^{i}/a_{i}\in\mathbb{R}\Bigg\}}$
+y $B_{1}=\{1,x,x^{2}\}$ base estándar de $V$.
+\begin{enumerate}
+\item Probar que $B_{2}=\{x-1,1,(x-1)^{2}\}$ es otra base de V.
+\item Hallar la matriz de cambio de base de $B_{1}$ a $B_{2}$.
+\item Utilizar lo obtenido en el item anterior y determinar $[p]_{B_{2}}$
+donde $p(x)=2x^{2}-5x+6$. ¿Cuáles son las coordenadas de p en la
+base $\{(1,(x-1)^{2},x-1\}$?
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item Lo primero que hacemos es calcular la dimensión de la base $dim(V)=3=|B_{1}|=|B_{2}|$.
+Ahora sólo nos resta probar que $B_{2}$ es linealmente independiente.\\
+$a(x-1)+b(1)+c(x-1)^{2}=0\Longrightarrow ax-a+b+c(x^{2}-2x+1)=0\Longrightarrow ax-a+b+cx^{2}-2cx+c=0\Longrightarrow cx^{2}+(a-2c)x-a+b+c=0\Longrightarrow$\\
+\\
+$\begin{cases}
+c & =0\\
+a-2c & =0\\
+a+b+c & =0
+\end{cases}\Longrightarrow c=0;a=0;b=0$\\
+Luego $B_{2}$ genera a $V$ por lo tanto también una base para $V$.
+\item $\quad$
+\[
+P_{B_{2}\leftarrow B_{1}}\begin{bmatrix}[1]_{B_{2}} & [x]_{B_{2}} & [x^{2}]{}_{B_{2}}\end{bmatrix}
+\]
+\\
+$[1]_{B_{2}}=0(x-1)+1(1)+0((x-1)^{2})$\\
+$[x]_{B_{2}}=1(x-1)+1(1)+0((x-1)^{2})$\\
+$[x^{2}]_{B_{2}}=a(x-1)+b(1)+c(x-1)^{2}=ax-a+b+c(x^{2}-2x+1)=ax-a+b+cx^{2}-2cx+c=cx^{2}+(a-2c)x+-a+b+c$\\
+\\
+$\begin{cases}
+cx^{2} & =x^{2}\\
+(a-2c)x & =0\\
+-a+b+c & =0
+\end{cases}\Longrightarrow\begin{cases}
+c & =1\\
+(a-2.1) & =0\\
+-a+b+c & =0
+\end{cases}\Longrightarrow\begin{cases}
+c & =1\\
+a & =2\\
+-2+b+1 & =0\Rightarrow b=1
+\end{cases}$\\
+\\
+Hay otra forma de calcular la matriz cambio de base haciendo lo siguiente:\\
+\\
+$\begin{bmatrix}\mathcal{C}|\mathcal{B}\end{bmatrix}\underbrace{\longrightarrow}_{reducci\acute{o}n}\begin{bmatrix}I\Bigg|\underbrace{\mathcal{C}^{-1}B}_{P_{C\leftarrow B}}\end{bmatrix}$\\
+\\
+Volviendo a lo anterior:\\
+\\
+\\
+Luego $P_{B_{2}\leftarrow B_{1}}\begin{bmatrix}0 & 1 & 2\\
+1 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}$\\
+\\
+\\
+\\
+Ejemplo de como usar la matriz de cambio de base, en este caso el
+vector $(1,1,1)$ representa a $1(1)+1(x)+1(x^{2})$ en la base $B_{1}.$\\
+\\
+$P_{B_{2}\leftarrow B_{1}}\begin{bmatrix}0 & 1 & 2\\
+1 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}\begin{pmatrix}1\\
+1\\
+1
+\end{pmatrix}=1\cdot\begin{bmatrix}0\\
+1\\
+0
+\end{bmatrix}+1\cdot\begin{bmatrix}1\\
+1\\
+0
+\end{bmatrix}+1\cdot\begin{bmatrix}2\\
+1\\
+1
+\end{bmatrix}=\begin{bmatrix}3\\
+3\\
+1
+\end{bmatrix}$\\
+\\
+$\begin{bmatrix}3\\
+3\\
+1
+\end{bmatrix}_{B_{2}}=3(x-1)+1+1(x-1)^{2}=3x-3+1+x^{2}-2x+1=x^{2}+x+1$.\\
+\\
+Obtuvimos el mismo resultado en diferentes bases.
+\item $[2x^{2}-5x+6]_{B_{2}}=\begin{bmatrix}0 & 1 & 2\\
+1 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}\begin{pmatrix}6\\
+-5\\
+2
+\end{pmatrix}=\begin{bmatrix}-1\\
+3\\
+2
+\end{bmatrix}$\\
+\\
+$\begin{bmatrix}-1\\
+3\\
+2
+\end{bmatrix}_{B_{2}}=-1(x-1)+3(1)+2[(x-1)^{2}]=2x^{2}-5x+6$
+\end{enumerate}
+\item Hallar la matriz cambio de base de:
+\begin{enumerate}
+\item la base estándar de $\mathbb{R}^{2\times2}$ a la base\\
+$B'=\Bigg\{\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix},\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix},\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix},\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}\Bigg\}$\\
+Determinar $[A]_{B'}$ para $A\in\mathbb{R}^{2\times2}$.\\
+\item la base $\{1,x,-1+2x^{2},-3x+4x^{3}\}$ de $\mathbb{R}_{3}[x]$ a
+la base $\{1,-\frac{1}{2}+x,-x+x^{2},\frac{1}{4}-\frac{3}{2}x^{2}+x^{3}\}$.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item Tenemos que pasar de la base estándar: $\Bigg\{\begin{bmatrix}1 & 0\\
+0 & 0
+\end{bmatrix},\begin{bmatrix}0 & 1\\
+0 & 0
+\end{bmatrix},\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix},\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}\Bigg\}$ \\
+$B'=\Bigg\{\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix},\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix},\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix},\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}\Bigg\}$.\\
+\\
+\\
+Para hacer eso calculamos la matriz cambio de base $P_{B'\leftarrow B}\Bigg[\begin{bmatrix}1 & 0\\
+0 & 0
+\end{bmatrix}_{B'},\begin{bmatrix}0 & 1\\
+0 & 0
+\end{bmatrix}_{B'},\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix}_{B'},\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}_{B'}\Bigg]$\\
+\\
+$\begin{bmatrix}1 & 0\\
+0 & 0
+\end{bmatrix}_{B'}=a\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}+b\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}+c\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+d\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}=0\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}-1\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}+0\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+0\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}$\\
+\\
+$\begin{bmatrix}0 & 1\\
+0 & 0
+\end{bmatrix}_{B'}=1\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}+1\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}+0\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+0\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}$\\
+\\
+$\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix}_{B'}=0\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}-2\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}-1\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+0\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}$\\
+\\
+$\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}_{B'}=-\frac{1}{2}\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}+\frac{5}{4}\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}+\frac{3}{4}\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+\frac{1}{4}\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}$\\
+\\
+\\
+$P_{B'\leftarrow B}\begin{bmatrix}0 & 1 & 0 & -\frac{1}{2}\\
+-1 & 1 & -2 & \frac{5}{4}\\
+0 & 0 & -1 & \frac{3}{4}\\
+0 & 0 & 0 & \frac{1}{4}
+\end{bmatrix}\begin{bmatrix}1\\
+1\\
+1\\
+1
+\end{bmatrix}=\begin{bmatrix}\frac{1}{2}\\
+-\frac{3}{4}\\
+-\frac{1}{4}\\
+\frac{1}{4}
+\end{bmatrix}$ \\
+\\
+$\begin{bmatrix}\frac{1}{2}\\
+-\frac{3}{4}\\
+-\frac{1}{4}\\
+\frac{1}{4}
+\end{bmatrix}_{B_{2}}\underbrace{=}_{???}\begin{bmatrix}1 & 1\\
+1 & 1
+\end{bmatrix}$ Calculamos: $\frac{1}{2}\begin{pmatrix}1 & 1\\
+0 & 0
+\end{pmatrix}-\frac{3}{4}\begin{pmatrix}-1 & 0\\
+0 & 0
+\end{pmatrix}-\frac{1}{4}\begin{pmatrix}2 & 0\\
+-1 & 0
+\end{pmatrix}+\frac{1}{4}\begin{pmatrix}1 & 2\\
+3 & 4
+\end{pmatrix}$ efectivamente nos da como resultado la matriz $\begin{bmatrix}1 & 1\\
+1 & 1
+\end{bmatrix}$.\\
+\\
+\\
+\item Hago la matriz cambio de base de la base $B=\{1,x,-1+2x^{2},-3x+4x^{3}\}$
+de $\mathbb{R}_{3}[x]$ a la base $B'=\{1,-\frac{1}{2}+x,-x+x^{2},\frac{1}{4}-\frac{3}{2}x^{2}+x^{3}\}$.\\
+$P_{B'\leftarrow B}\begin{bmatrix}[1]_{B_{2}} & [x]_{B_{2}} & [-1+2x^{2}]_{B_{2}} & [-3x+4x^{3}]_{B_{2}}\end{bmatrix}$\\
+\\
+$[1]_{B_{2}}=1(1)+0(-\frac{1}{2}+x)+0(-x+x^{2})+0(\frac{1}{4}-\frac{3}{2}x^{2}+x^{3})$\\
+\\
+$[x]_{B_{2}}=\frac{1}{2}(1)+1(-\frac{1}{2}+x)+0(-x+x^{2})+0(\frac{1}{4}-\frac{3}{2}x^{2}+x^{3})$\\
+\\
+$[-1+2x]_{B_{2}}^{2}=0(1)+2(-\frac{1}{2}+x)+0(-x+x^{2})+0(\frac{1}{4}-\frac{3}{2}x^{2}+x^{3})$\\
+\\
+$[-3x+4x^{3}]_{B_{2}}=a(1)+b(-\frac{1}{2}+x)+c(-x+x^{2})+d(\frac{1}{4}-\frac{3}{2}x^{2}+x^{3})=a-\frac{b}{2}+bx-cx+cx^{2}+\frac{d}{4}-\frac{3}{2}dx^{2}+dx^{3}\Longrightarrow$\\
+\\
+$dx^{3}+(c-\frac{3}{2}d)x^{2}+(b-c)x+a-\frac{1}{2}+\frac{d}{4}=-3x+4x^{3}$.
+Entonces por igualdad de polinomios nos queda el siguiente sistema:\\
+\\
+$\begin{cases}
+d & =4\\
+c-\frac{3}{2}d & =0\\
+b-c & =-3\\
+a-\frac{1}{2}+\frac{d}{4} & =0
+\end{cases}\Longrightarrow\begin{cases}
+d & =4\\
+c-6 & =0\Rightarrow c=6\\
+b-6 & =-3\Rightarrow b=3\\
+a-\frac{1}{2}+1 & =0\Rightarrow a+\frac{1}{2}=0\Rightarrow a=-\frac{1}{2}
+\end{cases}$\\
+\\
+\\
+La matriz de cambio de base nos quedaría:\\
+\\
+$P_{B'\leftarrow B}\begin{bmatrix}1 & 1 & 0 & -\frac{1}{2}\\
+0 & 1 & 2 & 3\\
+0 & 0 & 0 & 6\\
+0 & 0 & 0 & 4
+\end{bmatrix}$\\
+\end{enumerate}
+\item COMPLETAR ÚLTIMO EJ.
+\end{enumerate}
+
+\subsection*{Práctica 3: Transformaciones Lineales}
+\begin{enumerate}
+\item Para cada una de las siguientes funciones $T:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}$
+determinar si se trata de una transformación lineales y en caso afirmativo:
+obtener $nul(T)$, $img(T)$, calcular sus dimensiones y determinar
+si $T$ es inversible.
+\begin{enumerate}
+\item $T((x,y))=(y,x)$
+\item $T((x,y))=(x^{2},y^{2})$
+\item $T((x,y))=(x,-y)$
+\item $T((x,y))=(x,0)$
+\end{enumerate}
+Para probar que es lineal tengo que ver que se cumpla lo siguiente:
+$T(u+v)=T(u)+T(v)$ y $T(\alpha v)=\alpha T(v)$.
+\begin{enumerate}
+\item $img(T)=\{y(1,0)+x(0,1):x,y\in\mathbb{R}\}=\langle\{(0,1),(1,0)\}\rangle=\mathbb{R}^{2}$.
+Luego $dim(img(T))=2$. O también lo podemos calcular así:\\
+$img(T)=\{(x,y)\in\mathbb{R}^{2}\mid T(x,y)=(a,b)\}$\\
+\\
+$nul(T)=\{(x,y)\in\mathbb{R}\mid T(x,y)=(0,0)\}\Rightarrow\{(x,y)\in\mathbb{R}^{2}:(y,x)=(0,0)\}=\{0\}$.
+Además $nul(T)=n-r$, donde $n$ sería la dimensión del espacio vectorial
+donde se mueve $T$. Como $nul(T)=\{0\}$ entonces decimos que T es
+inyectiva, y como $img(T)=\mathbb{R}^{2}$ entonces $T$ también es
+sobreyectiva.\\
+Luego $T$ al ser biyectiva, es inyectiva.\\
+\\
+Sea $u=(x_{1},y_{1})$ y $v=(x_{2},y_{2})$\\
+\\
+$T(u+v)=T((x_{1},y_{1})+(x_{2},y_{2}))=T((x_{1}+x_{2},y_{1}+y_{2}))=(y_{1}+y_{2},x_{1}+x_{2})=$\\
+$=T(u)+T(v)=T(x_{1},y_{1})+T(x_{2},y_{2})=(y_{1},x_{1})+(y_{2},x_{2})=(y_{1}+y_{2},x_{1}+x_{2})$\\
+\\
+Por lo tanto T es una transformación lineal.\\
+\item No es una transformación lineal, ya que no se cumple la clausura bajo
+el producto tomando $u=(1,0)$ y $a=-1$ tenemos que \\
+$T(au)=T(-1(1,0))=T((-1,0))=((-1)^{2},0^{2})=(1,0)\not=(-1,0)=-1(1,0)=aT(u)$\\
+\item $img(T)=\{(x,0)+(0,-y)\mid x,y\in\mathbb{R}\}=\langle(1,0)+(0,-1)\rangle=\mathbb{R}^{2}$.
+Luego $dim(img(T))=2$.\\
+Por lo tanto el nulo de $T$ sólo contiene al $\{0\}$, como vimos
+anteriormente $dim(nul(T))=n-r$.\\
+\\
+Sea $u=(u_{1},u_{2})$ y $v=(v_{1},v_{2})$ probemos entonces que
+es una transformación lineal\\
+\\
+$T(u+v)=T((u_{1}+v_{1},u_{2}+v_{2}))=(u_{1}+v_{1},-u_{2}-v_{2})=$\\
+$=T(u)+T(v)=T(u_{1},u_{2})+T(v_{1},v_{2})=(u_{1},-u_{2})+(v_{1},-v_{2})=(u_{1}+v_{1},-u_{2}-v_{2})$\\
+\\
+Luego T es una transformación lineal.
+\item $img(T)=\{(x,0)\mid x\in\mathbb{R}\}=\langle(1,0)\rangle$. Luego
+$dim(img(T))=1.$ (No es sobreyectiva)\\
+Por lo tanto ya sabemos que el nulo de T va a contener un elemento,
+$dim(nul(T))=n-r=2-1=1$ (No es inyectiva)\\
+Observemos que el espacio nulo siempre es la entrada de la función,
+el espacio nulo se genera a partir del dominio que de como resultado
+al 0, ya sea 0 de polinomios, vectores, matrices. Entoncen sin hacer
+ningún cálculo ya sabemos que el $nul(T)=\{(0,y):y\in\mathbb{R}\}=\{y(0,1):y\in\mathbb{R}\}=\langle\{0,1\}\rangle$,
+es decir todas las comb. lineales de ese vector ya que darían como
+resultado al 0.\\
+\\
+Otra forma:\\
+$nul(T)=\{(x,y)\in\mathbb{R}:T(x,y)=(0,0)\}=\{(x,y)\in\mathbb{R}:(x,0)=(0,0)\}\Longrightarrow$\\
+$\begin{cases}
+x & =0\\
+0 & =0
+\end{cases}$, es decir el y puede valer cualquier cosa.\\
+\\
+Luego, T no es invertible.\\
+\\
+Ahora verificamos si es lineal, tomando $u=(u_{1},u_{1})$ y $v=(v_{1},v_{2})$\\
+\\
+$T(u+v)=T(u_{1}+v_{1},v_{1}+v_{2})=(u_{1}+v_{1},0)=(u_{1},0)+(v_{2}+0)=T(u_{1},u_{1})+T(v_{2},v_{2})=T(u)+T(v)$\\
+$T(a(u))=T(a(u_{1},u_{2}))=T(au_{1},au_{2})=(au_{1},0)=aT(u_{1},u_{2})=aT(u)$\\
+\\
+Luego T es una TL.
+\end{enumerate}
+\item Sea $V=\mathbb{R}^{2}$, fijamos la base canónica $B=\{e_{1},e_{2},\cdots,e_{n}\}$.
+Para cada $T_{i}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$ hallar
+$A_{i}$ tal que $A_{i}x=T_{i}(x),\forall x\in\mathbb{R}^{n},i=1,\dots,4.$
+\begin{enumerate}
+\item $T_{1}(x)=x,\forall x\in\mathbb{R}^{n}$
+\item $T_{2}(x)=0,\forall x\in\mathbb{R}^{n}$
+\item $T_{3}(x)=cx,c\in\mathbb{R},\forall x\in\mathbb{R}^{n}$
+\item $T_{4}(x)=y,donde\ y=(y_{k})_{k=1}^{n}$ con $y_{k},=x_{k},i\not=k,y_{k}=x_{i},k=j$
+y $y_{k}=x_{j},k=i$.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item $T_{1}(e_{i})=e_{i},$ por lo tanto $A_{1}=\begin{bmatrix}e_{1} & e_{2} & \dots & e_{n}\end{bmatrix}$
+\item $T_{2}(e_{i})=0$, por lo tanto $A_{2}=\begin{bmatrix}\mid & \mid & \mid & \mid\\
+0 & 0 & \cdots & 0\\
+\mid & \mid & \mid & \mid
+\end{bmatrix}$.
+\item $T_{3}(e_{i})=cx,$ por lo tanto, $A_{3}=\begin{bmatrix}ce_{1} & ce_{2} & \cdots & ce_{n}\end{bmatrix}$.
+\end{enumerate}
+\item Consideremos la base canónica de $V=\mathbb{R}^{2}$ dada por $B=\{e_{1},e_{2}\}$
+y la transformación lineal $T:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}$
+que aplica los vectores $e_{1}$ y $e_{2}$ como sigue:
+\begin{itemize}
+\item $T(e_{1})=e_{1}+e_{2}$
+\item $T(e_{2})=2e_{1}-e_{2}$
+\end{itemize}
+Obtener:
+\begin{enumerate}
+\item $T(3e_{1}-4e_{2})$ y $T^{2}(3e_{1}-4e_{2})$
+\item Las matrices asociadas a $T$ y $T^{2}$ en la base B.
+\item $T(v),\forall v\in V$.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item $T(3e_{1}-4e_{2})=T(3e_{1})+T(-4e_{2})=3T(e_{1})-4T(e_{2})=3(e_{1}+e_{2})-4(2e_{1}-e_{2})=3e_{1}+3e_{2}-8e_{1}+4e_{2}=(3-8)e_{1}+(3+4)e_{2}=$\\
+$=-5e_{1}+7e_{2}=-5(1,0)+7(0,1)=(-5,7)$\\
+$T^{2}(3e_{1}-4e_{2})=T(T(3e_{1}-4e_{2}))=T(-5e_{1}+7e_{2})=-5T(e_{1})+7T(e_{2})=-5(e_{1}+e_{2})+7(2e_{1}-e_{2})=-5e_{1}-5e_{2}+14e_{1}-7e_{2}=9e_{1}+12e_{2}$
+\item $T=\begin{bmatrix}1 & 2\\
+1 & -1
+\end{bmatrix},$ \\
+\\
+Para calcular la matriz asociada a $T^{2}$ tenemos que hallar $T(T(e_{1}))$
+y $T(T(e_{2}))$,\\
+$T(e_{1}+e_{2})=T(e_{1})+T(e_{2})=(e_{1}+\cancel{e_{2}})+(2e_{1}-\cancel{e_{2}})=3e_{1}+0e_{2}=(3,0)$\\
+$T(2e_{1}-e_{2})=2T(e_{1})-T(e_{2})=2(e_{1}+e_{2})-(2e_{1}-e_{2})=\cancel{2e_{1}}+2e_{2}-\cancel{2e_{1}}+2e_{2}=3e_{2}=(0,3)$\\
+\\
+Luego la matriz de la transformación lineal es:\\
+$A^{2}=\begin{bmatrix}3 & 0\\
+0 & 3
+\end{bmatrix}$
+\item Sabemos que $T(x)=Ax$, entonces tenemos que $T(x_{1},x_{2})=A\begin{bmatrix}x_{1}\\
+x_{2}
+\end{bmatrix}=\begin{bmatrix}1 & 2\\
+1 & -1
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}
+\end{bmatrix}=x_{1}\begin{bmatrix}1\\
+1
+\end{bmatrix}+x_{2}\begin{bmatrix}2\\
+-1
+\end{bmatrix}=(x_{1}+2x_{2},x_{1}-x_{2})$
+\end{enumerate}
+\item Sea $T_{1,2}:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$ tal que $T_{1}((x,y,z)^{t})=(x,y,0)$
+y $T_{2}((x,y,z)^{t})=(x,y,y)^{t}$. Hallar $T_{1}\circ T_{2}$ y
+$T_{2}\circ T_{1}$. Analizar si son epimorfismo (transformación lineal
+sobreyectiva), monomorfismo(inyectiva) o ninguna de ellas.\\
+Es inyectiva si el espacio nulo contiene sólo al $\{0\}$, es sobreyectiva
+si el codominio es igual a la imágen.\\
+\\
+$T_{1}\circ(T_{2}(x,y,z)^{t})=T_{1}(T_{2}(x,y,z)^{t})=T_{1}((x,y,y)^{t})=(x,y,0)^{t}$\\
+$T_{2}(T_{1}(x,y,z)^{t})=T_{2}((x,y,0)^{t})=(x,y,y)^{t}$\\
+\\
+$img(T_{1}\circ T_{2})=\{(x,y,0):x,y\in\mathbb{R}\}=\{x(1,0,0)+y(0,1,0):x,y\in\mathbb{R}\}=\langle\{(1,0,0),(0,1,0)\}\rangle$,
+$dim(T_{1}\circ T_{2})=2,$ como podemos ver la dimensión de la imágen
+es diferente de la dimensión del codominio por lo tanto basándonos
+en que $dim(nul(T))=n(dim\quad R^{3})-r=3-2$ el nulo contendrá un
+elemento.\\
+Observemos además que el nulo son los elementos de entrada(dominio)
+que hacen nulo a la función/transformación lineal.\\
+$nul(T_{1}\circ T_{2})=\{(0,0,z):z\in\mathbb{R}\}=\{z(0,0,1):z\in\mathbb{R}\}=\langle\{0,0,1\}\rangle$\\
+O también podemos buscar un contraejemplo $T_{1}(T_{2}(0,0,0))=T_{1}(T_{2}(0,0,9000))=(0,0,0)$,
+por lo tanto $T$ no es un monomorfismo.\\
+\\
+$img(T_{2}\circ T_{1})=\{(x,y,y):x,y\in\mathbb{R}\}=\{x(1,0,0)+y(0,1,1):x,y\in\mathbb{R}\}=\langle\{(1,0,0),(0,1,1)\}\rangle,$
+$dim(T_{2}\circ T_{1})=2\not=3=\mathbb{R}^{3}.$ Luego no es ni un
+epimorfismo, tampoco monomorfismo.\\
+\\
+$nul(T_{2}\circ T_{1})=\{(x,y,z)\in\mathbb{R}^{3}:T_{2}(T_{1}(x,y,z))\}=\{(x,y,z)\in\mathbb{R}^{3}:(x,y,y)=(0,0,0)\}$.
+El elemento $z$ puede valer cualquier cosa, luego:\\
+$nul(T_{2}\circ T_{1})=\langle(0,0,1)\rangle$
+\item Definimos $\mathbb{R}_{n}[x]=\{p:\text{\ensuremath{p\ polinomio\ a\ coeficientes\ reales\ grad(p)}\ensuremath{\leq n,x\in\mathbb{R}}}\}\cup\{0\}$.
+Sea\\
+\begin{align*}
+T & :\mathbb{R}^{2\times2}\rightarrow\mathbb{R}_{3}[x]\\
+ & \begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}\rightarrow & T\Big(\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}\Big)=2dx^{3}+(a+b)x^{2}+(a-c)x+2(c+d)
+\end{align*}
+
+\begin{enumerate}
+\item Probar que $T$ es lineal.
+\item Hallar una base para $nul(T)$ y una para $img(T)$.
+\item Determinar si $T$ es un isomorfismo.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item Para probar que T es lineal debemos verificar que $T(u+v)=T(u)+T(v)$
+y $T(au)=aT(u)$.\\
+Sea $u=\begin{bmatrix}a_{1} & a_{2}\\
+a_{3} & a_{4}
+\end{bmatrix}e\ y=\begin{bmatrix}b_{1} & b_{2}\\
+b_{3} & b_{4}
+\end{bmatrix}$\\
+\\
+$T\Bigg(\begin{bmatrix}a_{1}+b_{1} & a_{2}+b_{2}\\
+a_{3}+b_{3} & a_{4}+b_{4}
+\end{bmatrix}\Bigg)=2(a_{4}+b_{4})x^{3}+((a_{1}+b_{1})+(a_{2}+b_{2}))x^{2}+((a_{1}+b_{1})-(a_{3}+b_{3}))x+2((a_{3}+b_{3})+(a_{4}+b_{4})=$\\
+\\
+$=2a_{4}x^{3}+(a_{1}+a_{2})x^{2}+(a_{1}-a_{3})x+2(a_{3}+a_{4})+2b_{4}x^{3}+(b_{1}+b_{2})x^{2}+(b_{1}-b_{3})x+2(b_{3}+b_{4})=$\\
+$=T\Bigg(\begin{bmatrix}a_{1} & a_{2}\\
+a_{3} & a_{4}
+\end{bmatrix}\Bigg)+T\Bigg(\begin{bmatrix}b_{1} & b_{2}\\
+b_{3} & b_{4}
+\end{bmatrix}\Bigg)$\\
+\\
+\\
+$T\Big(\alpha\begin{bmatrix}b_{1} & b_{2}\\
+b_{3} & b_{4}
+\end{bmatrix}\Big)=T\Bigg(\begin{bmatrix}\alpha b_{1} & \alpha b_{2}\\
+\alpha b_{3} & \alpha b_{4}
+\end{bmatrix}\Bigg)=2(\alpha b_{4})x^{3}+(\alpha b_{1}+\alpha b_{2})x^{2}+(\alpha b_{1}-\alpha b_{3})x+2(\alpha b_{3}+\alpha b_{4})=\alpha\Big[2b_{4}x^{3}+(b_{1}+b_{2})x^{2}+(b_{1}-b_{3})x+2(b_{3}+b_{4})\Big]=\alpha T\Bigg(\begin{bmatrix}b_{1} & b_{2}\\
+b_{3} & b_{4}
+\end{bmatrix}\Bigg)$
+\item $img(T)=\{2dx^{3}+(a+b)x^{2}+(a-c)x+2(c+d):a,b,c,d\in\mathbb{R}\}=\{\alpha x^{3}+\beta x^{2}+\gamma x+\epsilon:\alpha,\beta,\gamma,\epsilon\in\mathbb{R}\}=\langle\{x^{3},x^{2},x,1\}\rangle$.
+$dim(img(T))=4$.\\
+$nul(T)=\Bigg\{\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}:T\Big(\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}\Big)=0x^{3}+0x^{2}+0x+0\Bigg\}=\Bigg\{\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}:2dx^{3}+(a+b)x^{2}+(a-c)x+2(c+d)=0x^{3}+0x^{2}+0x+0\Bigg\}=\Bigg\{\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}:\alpha x^{3}+\beta x^{2}+\gamma x+\epsilon=0x^{3}+0x^{2}+0x+0\Bigg\}=\{0\}$\\
+\\
+Otra forma de calcularlo: \\
+Como sabemos que $dim(nul(T))=n-r=4-4$ entonces el nulo sólo contiene
+al 0. Luego $nul(T)=\{0\}$
+\item T no es isomorfo ya que no es ni un monomorfismo(inyectiva) ni un
+epimorfismo(sobreyectiva).
+\end{enumerate}
+\item Sea $T_{w}:\mathbb{C}\rightarrow\mathbb{C}\mid T_{w}(z)=z+w\hat{z},$
+donde $w=a+ib,a,b\in\mathbb{R}$.
+\begin{enumerate}
+\item Considerar $w=1+i$ y calcular $T_{w}(2+3i)$.
+\item Comprobar que $T_{w}$ es una transformación lineal entre espacios
+vectoriales.
+\item Si $B=\{1,i\}$ es una base de $\mathbb{C}$, hallar la matriz de
+$T_{w}$ en dicha base.
+\item Probar que $T_{w}$ es isomorfismo si y sólo si $a^{2}+b^{2}\not=1$.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item $T_{1+i}(2+3i)=(2+3i)+(1+i)(2-3i)=(2+3i)+(2-3i+2i-3i^{2})=(2+3i)+(2-i+3)=7+2i$.
+\item Debería probar que se cumple $T_{w}(u+v)=T_{w}(u)+T_{w}(v)$, y $T_{w}(au)=aT(u)$,
+supongo que tomando $w=a+ib$.
+\item Para hallar la matriz de la transformación lineal, tenemos que hallar
+cuanto vale la transformación en dicha base y el resultado pasará
+a ser las columnas de la matriz en el orden de la base.\\
+$T_{w}(1)=1+(a+ib)(1)=1+a+ib$\\
+$T_{w}(i)=i+(a+ib)(-i)=i-ai-i^{2}b=b+(1-a)i$\\
+$T=\begin{bmatrix}\mid & \mid\\
+T_{w}(i) & T_{w}(i)\\
+\mid & \mid
+\end{bmatrix}=\begin{bmatrix}1+a & b\\
+b & 1-a
+\end{bmatrix}$
+\item $T_{w}$ es isomorfismo si y sólo si A es inversible si y sólo si
+$|A|=0$, si y sólo si $(1+a)(1-a)-b^{2}=0\Longleftrightarrow1\cancel{-a+a}-a^{2}-b^{2}=0\Longleftrightarrow1=a^{2}+b^{2}$.
+\end{enumerate}
+\item Sea $T:\mathbb{R}_{n}[x]\rightarrow R_{n}[x]$ tal que $T(a_{0}+a_{1}x+\cdots+a_{n}x^{n})=a_{0}+a_{1}(x+1)+\cdots+a_{n}(x+1)^{n}$.
+Probar que $T$ es isomorfo.\\
+Ni toman esto y no tengo idea como hacerlo.
+\item Sea $T:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$ tal que $T(v)=(x+y,x+z,\alpha(v))^{t}$,
+donde $v=(x,y,z)^{t}$ y $\alpha:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$.
+Determinar, si es posible, $\alpha$ de modo que $T$ resulte lineal.\\
+Para que $T$ sea lineal se tiene que cumplir que $T(u+v)=T(u)+T(v)$
+y $T(au)=aT(u)$\\
+Desarrollandolo nos queda que $\alpha$ debe ser una transformación
+lineal, así que podemos tomar por ejemplo a $\alpha(x,y,z)=x+y+z$.
+\item Sea $T:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$ transformación lineal
+tal que\\
+\[
+T((0,0,1)^{t})=(2,3,5)^{t},\quad\quad T((0,1,1)^{t})=(1,0,0)^{t},\quad\quad T((1,1,1)^{t})=(0,1,-1)^{t}
+\]
+
+\begin{enumerate}
+\item Probar que con esta información es posible obtener $T(v),\forall v\in\mathbb{R}^{3}$.
+\item Determinar, fijada la base canónica en $\mathbb{R}^{3}$, la matriz
+de $T$.
+\item Utilizando (9b), obtener $dim(nul(T))$ y $rang(T)$.
+\item Determinar si $T$ es inversible.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item Como los 3 vectores son linealmente independientes entonces vale que
+$\forall v\in\mathbb{R}^{3}$, siempre va a existir una combinación
+lineal tal que $v=\alpha(0,0,1)+\beta(0,1,1)+\gamma(1,1,1)$, luego
+tenemos que $T(v)=\alpha T(0,0,1)+\beta T(0,1,1)+\gamma T(1,1,1)$.
+\item Primero tenemos que calcular $T(1,0,0),T(0,1,0),T(0,0,1)$. Para ello
+tenemos que calcular $(1,0,0)$ como combinación lineal de los elementos
+de la base, ya que sabemos cuánto vale la transformación lineal sobre
+esos elementos, entonces:\\
+$(1,0,0)=0(0,0,1)-(0,1,1)+(1,1,1)$, luego\\
+$T(1,0,0)=0T(0,0,1)-T(0,1,1)+T(1,1,1)=(-1,0,0)+(0,1,-1)=(-1,1,-1)$\\
+\\
+$(0,1,0)=-(0,0,1)+(0,1,1)+0(1,1,1)$, luego\\
+$T(0,1,0)=-1T(0,0,1)+T(0,1,1)=(-2,-3,-5)+(1,0,0)=(-1,-3,-5)$\\
+\\
+$T(0,0,1)=(2,3,5)$\\
+\\
+$\begin{bmatrix}\mid & \mid & \mid\\
+T(1,0,0) & T(0,1,1) & T(1,1,1)\\
+\mid & \mid & \mid
+\end{bmatrix}=\begin{bmatrix}-1 & -1 & 2\\
+1 & -3 & 3\\
+-1 & -5 & 5
+\end{bmatrix}$
+\item Hacer reducción por filas a la matriz de la TL, luego a partir de
+ahí calcularlo.
+\item Yes.
+\end{enumerate}
+\item Determinar, si existe, una transformación lineal $T:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$
+que verique: $T((1,-1,1)^{t})=(1,0)^{t}$ y $T((1,1,1)^{t})=(0,1)^{t}$.\\
+Toda transformación lineal queda determinada por cómo actúa en los
+elementos de la base. Como el dominio de la transformación lineal
+es $\mathbb{R}^{3}$ necesitamos un vector linealmente independiente
+más para determinar la transformación. Por lo tanto agregamos el vector
+$(0,1,0)$ y le damos cualquier imágen como por ejemplo $(3,14)$.\\
+$T((0,1,0)^{t})=(3,14)$ ahora tenemos que verificar que sean linealmente
+independientes para ellos vamos a hacer eliminación por filas.\\
+\\
+$\begin{bmatrix}1 & 0 & 1\\
+-1 & 0 & 1\\
+1 & 1 & 1
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & 1\\
+0 & 1 & 2\\
+0 & 0 & 0
+\end{bmatrix}$ No es linealmente independiente, ya que contiene una fila nula por
+lo tanto el espacio columna está siendo generado por dos vectores:\\
+\\
+O también podemos probar que no son linealmente independiente haciendo
+la siguiente cuenta:\\
+\\
+$(0,1,0)=a(1,-1,1)+b(1,1,1)=(0,1,0)=(a+b,-a+b,a+b)\Longrightarrow$\\
+\\
+$\begin{cases}
+a+b & =0\\
+-a+b & =1\\
+a+b & =0
+\end{cases}\Longrightarrow\begin{cases}
+2b & =1\Rightarrow b=\frac{1}{2}\\
+a & =-b
+\end{cases}$\\
+\\
+$(0,1,0)=-\frac{1}{2}(1,-1,1)+\frac{1}{2}(1,1,1)=(0,1,0)$\\
+\\
+Ahora probemos tomar $T((0,0,1)^{t})=(3,14)$, luego los 3 vectores
+son linealmente independientes por lo que la matriz de la transformación
+es la siguiente:\\
+\\
+Luego la norma de la tranformación lineal es la siguiente:\\
+$T(x,y,z)=A\begin{pmatrix}x\\
+y\\
+z
+\end{pmatrix}=\begin{bmatrix}1 & 0 & 3\\
+0 & 1 & 14
+\end{bmatrix}\begin{pmatrix}x\\
+y\\
+z
+\end{pmatrix}=(x+3z,y+14z)$.
+\item Sea V y W espacios vectoriales $\mathbb{K}$ y $\mathcal{L}(V,W)=\{T:V\rightarrow W:T\ transformaci\acute{o}n\ lineal\}$.
+Probar que para $T_{1},T_{2}\in\mathcal{L}(V,W)$
+\begin{enumerate}
+\item $\{v\in V:T_{1}(v)=T_{2}(v)\}\overset{\subset}{s.e.}V.$
+\item Si $V=\langle U\rangle$ y $T_{1}(u)=T_{2}(u),\forall u\in\mathcal{U}$,
+entonces $T_{1}(v)=T_{2}(v),\forall v\in V$.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item jk
+\end{enumerate}
+\item Sean V y W espacios vectoriales de dimensión finita y $T\in\mathcal{L}(V,W)$.
+Probar que:
+\begin{enumerate}
+\item Si T inyectiva, entonces T transforma conjuntos l.i. de V en conjuntos
+l.i. de W.
+\item Si T sobreyectiva, entonces T transforma conjuntos generadores de
+V en conjuntos generadores de W.
+\item T isomorfismo si y sólo si T transforma bases de V en bases de W.
+\end{enumerate}
+\item Sea V un espacio vectorial sobre $\mathbb{K}$ y supongamos que existe
+una aplicación lineal $T\in\mathcal{L}(V)$ tal que tanto $nul(T)$
+como $img(T)$ son subespacios de dimensión finita. Probar que $V$
+también debe ser de dimensión finita.
+\item Sea V un espacio vectorial de dimensión finta sobre $\mathbb{K},$
+y $S,T\in\mathcal{L}(V)$. Probar que:
+\begin{enumerate}
+\item $T\circ S$ es inversible si y sólo si $S\ y\ T$ son inversibles.
+\item Para $I$ la función identidad en V, $T\circ S=I$ si y sólo si $S\circ T=I$.
+\end{enumerate}
+\item Sea V el espacio vectorial de los números complejos y $\mathbb{K}$
+el cuerpo de los números reales. Con las operaciones usuales, V es
+un espacio vectorial sobre $\mathbb{K}$. Describir explícitamente
+un isomorfismo de este espacio con $\mathbb{R}^{2}$.
+\item Una matriz $n\times n$, $A=(a_{ij})_{i,j=1}^{n}$ con entradas en
+$\mathbb{C}$ tal que $A=\overline{A}^{t}$, i.e. $a_{ij}=\overline{a_{ji}}$,
+para todos $i,j=1,\dots,n$ se dice Hermitiana.\\
+Sea W el conjunto de todas las matrices Hermitianas $2\times2$.
+\begin{enumerate}
+\item Verificar que W es un espacio vectorial sobre $\mathbb{R}.$
+\item Verificar que la aplicación\\
+\[
+(x,y,z,t)\rightarrow\begin{bmatrix}t+x & y+iz\\
+y-iz & t-x
+\end{bmatrix}
+\]
+\\
+es un isomorfismo de $\mathbb{R}^{4}$ en W.
+\end{enumerate}
+\item Mostrar que $\mathbb{K}^{m\times n}$ es isomorfo a $\mathbb{K}^{mn}$.
+\item Sean V y W dos espacios vectoriales de dimensión finita sobre $\mathbb{K}.$
+Probar que V y W son isomorfos si y sólo si $dim\ V=dim\ W$.\\
+\item Sea T la transformación lineal de $\mathbb{R}^{3}$ en $\mathbb{R}^{2}$
+definida por\\
+\[
+T(x_{1},x_{2},x_{3})=(x_{1}+x_{2},2x_{3}-x_{1})
+\]
+
+\begin{enumerate}
+\item Si $\mathcal{B}$ es la base ordenada estándar de $\mathbb{R}^{3}$
+y $\mathcal{B}'$ es la base ordenada estándar para $\mathbb{R}^{2}$,
+determinar la matriz de T relativa al par $(\mathcal{B},\mathcal{B}')$.
+\item Si $\mathcal{B}=\{(1,0,-1),(1,1,1),(1,0,0)\}$ y $\mathcal{B}'=\{(0,1),(1,0)\}$.
+¿Cuál es la matriz de T relativa al par $(\mathcal{B},\mathcal{B}')$?.
+\end{enumerate}
+$\quad$
+\begin{enumerate}
+\item $T(1,0,0)=(1,-1)$\\
+$T(0,1,0)=(1,0)$\\
+$T(0,0,1)=(0,2)$\\
+\\
+Luego la matriz de la transformación lineal es:\\
+$A=\begin{bmatrix}1 & 1 & 0\\
+-1 & 0 & 2
+\end{bmatrix}$
+\item $T(1,0,-1)=(1,-3)$\\
+$T(1,1,1)=(2,1)$\\
+$T(1,0,0)=(1,-1)$\\
+\\
+Y como la base destino que es canónica y están invertidos los elementos,
+entonces calculamos:\\
+\\
+$\alpha(0,1)+\beta(1,0)=(1,-3)$ y así con los demás elementos\\
+$\begin{cases}
+\beta & =1\\
+\alpha & =-3
+\end{cases}$\\
+\\
+Siempre se pone en orden a la base dada, luego tenemos:\\
+$A=\begin{bmatrix}-3 & 1 & -1\\
+1 & 2 & 1
+\end{bmatrix}$.
+\end{enumerate}
+\item Sea T un operador lineal sobre $\mathbb{K}^{n}$ y sea A la matriz
+de T relativa a la base estándar de $\mathbb{K}^{n}$. Sea W el subespacio
+de $\mathbb{K}^{n}$ generado por los vectores columnas de A. ¿Quérelación
+existe entre W y T?\\
+\\
+\\
+\\
+\item Sea V un espacio vectorial de dimensión finita sobre el campo $\mathbb{K}$
+y sean S y T operadores lineales sobre V. Probar que existen dos bases
+ordenadas $\mathcal{B}$ y $\mathcal{B}'$ en V tales que $[S]_{B}=[T]_{B'}$
+si y sólo existe un operador lineal inversible $\mathcal{U}$ sobre
+V tal que $T=\mathcal{USU}^{-1}$.
+\item En $\mathbb{R}^{3}$, sean $v_{1}=(1,0,1)$, $v_{2}=(0,1,2)$ y $v_{3}=(-1,-1,0)$.
+\begin{enumerate}
+\item Si $f$ es un funcional lineal sobre $\mathbb{R}^{3}$ tal que $f(v_{1})=1$,
+$f(v_{2})=-1$ y $f(v_{3})=3$ y si $v=(a,b,c)$, hallar $f(v)$.
+\item Describir explícitamente un funcional lineal $f$ sobre $\mathbb{R}^{3}$
+tal que $f(v_{1})=f(v_{2})=0$ pero $f(v_{3})\not=0$.
+\item Sea $f$ cualquier funcional lineal tq. $f(v_{1})=f(v_{2})=0$ pero
+$f(v_{3})\not=0$. Si $v=(2,3,-1)$, muestre que $f(v)\not=0$.
+\end{enumerate}
+Lo primero que hay que saber antes de resolver esto es como calcular
+un funcional lineal: $f(x,y,z)=a_{1}x+a_{2}y+a_{3}z$ o escrito de
+otra forma $f(x)=a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3},x\in\mathbb{R}^{3}$.
+\begin{enumerate}
+\item $f(x_{1},x_{2},x_{3})=a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}.$\\
+\\
+$f(v_{1})=f(1,0,1)=a_{1}+a_{3}=1\Longrightarrow a_{1}=1-a_{3}\Rightarrow a_{1}=1-1\Rightarrow a_{1}=0$\\
+$f(v_{2})=f(0,1,2)=a_{2}+2a_{3}=-1\Rightarrow a_{2}=-1-2a_{3}\Rightarrow a_{2}=-1-2\cdot1\Rightarrow a_{2}=-3$\\
+$f(v_{3})=f(-1,-1,0)=-a_{1}-a_{2}=3\Rightarrow-(1-a_{3})-(-1-2a_{3})=3\Rightarrow-1+a_{3}+1+2a_{3}=3\Rightarrow3a_{3}=3\Rightarrow a_{3}=1$\\
+\\
+O de otra forma haciendo eliminación por filas:\\
+\\
+$\begin{bmatrix}1 & 0 & 1 & 1\\
+0 & 1 & 2 & -1\\
+-1 & -1 & 0 & 3
+\end{bmatrix}\longrightarrow\begin{bmatrix}1 & 0 & 1 & 1\\
+0 & 1 & 2 & -1\\
+0 & 0 & 3 & 3
+\end{bmatrix}\longrightarrow\begin{cases}
+a_{1}+a_{3} & =1\\
+a_{2}+2a_{3} & =-1\\
+3a_{3} & =3
+\end{cases}\longrightarrow\begin{cases}
+a_{1} & =1-1\Rightarrow a_{1}=0\\
+a_{2} & =-1-2\cdot1\Rightarrow a_{2}=-3\\
+a_{3} & =1
+\end{cases}$\\
+\\
+De esta forma el funcional lineal queda determinado por $f(x,y,z)=-0x-3y+z$.
+\item $f(1,0,1)=a_{1}+a_{3}=0$\\
+$f(0,1,2)=a_{2}+2a_{3}=0$\\
+$f(-1,-1,0)=-a_{1}-a_{2}\not=0$\\
+\\
+$\begin{bmatrix}1 & 0 & 1 & 0\\
+0 & 1 & 2 & 0\\
+-1 & -1 & 0 & 1
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & 1 & 0\\
+0 & 1 & 2 & 0\\
+0 & -1 & 1 & 1
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & 1 & 0\\
+0 & 1 & 2 & 0\\
+0 & 0 & 3 & 1
+\end{bmatrix}$\\
+\\
+$\begin{cases}
+a_{1}+a_{3} & =0\\
+a_{2}+2a_{3} & =0\\
+3a_{3} & =1
+\end{cases}\Longrightarrow\begin{cases}
+a_{1}+\frac{1}{3} & =0\Rightarrow a_{1}=-\frac{1}{3}\\
+a_{2} & =-\frac{2}{3}\\
+a_{3} & =\frac{1}{3}
+\end{cases}$\\
+\\
+Luego $f(x,y,z)=-\frac{1}{3}x-\frac{2}{3}y+\frac{1}{3}z$.
+\item $(2,3,-1)=a(1,0,1)+b(0,1,2)+c(-1,-1,0)$\\
+$\begin{bmatrix}1 & 0 & -1 & 2\\
+0 & 1 & -1 & 3\\
+-1 & 2 & 0 & -1
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & 0 & -1\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & -3
+\end{bmatrix}\Rightarrow\begin{cases}
+a & =-1\\
+b & =0\\
+c & =-3
+\end{cases}$\\
+\\
+Luego $(2,3,-1)=-(1,0,1)-3(-1,-1,0)$, entonces $f(2,3,-1)=-\underbrace{f(1,0,1)}_{\not=0}-3\underbrace{f(-1,-1,0)}_{=0}\not=0$
+\end{enumerate}
+\item Sea $\mathcal{B}=\{(1,0,-1),(1,1,1),(2,2,0)\}$ una base de $\mathcal{C}^{3}.$
+Hallar la base dual de $\mathcal{B}$.\\
+\url{https://www.youtube.com/watch?v=KrU1UdmooFM} (Explica perfectamente
+cómo buscar la base dual).
+\item Sea $v_{1}=(1,0,-1,2)$ y $v_{2}=(2,3,1,1)$ y sea $W=\langle\{v_{1},v_{2}\}\rangle$.
+¿Qué funcionales lineales de la forma $f(x_{1},x_{2},x_{3},x_{4})=c_{1}x_{1}+c_{2}x_{2}+c_{3}x_{3}+c_{4}x_{4}$
+están en el anulador de W?\\
+\\
+Recordar $f(x,y,z,w)=ax+by+cz+dw$\\
+\\
+$f(1,0,-1,2)=a-c+2d=0\Rightarrow a-c+2d=0\Rightarrow a+2d=c\Rightarrow\boxed{-b+d=c}$\\
+$f(2,3,1,1)=2a+3b+c+d\Rightarrow0\Longrightarrow2a+3b+a+2d+d=0\Rightarrow3a+3b+3d=0\Rightarrow\boxed{a=-b-d}$\\
+\\
+$\begin{bmatrix}-b-d\\
+b\\
+-b+d\\
+d
+\end{bmatrix}=b\begin{bmatrix}-1\\
+1\\
+-1\\
+0
+\end{bmatrix}+d\begin{bmatrix}-1\\
+0\\
+1\\
+1
+\end{bmatrix}$\\
+\\
+O de otra forma: \\
+$\begin{bmatrix}1 & 0 & -1 & 2 & 0\\
+2 & 3 & 1 & 1 & 0
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & -1 & 2 & 0\\
+0 & 3 & 3 & -3 & 0
+\end{bmatrix}\rightarrow\begin{bmatrix}1 & 0 & -1 & 2 & 0\\
+0 & 1 & 1 & -1 & 0
+\end{bmatrix}$\\
+\\
+$a_{1}-a_{3}+2a_{4}=0\Rightarrow a_{1}-a_{3}+2a_{2}+2a_{3}=0\Rightarrow a_{3}+a_{1}+2a_{2}=0\Rightarrow a_{1}=-2a_{2}-a_{3}\Rightarrow$\\
+$a_{2}+a_{3}-a_{4}=0\Rightarrow a_{2}+a_{3}=a_{4}$\\
+\\
+$\begin{bmatrix}-2a_{2}-a_{3}\\
+a_{2}\\
+a_{3}\\
+a_{2}+a_{3}
+\end{bmatrix}=a_{2}\begin{bmatrix}-2\\
+1\\
+0\\
+1
+\end{bmatrix}+a_{3}\begin{bmatrix}-1\\
+0\\
+1\\
+1
+\end{bmatrix}$\\
+\\
+\\
+$W^{0}=\Bigg\{ f(x)=x\cdot c\mid c\in\Bigg\langle\begin{bmatrix}-2\\
+1\\
+0\\
+1
+\end{bmatrix},\begin{bmatrix}-1\\
+0\\
+1\\
+1
+\end{bmatrix}\Bigg\rangle\Bigg\}$\\
+\\
+\item Sea $V=\mathcal{M}_{2\times2}(\mathbb{R})$ y sean\\
+\linebreak{}
+\[
+B=\begin{bmatrix}2 & -2\\
+-1 & 1
+\end{bmatrix}\quad\quad\quad\quad\quad\quad C=\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}
+\]
+\\
+Sea W el subespacio de V que consiste de todas las matrices A tales
+que $AB=0$. Sea $f$, un funcional lineal sobre V que está en el
+anulador de W. Supongamos que $f(I)=0$ (I matriz identidad) y $f(C)=3$.
+Hallar $f(B)$.\\
+\\
+$W=\Big\{ A\in\mathbb{R}^{4}:\begin{bmatrix}a & b\\
+c & d
+\end{bmatrix}\begin{bmatrix}2 & -2\\
+-1 & 1
+\end{bmatrix}=\begin{bmatrix}0 & 0\\
+0 & 0
+\end{bmatrix}\Big\}$\\
+$\begin{cases}
+2a & =b\\
+2a & =b\\
+d & =2c\\
+2c & =d
+\end{cases}$\\
+\\
+$W=\Big\{\begin{bmatrix}a & 2a\\
+c & 2c
+\end{bmatrix}:a,c\in\mathbb{R}\Big\}$\\
+\\
+$f(W)=0$\\
+$f(I)=0$\\
+$f\Big(\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}\Big)=3;f\Big(\begin{bmatrix}1 & 0\\
+0 & 1
+\end{bmatrix}\Big)=0$\\
+\\
+$B=\begin{bmatrix}2 & -2\\
+-1 & 1
+\end{bmatrix}=\underbrace{\begin{bmatrix}-1 & -2\\
+-1 & -2
+\end{bmatrix}}_{=0}+3\underbrace{\begin{bmatrix}1 & 0\\
+0 & 1
+\end{bmatrix}}_{=0}=0$\\
+\\
+$f(B)=\Big(\begin{bmatrix}2 & -2\\
+-1 & 1
+\end{bmatrix}\Big)=f\Big(\underbrace{\begin{bmatrix}-1 & -2\\
+-1 & -2
+\end{bmatrix}}_{=0}+3\underbrace{\begin{bmatrix}1 & 0\\
+0 & 1
+\end{bmatrix}\Big)}_{=0}=0$\\
+\item Sean $W_{1}$ y $W_{2}$ subespacios de un espacio vectorial V de
+dimensión finita.
+\begin{enumerate}
+\item Probar que $(W_{1}+W_{2})^{0}=W_{1}^{0}\cap W_{2}^{0}$.
+\item Probar que $(W_{1}\cap W_{2})=W_{1}^{0}+W_{2}^{0}$
+\end{enumerate}
+\item Sea V un espacio vectorial de dimensión finita sobre $\mathbb{K}$
+y sea W un subespacio de V. Si $f$ es un funcional lineal sobre W,
+pruebe que existe un funcional lineal g sobre V tal que $g(v)=f(v),\forall v\in W$.\\
+\\
+Sea $B_{V}$ una base de V y $B_{W}$ una base de W tales que $B_{W}\subseteq B_{V}$.
+Toda transformación lnieal (en particular los funcionales lineales)
+queda determinada por como actúa sobre los vectores de la base, entonces
+podemos definir a $g(v)=f(v)$ para cada vector $B_{W}$ y $g(v)=0$
+para cada vector $B_{V}-B_{W}$.\\
+\\
+\end{enumerate}
+
+\end{document}

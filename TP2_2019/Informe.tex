@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tgheros}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\usepackage{enumerate}
+\usepackage[margin=0.5in]{geometry}
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=2.5cm]{unr.png}\par\vspace{1cm}
+	{\scshape \fontsize{8}{4} \selectfont {FACULTAD DE CIENCIAS EXACTAS, INGENIERÍA Y AGRIMENSURA} \par}
+	\vspace{1cm}
+	{\scshape\Huge Álgebra Lineal\par}
+	\vspace{1.5cm}
+	{\Large \bfseries TRABAJO PRÁCTICO Nº 2\par}
+\end{titlepage}
+\fontsize{15}{15}\selectfont
+\noindent
+{\huge \colorbox[rgb]{0.54,0.81,0.94}{Definiciones}} \\ \\
+\noindent
+\underline{Definición 1}. En un espacio vectorial de dimensión finita $n$, un subespacio de
+dimensión $n-1$ se llama hiperespacio o hiperplano o subespacio de codimensión $1$. \\ \\
+\underline{Definición 2}. Si $V$ es un espacio vectorial sobre $\mathbb{K}$ y $S$ es un subconjunto
+de $V$, el anulador de S es el conjunto $S^0$ de funcionales lineales sobre $V$ tales que 
+$f(v) = 0, \forall v \in S$. \\ \\
+\underline{Teorema 1}. Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo
+$\mathbb{K}$, y sea $W$ un subespacio de $V$ entonces $dim(W) + dim(W^0) = dim V$. \\ \\
+\underline{Colorario 1}. Si $W$ es un subespacio $k$-dimensional de un espacio vectorial $V$
+$n$-dimensional, entonces $W$ es la intersección de $(n-k)$ hiperplanos de $V$. \\ \\
+{\huge \colorbox[rgb]{0.54,0.81,0.94}{Demostración}} \\ \\
+\noindent
+Extendemos la base $\{w_1,...,w_k\}$ de $W$ a la base $\{w_1,...,w_k,v_1,...,v_{n-k}\}$ de $V$. \\
+Sea $H_j = \langle \{ w_1,...,w_k,v_1,...,v_{n-k} \setminus \{ v_j \} \} \rangle$ para $1 \leq j \leq n-k$. \\
+Notamos que cada $H_j$ es un subespacio de codimensión 1 de $V$ que contiene a $W$. \\ \\
+Además podemos ver que
+\[ W = H_1 \cap \dots \cap H_{n-k}\]
+Luego sea $\mathcal{U}$ un conjunto de subespacios de codimensión 1 de $V$ que contiene a $W$. Entonces \\
+\[W \subseteq \bigcap_{U \in \mathcal{U}}{U \subseteq H_1 \cap \dots \cap H_{n-k}} = W \] \\
+Por lo tanto
+\[ W = \bigcap_{U \in \mathcal{U}}{U}. \]
+
+
+
+\end{document}

@@ -1,0 +1,1 @@
+firefox 'INNER PRODUCT & ORTHOGONALITY.html'

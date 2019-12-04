@@ -1,0 +1,302 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{tgadventor}
+{\fontfamily{qag}\selectfont 
+
+\title{Álgebra Lineal}
+\date{Jun}
+
+\begin{document}
+
+\maketitle
+\section{Práctica 5}
+
+\subsubsection{1}
+\begin{enumerate}[a.]
+\item
+	Verificar que para $A = (a_{ij}), B = (b_{ij}) \in M_{n \times n}(\mathbb{K}),$
+	\[
+		\displaystyle \langle A,B \rangle = \sum_{i,j}{a_{ij}\overline{b}_{ij}},
+	\]
+es un producto interno (conocido como producto de Frobenius).
+	\\
+	$||u+v||^2 + ||u-v||^2 = 2(||u||^2+||v||^2)$
+\item
+\end{enumerate}
+
+\subsubsection{Dados $u,v \in V$ espacio vectorial con producto intetrno, probar que $u=v$ si y sólo si
+$\langle u,w \rangle = v \times w $ para todo $w \in V$.}
+
+\subsubsection{Sea $W$ un espacio vectorial con producto interno y $W$ un subespacio de $V$. Probar
+que $(W^\bot)^\bot = W$.}
+\begin{itemize}
+\item
+	$\subseteq:$ Sea $x \in (W^\bot)^\bot$, como $x \in V$ sabemos que podemos escribirlo como
+	$x = p+u$ con $p \in W$ y $u \in W^\bot$. Además $x \cdot u = 0$ es decir 
+	$(p+u) \cdot u = \underbrace{p \cdot u}_0 + u \cdot u = u \cdot u = 0 \Longleftrightarrow
+	u = 0$, por lo que $x = p \in W$.
+\item
+	$\supset:$ Sea $x \in W$, como $x \in W$ sabemos que podemos escribirlo como $x = p+u$ con
+	$p \in W^\bot$ y $u \in (W^\bot)^\bot$. Además $x \cdot p = 0$ es decir $(p+u) \cdot p =
+	p \cdot p + \underbrace{p \cdot 0}_0 = p \cdot p = 0 \Longleftrightarrow p = 0$, por lo que
+	$x = u \in (W^\bot)^\bot$.
+\end{itemize}
+\subsubsection{Sea $\mathbb{R}^{n \times n}$ con el producto interno definido en el ejercicio 17}
+\begin{enumerate}[1.]
+\item
+	Hallar una base ortogonal para $\mathbb{R}^{n \times n}$ para dicho producto interno. \\ \\
+	Sean $A = \begin{pmatrix}a&b\\c&d\end{pmatrix}$ y $B = \begin{pmatrix}w&x\\y&z\end{pmatrix}$, recordemos que
+	$\langle A,B \rangle = aw+bx+cy+dz$; luego la base estandar es una base ortogonal.
+\item
+	Hallar $W^\bot$, si $W = \Bigg \langle \Bigg \{ \begin{pmatrix}1&2\\0&-1\end{pmatrix}, 
+	\begin{pmatrix}1&0\\0&0\end{pmatrix} \Bigg \} \Bigg \rangle$
+\item
+\end{enumerate}
+\subsubsection{Sea $v = (a,b)$. Describir el conjunto $H$ de vectores $(x,y)$ que son ortogonales a $v$.}
+\[
+H = \{ (x,y)^T / (x,y)^T \cdot (a,b) = 0 \} = \{ (x,y) / xa + yb = 0 \}
+\]
+\subsubsection{Sea $W = \langle \{ v_1,\dots,v_p \} \rangle$. Mostrar que si $x$ es ortogonal a todo $v_j$,
+para $1 \leq j \leq p$, luego $x$ es ortogonal a todo vector en $W$.}
+Sea $v \in W / v = \alpha_1 v_1 + \dots + \alpha_p v_p$. \\ \\
+Luego $v \cdot x = (\alpha_1 v_1) \cdot x + \dots
++ (\alpha_p v_p) \cdot x = \alpha_1 \underbrace{(v_1 \cdot x)}_0 +\dots+\alpha_p \underbrace{(v_p \cdot x)}_0 = 0$. 
+\subsubsection{Mostrar que si $W \cap W^\bot$, entonces $x=0$.}
+
+\subsubsection{En cada caso, mostrar que $\{ u_1,u_2 \}$ o $\{ u_1,u_2,u_3\}$ es una base ortogonal
+para $\mathbb{R}^2$ o $\mathbb{R}^3$ respectivamente, y luego expresar a $x$ como combinación lineal
+de la base correspondiente.}
+\textbf{a}. $u_1 = \begin{pmatrix}2\\-3\end{pmatrix}, u_2 = \begin{pmatrix}6\\4\end{pmatrix},
+x = \begin{pmatrix}9\\-7\end{pmatrix}$. \\ \\ \\
+\textbf{b}. $u_1 = \begin{pmatrix}1\\0\\1\end{pmatrix}, u_2 = \begin{pmatrix}-1\\4\\1\end{pmatrix}, u_3 = \begin{pmatrix}2\\1\\-2\end{pmatrix}, x = \begin{pmatrix}8\\-4\\-3\end{pmatrix}$
+
+\subsubsection{Suponer que $W$ es un subespacio de $\mathbb{R}^n$ generado por $n$ vectores ortogonales distintos
+de 0. Explicar por que $W = \mathbb{R}^n$}
+
+Debemos ver que los $n$ vectores generan a $\mathbb{R}^n$. Ya sabemos que son $n$, nos resta ver que
+son linealmente independientes. Supongamos que no lo sean, luego uno de ellos puede expresarse como
+combinación lineal de los demás: $v_1 = \alpha v_2 + \beta v_3$. Ahora:
+\[
+(\alpha v_2 + \beta v_3)\cdot v_1 = (\alpha v_2) \cdot v_1 + (\beta v_2) \cdot v_1 = 
+\alpha (v_2 \cdot v_1) + \beta (v_2 \cdot v_1) = 0
+\]
+es decir $v_1 \cdot v_1 = 0 \Longleftrightarrow v_1 = 0$. Contradicción.
+
+\subsubsection{Sean $U,V$ matrices ortogonales. Explicar por que $UV$ es una matriz ortogonal.}
+Sea $U,V$ matrices ortogonales entonces sabemos que vale $U^{-1} = U^T$ y $V^{-1} = V^T$ \\ \\
+Luego
+\[
+(UV)^t = V^tU^t = V^{-1}U^{-1}
+\]
+Es decir, $(UV)^t = (UV)^{-1}$
+
+\subsubsection{Sea $\{ u_1,u_2 \}$ un conjunto ortogonal de vectores distintos de cero y $c_1,c_2$ 
+escalares no nulos. Mostrar que $\{ c_1 u_1, c_2 u_2\}$ también es ortogonal.}
+Como $\{ u_1,u_2\}$ es un conjunto ortogonal entonces sabemos que $u_1 \cdot u_2 = 0$. \\
+Tenemos que probar que $c_1 u_1 \cdot c_2 u_2 = 0$ \\
+COMPLETAR
+\subsubsection{Dado $0 \not = u \in \mathbb{R}^n$ y sea $L = \langle \{ u \}\rangle$. Para $y \in \mathbb{R}^n$,
+la reflexión de $y$ en $L$ se define como: }
+\[
+{ref}_L y = 2 {proy}_L y - y
+\]
+\begin{enumerate}[a.]
+\item
+	Graficar en $\mathbb{R}^2$ para observar que la ${ref}_L y $ es la suma de $\displaystyle
+	\mathop{y}^\wedge = {proy}_L y$ con $\displaystyle \mathop{y}^\wedge - y$
+\item
+	Mostrar que la aplicación $y \rightarrow {ref}_L y$ es una transformación lineal.
+\end{enumerate}
+
+\subsubsection{Sean}
+\[
+u_1 = \begin{pmatrix}0\\1\\-4\\-1\end{pmatrix}, u_2 = \begin{pmatrix}3\\5\\1\\1\end{pmatrix},
+u_3 = \begin{pmatrix}1\\0\\1\\-4\end{pmatrix}, u_4 = \begin{pmatrix}5\\-3\\-1\\1\end{pmatrix},
+x = \begin{pmatrix}10\\-8\\2\\0\end{pmatrix}
+\]
+Escribir $x$ como suma de dos vectores, uno en $\langle \{ u_1,u_2,u_3 \} \rangle$ y otro en 
+$\langle \{ u_4 \} \rangle$ \\ \\
+$x = ( -\frac{8}9 u_1 - \frac{2}9 u_2 + \frac{2}3 u_3)+2u_4$
+\subsubsection{Sea $W$ el subespacio generado por}
+$v_1 = \begin{pmatrix}3\\1\\-1\\1\end{pmatrix}, v_2 = \begin{pmatrix}1\\-1\\1\\-1\end{pmatrix}$
+\begin{enumerate}[a.]
+\item
+	Si $y = (3,1,5,1)$, escribirlo como la suma de un vector en $W$ y uno en $W^\bot$. \\
+	Sean $v_3 = \begin{pmatrix}0\\0\\1\\1\end{pmatrix}$ y $v_4 = \begin{pmatrix}0\\1\\1\\0\end{pmatrix}$,
+	veamos que ambos pertenecen a $W^\bot$. Sean $x \in W / x = \alpha v_1 + \beta v_2$, luego
+	$x \cdot v_3 = \alpha(\underbrace{v_1 \cdot v_3}_{= 0}) + \beta (\underbrace{v_2 \cdot v_3}_{= 0})
+	 = \alpha 0 + \beta 0 = 0$ y análogamente
+	para $v_4$. Finalmente $y = \Big(\dfrac{1}2 v_1 + \dfrac{3}2 v_2 \Big) + (2 v_3 + 2v_4)$
+\item
+	Si $y = (3,-1,1,13)$, encontrar el punto más cercano a $y$ en $W$. \\
+	Observemos que $y = \underbrace{(\dfrac{5}3 v_1 - \dfrac{14}3 v_2)}_{\displaystyle =y} + 
+	\underbrace{(\dfrac{28}3 v_3 - \dfrac{14}3 v_4)}_{= \displaystyle \mathop{y}^\wedge}$, luego el
+	punto más cercano es $\Big (\dfrac{1}3,\dfrac{19}3,-\dfrac{19}3,\dfrac{19}3 \Big )$
+\item
+	Si $y = (2,4,0,1)$ encontrar la mejor aproximación a $y$ mediante vectores de la forma
+	$c_1v_1 + c_2v_2$. Hallar la distancia de $y$ a $W$. \\
+\end{enumerate}
+
+\subsubsection{Sean $y = [4,8,1]^t$, $u_1 = [\frac{2}3,\frac{1}3,\frac{2}3],u_2 = [ -\frac{2}3, \frac{2}3,\frac{1}3 ]^t$
+y $W = \langle \{ u_1 , u_2 \} \rangle$}
+\begin{enumerate}[a.]
+\item
+	Sea $U = [u_1,u_2]$. Calcular $U^tU$ y $UU^t$
+\item
+	Calcular ${proy}_W y$ y $(UU^t)y$
+\end{enumerate}
+\subsubsection{Sea $A$ una matriz $m \times n$. Demostrar que todo vector $x \in \mathbb{R}^n$ puede escribirse en la forma
+$x = p+u$, donde $p$ está en $\mathcal{F}(A)$ y $u \in \mathcal{N}(A)$. Mostrar que si la ecuación $Ax = b$ es consistente,
+entonces hay una única $p$ en $\mathcal{F}(A)$ tal que $Ap = b$.}
+
+\subsubsection{Sea $W$ un subespacio de $\mathbb{R}^n$ con una base ortogonal $\{ w_1,\dots,w_p \}$ y sea 
+$\{ v_1,\dots,v_q \}$ una base ortogonal de $W^\bot$.}
+\begin{enumerate}[a.]
+\item
+	Explicar por qué $\{ w_1,\dots,w_p,v_1,\dots,v_q \}$ es un conjunto ortogonal. \\ \\ \\
+	Para $w_i$ y $w_j$ sabemos que $w_i \cdot w_j = 0$ por ser $\{ w_1,\dots,w_p \}$ un conjunto ortogonal y análogamente
+	para $v_i,v_j$. \\ \\ Para $w_i$ y $v_j$, como $v_j \in W^\bot$ significa que $v_j \cdot w = 0$ para cualquier $w \in W$,
+	en particular para cualquier $w_i$. 
+\item
+	Explicar por qué el conjunto definido en el ítem anterior genera $\mathbb{R}^n$. \\ \\ 
+\item
+	Demostrar que $dim(W)+dim(W^\bot)=n = dim(V)$ \\ \\
+	Sean $\beta = \{ w_1,w_2,\dots,w_k \}$ y $\gamma = \{ x_1,x_2,\dots,x_m \}$ bases de $W$ y $W^\bot$
+	respectivamente. Bastaría con probar que
+	\[
+	\beta \cup \gamma = \{ w_1,w_2,\dots,w_k,x_1,x_2,\dots,x_m  \}
+	\]
+	es una base para $V$. Dado $v \in V$, entonces sabemos que $v = v_1+v_2$ para algún $v_1 \in W$ y 
+	$v_2 \in W^\bot$. Además como $\beta$ y $\gamma$ son bases para $W$ y $W^\bot$ respectivamente,
+	entonces existen escalares $a_1,a_2,\dots,a_k,b_1,b_2,\dots,b_m$ tal que
+	$v_1 = \sum_{i=1}^{k}{a_iw_i}$ y $v_2 = \sum_{j=1}^{m}{b_jx_j}$. Por lo tanto
+	\[
+	v = v_1+v_2 = \sum_{i=1}^{k}{a_iw_i} + \sum_{j=1}^{m}{b_jx_j},
+	\]
+	Se sigue que $\beta \cup \gamma$ genera a $V$. Ahora, mostraremos que $\beta \cup \gamma$ es
+	linealmente independiente. \\
+	Dados $c_1,c_2,\dots,c_k,d_1,d_2,\dots,d_m$ tal que
+	$\displaystyle \sum_{i=1}^{k}{c_iw_i} + \sum_{j=1}^{m}{d_jx_j} = 0$, entonces 
+	$\displaystyle \sum_{i=1}^{k}{c_iw_i} = - \sum_{j=1}^{m}{d_jx_j}$ \\
+	Entonces $\displaystyle \sum_{i=1}^{k}{c_iw_i} \in W \cap W^\bot$ y 
+	$\displaystyle \sum_{j=1}^{m}{d_jx_j} \in W \cap W^\bot$. \\
+	Pero como $W \cup W^\bot = \{ 0\}$ (dado $x \in W \cap W^\bot$, tenemos que $\langle x,x \rangle = 0$)
+	y por lo tanto $x = 0$), tenemos que $\displaystyle \sum_{i=1}^{k}{c_iw_i} = \sum_{j=1}^{m}{d_jx_j} = 0$.
+	Por consiguiente $c_i = 0$ y $d_j = 0$ para cada $i,j$ ya que $\beta$ y $\gamma$ son bases de $W$
+	y $W^\bot$ respectivamente. \\ \\
+	Luego concluímos que $\beta \cup \gamma$ es linealmente independiente.
+\end{enumerate}
+
+\subsubsection{Siendo}
+$u = \begin{pmatrix}3\\0\\-1\end{pmatrix}$ y $v = \begin{pmatrix}8\\5\\-6\end{pmatrix}$, usar el proceso de
+Gram-Schmidt para producir una base ortogonal de $\langle \{ u,v \} \rangle$
+\subsubsection{}
+\begin{enumerate}[a.]
+\item
+	Verificar que $\displaystyle A \times B = \sum_{i,j}{A_{ij}B_{ij}}$ es un producto 
+	interno en $\mathbb{R}^{n \times n}$
+	(conocido como producto de Frobenius).
+	\begin{itemize}
+	\item
+		$\displaystyle (A+B) \times C = \sum_{i,j}({A_{ij}+B_{ij}})C_{ij} = 
+		\sum_{i,j}{(A_{ij}C_{ij}+B_{ij}C_{ij})} =  \\
+		= \sum_{i,j}{A_{ij}C_{ij}} + \sum_{i,j}{B_{ij}C_{ij}} = A \times C + B \times C$.
+	\item
+		$\alpha A \times B = \sum_{i,j}{\alpha A_{ij}B_{ij}} = \alpha \sum_{i,j}{A_{ij}B_{ij}} = 
+		\alpha (A \times B)$.
+	\item
+		$A \times B = \sum_{i,j}{A_{ij}B_{ij}} = \sum_{i,j}{B_{ij}A_{ij}} = B \times A$
+	\item
+		$A \times A = \sum_{i,j}{A_{ij}A_{ij}} = \underbrace{\sum_{i,j}{A_{ij}^2}}_{\geq 0} \geq 0$ y claramente
+		$A \times A = 0 \Longrightleftarrow A = 0$.
+	\end{itemize}
+
+\item
+	Probar que $A \times B = tr(AB^T)$. \\
+	$\displaystyle tr(AB^T) = \sum_{i=1}^{n}{(AB^T)_{ii}} = \sum_{i=1}^{n}{\sum_{j=1}^{m}{A_{ij}{B^T}_{ji}}}
+	=  \sum_{i=1}^{n}{\sum_{j=1}^{m}{A_{ij}{B}_{ij}}} = A \times B$
+\item
+	Probar que $AB \times C = B \times A^t C$. \\
+	$\displaystyle \sum_{i=1}^{n}{(AB)_iC_i} = \sum_{i=1}^{n}{( \sum_{k=1}^{n}{A_{ij}B_{ji}} )C_i} 
+	= $
+	
+\end{enumerate}
+
+\subsubsection{Verificar que $\displaystyle f \times g = \int_{1}^{e}{log(x)f(x)g(x) dx}$ es un producto interno en
+$\mathcal{C}([1,e])$}
+
+\subsubsection{Dados $u,v \in V$ espacio vectorial con producto interno, probar que $v=w$ si y sólo si 
+$u \times v = u \times w \quad \forall w \in V$.}
+\centerline{$u \cdot v = u \cdot w $}
+\centerline{$u \cdot v - u \cdot w = 0$}
+\centerline{$u \cdot (v -w ) = 0$}
+Si $u \cdot v = u \cdot w$ para todo $u$ (equivalentemente $u \cdot (v-w) = 0)$, entonces con $u=v-w$,
+tenemos que $||v-w||^2 = (v-w) \cdot (v-w) = 0$. Por lo tanto $v=w$.
+\subsubsection{Demostrar.}
+\begin{enumerate}[i.]
+\item
+	Un vector $v \in W^\bot$ si y sólo si $v$ es ortogonal a todo vector en un conjunto que generae a $W$.
+	$v \in W^\bot$ if and only if v is orthogonal forall v that spams W $\implies$
+
+
+
+
+
+
+
+
+
+
+
+\item
+	$W^\bot$ es un subespacio vectorial de $V$.
+\end{enumerate}
+\subsubsection{Sea $V$ un espacio vectorial con producto interno y $W$ un subespacio de $V$. Probar que
+$(W^\bot)^\bot = W$}
+\begin{itemize}
+\item
+	$(\subseteq)$: Sea $x \in (W^\bot)^\bot$, como $x \in V$ sabemos que podemos escribirlo como 
+	$x = p+u$ con $p \in W$ y $u \in W^\bot$. Además $x \cdot u = 0$ es decir
+	 $(p+u)\cdot u = p \cdot u + u \cdot u = u \cdot u = 0 \Longrightarrow u = 0$, por lo que
+	$x = p \in W$.
+\item
+	$(\supset)$: Sea $x \in W$, como $x \in V$ sabemos que podemos escribirlo como $x = p+u$
+	con $p \in W^\bot$ y $u \in (W^\bot)^\bot$. Además $x \cdot p = 0$ es decir $(p+u)\cdot p =
+	p \cdot p = \underbrace{p \cdot u}_{= 0} = p \cdot p = 0 \Longleftrightarrow p = 0$, por lo
+	que $x = u \in (W^\bot)^\bot$.
+\end{itemize}
+\subsubsection{Sea $\mathbb{R}^n$ con el producto interno definido en el ejercicio anterior.}
+\begin{enumerate}[ a) ]
+\item
+	Hallar una base ortogonal para $\mathbb{R}^{n \times n}$ para dicho producto interno. \\ \\
+	Sean $A = \begin{pmatrix} a&b\\c&d \end{pmatrix}$ y $B =  \begin{pmatrix} w&x\\y&z\end{pmatrix}$,
+	recordemos que $\langle A,B \rangle = aw + bx + cy +dz$; luego la base estandar es una base
+	ortogonal.
+\item
+	Hallar $W^\bot$, si $W = \Big\langle \Big\{ \begin{pmatrix}1&2\\0&-1\end{pmatrix},
+	\begin{pmatrix} 1&0\\0&0 \end{pmatrix} \Big\} \Big\rangle \subset \mathbb{R}^{2 \times 2}$ \\ \\
+	
+\item
+	Idem para $W = \Bigg\{ \begin{pmatrix} a&b&c\\0&0&0\\0&0&0 \end{pmatrix}: a,b,c \in \mathbb{R} \Bigg\}$
+\end{enumerate}
+Esto es lo que representa la multiplicacion de matrices. \\ \\ \\
+$AB = C$ \\ \\ 
+$\displaystyle c_{ij} = \sum_{k=1}^{n}{a_{ik} b_{kj}}$ \\ \\ \\ \\
+$\displaystyle c_{1,1} = \sum_{k=1}^{n}{a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}}$ \\ \\
+$\displaystyle c_{2,2} = \sum_{k=1}^{n}{a_{21}b_{} + a_{}b_{} + a_{}b_{}}$
+
+
+
+
+
+
+
+
+
+}
+\end{document}

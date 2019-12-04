@@ -1,0 +1,71 @@
+%% LyX 2.3.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{babel}
+\begin{document}
+
+\subsection*{Álgebra Lineal Final Teórico}
+\begin{itemize}
+\item Conjuntos linealmente independientes:\\
+Un conjunto es linealmente independiente si $a_{1}v_{1}+a_{2}v_{2}+\cdots+a_{n}v_{n}=0\Rightarrow a_{1}=\cdots=a_{n}=0$.
+\item Suma directa\\
+\\
+La suma de dos subespacios es directa si y sólo si la intersección
+de los subespacios es el vector nulo.\\
+Sean $U_{1}$ y $U_{2}$ subespacios de V, luego las siguientes proposiciones
+son equivalentes:
+\begin{itemize}
+\item $V=U_{1}\bigoplus U_{2}$
+\item $V=U_{1}+U_{2}$ y $0=u_{1}+u_{2}\Rightarrow u_{1}=u_{2}=0$
+\item $V=U_{1}+U_{2}$ y $U_{1}\cap U_{2}=\{0\}$
+\end{itemize}
+\item Demostrar que S es LI si y sólo si el generado de S es suma directa
+de los espacios generados de los vectores de S.\\
+Sea $S=\{s_{1},\cdots,s_{n}\}$
+\begin{itemize}
+\item $\Rightarrow$ Supongo que $S$ es un conjunto linealmente independiente
+entonces existen vectores $s_{1},\cdots,s_{n}\in S$ distintos y escalares
+$a_{1}+\cdots+a_{n}$\textcolor{purple}{{} }tales que $a_{1}s_{1}+\cdots+a_{n}s_{n}=0\Rightarrow a_{1}=\cdots=a_{n}=0$.\\
+Luego se cumple que $s_{i}+s_{j}=0\Rightarrow s_{i}=s_{j}=0,con\ i\not=j$,
+por lo tanto se cumple que $\langle S\rangle=\sum_{s\in S}\alpha_{s}s$.
+\item $\Leftarrow$ Supongo que S es suma directa de los espacios generados
+de los vectores de S.\\
+Entonces se cumple que $s_{1}+\cdots+s_{n}=0\Rightarrow s_{1}=\cdots=s_{n}=0$
+por lo tanto S es un conjunto linealmente independiente.
+\end{itemize}
+\item Lema de Schur\\
+\\
+Sea V un espacio vectorial sobre $\mathbb{K}$ y sea $S=\{U_{1},\cdots,U_{n}\}$
+un conjunto de operadores de $V$. Si $V$ es un S-espacio simple
+y $T:V\rightarrow V$ una transformación lineal tal que $TU_{i}=U_{i}T$
+para toda $U_{i}\in S$, entonces $T$ es invertible o $T$ es la
+aplicación nula.\\
+\textbf{Demostración}\\
+\\
+Supongamos $T\not=0$. Por la proposición 1 sabemos que $img(T)$
+y $nul(T)$ son subespacios invariantes. Además como V es un S-espacio
+simple sus únicos subespacios invariantes son V y $\{0\}$ por lo
+que $img(T)=V$ y $nul(T)=\{0\}$. Esto implica que $T$ es sobreyectiva
+e inyectiva, luego es invertible.
+\item Proceso de Gram-Schmidt
+\item Teoremas de Pitágoras
+\item Producto Interno
+\item Teorema de Jordan
+\item Definición de matrices semejantes
+\item Definición de polinomio característico
+\item Definición de autovalor, autovector
+\item Condición necesaria y suficiente para diagonalizar una matriz.
+\item Probar que los autovalores de dos matrices semajantes son iguales.
+\item A inversible$\Rightarrow N(A)={0}$, las columnas son linealmente
+independientes, el determinante distinto a 0.
+\item Teorema de descomposición ortogonal
+\item Sea V un espacio vectorial, $T:V\rightarrow V$. Definir cuando un
+espacio V es cíclico (enunciar todo lo necesario para dar la definición).
+\item Definir base de Jordan y demostrar que es base.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,2 @@
+La cursé en el 2019, con <a href="https://www.fceia.unr.edu.ar/~elina/">Elina</a>
+hay muchos ejercicios hechos por /damianarielm, yo escribí nuevos pdfs para repasar simplemente cuando no tenía ganas de escribir en una hoja, y los que no me salían miraba la solución, todo el trabajo que está acá sobre ejercicios no es todo mio. Agregué un apunte de ortogonalidad que encontré que tiene las mismas consignas que nuestra práctiac.

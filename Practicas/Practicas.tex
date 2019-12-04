@@ -1,0 +1,2909 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{tgadventor}
+{\fontfamily{qag}\selectfont 
+
+\title{Álgebra Lineal - Práctica}
+\date{Terminando Abril}
+
+\begin{document}
+
+\maketitle
+\section{Prácticas}
+\subsection{Espacios Vectoriales - P2}
+Repasamos lo que era un \textbf{espacio vectorial}: \\
+Sea $V$ un conjunto no vacío de objetos llamados elementos, $\mathbb{K}$ un cuerpo de escalares y las
+operaciones: \\ \\
+\hspace*{1cm} $+: V \times V \rightarrow V \hspace*{0.5cm} \cdot: \mathbb{K} \times V \rightarrow V$ \\
+\hspace*{1.5cm} $(u,v) \rightarrow u+v \hspace*{0.5cm} (\alpha,u) \rightarrow \alpha u$ \\
+decimos que $(V,\mathbb{K},+,.)$ es un espacio vectorial si satisface los siguientes axiomas: \\
+\begin{itemize}
+\item Axiomas para la suma: 5 axiomas
+\item Axiomas para el producto por escalares: 3 axiomas
+\item Propiedades distributivas: 2 axiomas
+\end{itemize}
+\textbf{Modelo a seguir:} 
+\begin{enumerate}
+\item El conjunto de números reales positivos ($\mathbb{R}^+$), con la suma $x+y$ definida como $x \cdot y$ \\
+y el producto $cx$ como $x^c$. \\
+	$(\mathbb{R}^+,+,\cdot)$ donde \\ 
+	\hspace*{3cm}$x+y = x \cdot y \forall x,y \in \mathbb{R}^+$ \\
+	\hspace*{3cm}$cx = x^c \forall x \in \mathbb{R}^+, \forall c \in \mathbb{R}$  \\ \\
+	Ahora vamos a verificiar los 10 axiomas para probar que es un espacio vectorial.
+	\begin{itemize}
+	\item
+		Sea $x,y \in \mathbb{R}^+ \Rightarrow x+y \in \mathbb{R}^+?$ \\
+		$x+y \underbrace{=}_{def.} x \cdot y \in \mathbb{R}^+$
+	\item
+		Sea $\alpha \in \mathbb{R}, x \in \mathbb{R}^+ \Rightarrow \alpha \cdot x \in \mathbb{R}^+?$ \\
+		$\alpha \cdot x \underbrace{=}_{def.} x^\alpha \underbrace{=}_{prop.} e^{ln(x^\alpha)} = e^{\alpha \cdot ln(x)} \in \mathbb{R}^+$
+	\item Así con los siguientes axiomas.
+	\end{itemize}
+\end{enumerate}
+
+
+
+\subsubsection{Analizar si los siguientes conjuntos con las operaciones definidas son un espacio vectorial.}
+
+
+
+
+
+
+
+
+\begin{enumerate}[1.]
+
+
+
+
+
+
+
+
+\item \textbf{El conjunto de los números reales positivos ($\mathbb{R}^+$), con la suma y el producto por 
+escalar usuales.} \\ \\
+
+
+	\begin{enumerate}[(1)]
+		\item
+			Cerrado bajo la suma: \\ \\
+			Sea $u,v \in \mathbb{R}^+ \Rightarrow u+v \in \mathbb{R}^+?$ \\ \\
+			$\underbrace{u}_{\in \mathbb{R}^+} + \underbrace{v}_{\in \mathbb{R}^+} \in \mathbb{R}^+$
+		\item
+			Asociatividad de la suma: \\ \\
+			Sea $u,v,w \in \mathbb{R}^+ \Rightarrow u+(v+w) = (u+v)+w?$ \\ \\ 
+			$u+(v+w) \underbrace{=}_{Asoc. de +} u+v+w \underbrace{=}_{Asoc.+} (u+v)+w$
+		\item
+			Conmutatividad de la suma: \\ \\
+			Sea $u,v \in \mathbb{R}^+ \Rightarrow u+v = v+u$ \\ \\
+			$u+v \underbrace{=}_{conm.de +} u+v$
+		\item 
+			Elemento neutro de la suma: \\ \\
+			Sea $v \in \mathbb{R}^+ \Rightarrow \exists \emptyset \in \mathbb{R}^+ / v+\emptyset = v?$ \\ \\
+			Tomando $\emptyset = 0$, tenemos que: 
+			$v+\emptyset \underbrace{=}_{def.\emptyset} v+0 \underbrace{=}_{def.+} v$
+		\item
+			Elemento opuesto de la suma: \\ \\
+			Sea $v \in \mathbb{R}^+ \Rightarrow \exists q \in \mathbb{R}^+ / v+q = \emptyset?$ \\ \\
+			Tomando $q=-v$, tenemos que: 
+			$v +q \underbrace{=}_{def.q} v + (-v) \underbrace{=}_{Arit.} v - v \underbrace{=}_{def. -} \emptyset$ \\
+		\item
+			Cerrado bajo el producto: \\ \\
+			Sea $\alpha \in \mathbb{R}$ y $v \in \mathbb{R}^+ \Rightarrow \alpha v \in \mathbb{R}^+$? \\ \\
+			Si $\alpha \geq 0 \Longrightarrow \alpha v \in \mathbb{R}^+$ \\
+			Si $\alpha < 0 \Longrightarrow (1/\alpha)v \in \mathbb{R}^+$
+		\item
+			Asociatividad del producto: \\ \\ 
+			$\alpha \beta)v = \alpha( \beta v)?$ \\ \\
+			$(\alpha \beta)v = \alpha ( \beta v)$
+		\item
+			Elemento neutro del producto: \\ \\
+			Sea $v \in \mathbb{R}^+$, $ \Rightarrow \exists s \in \mathbb{R} s.v = v?$ \\ \\
+			Tomando $s = 1$, tenemos que, $s.v \underbrace{=}_{def. s} 1.v = v $
+		\item
+			Del producto respecto de la suma de vectores: \\ \\
+			Sea $\alpha \in \mathbb{R}$ y $u,v \in \mathbb{R}^+ \Rightarrow \alpha(u+v) = \alpha u + \alpha v?$\\ \\
+			$\alpha(u+v) = \alpha u + \alpha v$
+		\item
+			Del producto respecto de la suma de escalares: \\ \\
+			$(\alpha + \beta) v = \alpha v + \beta v?$ \\ \\
+			$(\alpha + \beta)v \underbrace{=}_{distr.respect.+} \alpha v + \beta v $
+	\end{enumerate}
+
+
+\item \textbf{El conjunto de números reales positivos ($\mathbb{R}^+$), con la suma $x+y$ definida como $x \cdot y$ \\
+y el producto $cx$ como $x^c$.} \\
+
+Sea $(\mathbb{R}^+,+,\cdot)$ donde: \\
+\hspace*{3cm} $x+y = x \cdot y$, $\forall x,y \in \mathbb{R}^+$ \\
+\hspace*{3cm} $cx = x^c$, $\forall c \in \mathbb{K}, \forall x \in \mathbb{R}^+$ \\
+Comenzaremos probando los 10 axiomas: \\ 
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $x,y \in \mathbb{R}^+ \Rightarrow x+y \in \mathbb{R}?$ \\
+	$x+y \underbrace{=}_{def.} x \cdot y \in \mathbb{R}^+$
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $u,v,w \in \mathbb{R}^+ \Rightarrow u+(v+w) = (u+v)+w?$ \\ \\
+	$u+(v+w) \underbrace{=}_{def.} u + (v \cdot w) = u \cdot ( v \cdot w) = u \cdot v \cdot w$ \\
+	$(u+v)+w = (u \cdot v) + w = (u \cdot v ) \cdot w = u \cdot v \cdot w$
+
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $u,v \in \mathbb{R}^+ \Rightarrow u+v = v+u$ \\ \\
+	$u+v \underbrace{=}_{def.+} uv \underbrace{=}_{conm. del prod.} vu = v+u$
+
+\item
+	Elemento neutro de la suma: \\ \\
+	Sea $v \in \mathbb{R}^+ \Rightarrow \exists! \emptyset \in \mathbb{R}^+ / v+\emptyset = v?$ \\ \\
+	Sea $\emptyset = 1$, entonces tenemos que: \\ 
+	$v + \emptyset \underbrace{=}_{def.\emptyset} v + 1 \underbrace{=}_{def.+} v.1 \underbrace{=}_{Arit.} v$
+\item
+	Elemento opuesto de la suma: \\ \\
+	Sea $v \in \mathbb{R}^+ \Rightarrow \exists q \in \mathbb{R}^+ / v + q = \emptyset?$ \\ \\
+	Tomando $q = \displaystyle \frac{1}{v}$, entonces tenemos que: \\ \\
+	$v + q \underbrace{=}_{def.q} v + (1/v)  \underbrace{=}_{def.+} v \cdot (1/v) \underbrace{=}_{Arit.} 1$
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $v \in \mathbb{R}^+, \alpha \in \mathbb{K} \Rightarrow \alpha v \in \mathbb{R}^+$ \\ \\
+	$\alpha v = v^{\alpha} \in \mathbb{R}^+$, pues: \\ \\
+	Si tomamos $\alpha \geq 0 \Rightarrow v^{\alpha} \in \mathbb{R}^+$ \\
+	Si tomamos $\alpha < 0 \Rightarrow 1/(v^\alpha) \in \mathbb{R}^+$ 
+\item
+	Asociatividad del producto: \\ \\
+	Sea $v \in \mathbb{R}^+$ y $\alpha,\beta \in \mathbb{R} \Rightarrow (\alpha \beta)v = \alpha(\beta v)?$ \\ \\
+	$(\alpha \beta)v \underbrace{=}_{def. \cdot} (\beta^{\alpha})v \underbrace{=}_{def. \cdot} v^{\beta^\alpha} 
+	\underbrace{=}_{Arit.} \alpha v^\beta \underbrace{=}_{def. \cdot} \alpha (\beta v) $\\
+\item
+	Elemento neutro del producto: \\ \\
+	Sea $v \in \mathbb{R}^+ \Rightarrow \exists s \in \mathbb{R} / sv = v ?$ \\ \\
+	Tomando $s = 1$ tenemos que: \\
+	$sv \underbrace{=}_{def.s} 1.v \underbrace{=}_{def.\cdot} v^1 \underbrace{=}_{Arit.} v$
+\item
+	Del producto respecto de la suma de vectores: \\ \\
+	Sea $\alpha \in \mathbb{R}$, $u,v \in \mathbb{R}^+ \Rightarrow \alpha(u+v) = \alpha u + \alpha v?$ \\ \\
+	$\alpha (u+v) = \alpha ( uv ) = (uv)^\alpha = u^\alpha \cdot v ^ \alpha $ \\
+	$\alpha u + \alpha v \underbrace{=}_{def \cdot} u^\alpha + v^\alpha = u^\alpha \cdot v ^\alpha $
+\item
+	Del producto respecto de la suma de escalares: \\ \\
+	Sea $\alpha, \beta \in \mathbb{R}$ y $v \in \mathbb{R}^+ \Rightarrow (\alpha + \beta)v = \alpha v + \beta v?$ \\ \\
+	$(\alpha + \beta)v \underbrace{=}_{def.+} (\alpha \beta)v \underbrace{=}_{def \cdot} v^{\alpha \beta} \underbrace{=}_{prop \cdot en R} v^{\alpha + \beta}
+	 \not = v^\alpha v^\beta \underbrace{=}_{def \cdot} v^\alpha + v^\beta \underbrace{=}_{def +} \alpha v + \beta v$ \\
+\end{enumerate}
+Luego V no es un espacio vectorial, ya que no cumple el último axioma.
+
+
+
+
+\item \textbf{El conjunto de las funciones pares, con la suma y producto por escalar usuales.} \\
+
+Función par: $f(x) = f(-x), \forall x \in \mathbb{R}$ \\ \\
+
+Sea $(Fp,+,\cdot)$, donde
+
+\hspace*{3cm} $Fp = \lbrace f / $f es par$ \rbrace$ \\
+\hspace*{3cm} $x+y = x+y$ \\
+\hspace*{3cm} $cx = cx$ \\ \\
+Probaremos los 10 axiomas: 
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $f,g \in Fp \Rightarrow f+g \in Fp?$ \\ \\
+	$(f+g)(x) = f(x)+g(x) = f(-x) + g(-x) = (f+g)(-x)$
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $f,g,h \in Fp \Longrightarrow f+(g+h) = (f+g)+h?$ \\ \\
+	$(f+(g+h))(x) = f(x) + (g+h)(x) = f(x) + g(x) + h(x) = (f+g)(x) + h(x) = f(x) + g(x) + h(x)$ \\
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $f,g \in Fp \Longrightarrow (f+g)(x) = (g+f)(x)?$\\ \\
+	$(f+g)(x) = f(x) + g(x) = g(x) + f(x) = (g+f)(x)$ \\
+\item
+	Elemento neutro de la suma: \\ \\
+	Sea $f \in Fp \Longrightarrow \exists! \emptyset \in Fp / f + \emptyset = f?$ \\ \\
+	Tomamos a $\emptyset$ como $g(x) = 0, \forall x$ \\
+	$f + \emptyset = f + 0 = f$
+\item
+	Elemento opuesto de la suma: \\ \\
+
+
+\end{enumerate}
+
+\item \textbf{El conjunto de las funciones continuas, con el producto cf definido como (cf)(x) = f(cx) y
+la suma habitual de funciones.} \\ \\
+
+$Fc = \lbrace f / $f es una función continua$ \rbrace$
+
+
+\begin{enumerate}[(1)]
+\item
+
+	Cerrado bajo la suma: \\ \\ 
+	Sea $f,g \in Fc \Rightarrow f+g \in Fc?$ \\ \\
+	O sea la suma de dos funciones continuas, ¿es una función continua?\\
+	$(f+g)(x) = f(x) + g(x) \in Fc$
+
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $f,g,h \in Fc \Rightarrow (f+(g+h))(x) = ((f+g)+h)(x)$ \\ \\
+	$(f+(g+h))(x) = f(x) + (g+h)(x) = f(x) + g(x) + h(x) = (f+g)(x) + h(x) = ((f+g)+h)(x)$ \\
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $f,g \in Fc \Rightarrow (f+g)(x) = (g+f)(x)?$ \\ \\
+	$(f+g)(x) = f(x)+g(x) = (g+f)(x)$
+\item
+	Elemento neutro de la suma: \\ \\
+	Sea $f \in Fc$ y $s \in Fc \Rightarrow (f+s)(x) = f(x)$  \\ \\
+	Tomando $s = \lbrace g / g(x) = 0 \rbrace$, entonces tenemos que \\ \\
+	$(f+s)(x) \underbrace{=}_{def.s} (f+g)(x) = f(x)+g(x) \underbrace{=}_{def.g} f(x)$
+\item
+	Elemento opuesto de la suma: \\ \\
+	Sea $f \in Fc \Rightarrow \exists g \in Fc / (f+g)(x) = s?$ \\ \\ 
+	Tomando $g(x) = -f(x)$, tenemos que \\ \\
+	$(f+g)(x) \underbrace{=}_{def.g} = (f+(-f)(x)) = f(x) - f(x) = s$ \\ 
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $f \in Fc, \alpha \in \mathbb{R} \Rightarrow \alpha f \in Fc?$ \\ \\
+	$(\alpha f)(x) \underbrace{=}_{def.prod.} f(\alpha x) \in Fc$
+\item
+	Asociatividad del producto: \\ \\
+	Sea $\alpha, \beta \in Fc$ y $f \in Fc \Rightarrow ((\alpha \beta)f)(x) = (\alpha ( \beta f))(x) ?$ \\ \\
+	$(\alpha(\beta f))(x) = (\alpha (f(\beta x)) = f((\alpha \beta) x)$ \\
+	$((\alpha \beta) f))(x) = f((\alpha \beta)x)$
+\item
+	Elemento neutro del producto: \\ \\
+	Sea $f \in Fc \Rightarrow \exists q \in \mathbb{R} / (q \cdot f)(x) = f(x)$ \\ \\
+	Tomando q = 1, entonces tenemos que: \\
+	$(q \cdot f)(x) \underbrace{=}_{def.q} (1 \cdot f )(x) \underbrace{=}_{def.\cdot} f(x \cdot 1) = f(x)$
+\item
+	Del producto respecto de la suma de vectores: \\ \\
+	Sea $\alpha \in \mathbb{R}$ y $f,g \in Fc \Rightarrow \alpha (f+g)(x) = (\alpha f)(x) + (\alpha g)(x)?$ \\ \\
+	$(\alpha (f+g))(x) \underbrace{=}_{def. \cdot} (f+g)(\alpha x) = f(\alpha x) + g(\alpha x) = (\alpha f)(x) +
+	(\alpha g)(x)$\\
+\item
+	Del producto respecto de la suma de escalares: \\ \\
+	Sea $\alpha, \beta \in \mathbb{R}$ y $f \in Fc \Rightarrow (\alpha + \beta)f)(x) = (\alpha f + \beta f)(x)?$ \\ \\
+	$((\alpha + \beta)f)(x) \underbrace{=}_{def. \cdot} f((\alpha + \beta) x) = f(\alpha x + \beta x) \underbrace{=}_{puedo?} 
+	f(\alpha x) + f(\beta x) = \alpha f(x) + \beta f(x) = (\alpha f + \beta f)(x) $
+\end{enumerate}
+Luego $Fc$ es un espacio vectorial.
+
+
+\item \textbf{El conjunto de las funciones biyecticas, con el producto por escalar habitual y la suma f+g definida como
+(f+g)(x) = f(g(x))} \\ \\
+$Fb = \lbrace f / $f es biyectiva $\rbrace$ 
+
+
+
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $f,g \in Fb \Rightarrow (f+g)(x) \in Fb?$ \\ \\
+	Es decir la suma de dos funciones biyectivas, ¿es una función biyectiva? \\ \\
+	$(f+g)(x) \underbrace{=}_{def.+} f(g(x))  \in Fb$, ya que la composición de dos funciones biyectivas es biyectiva.
+
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $f,g,h \in Fc \Rightarrow (f+(g+h))(x) = ((f+g)+h)(x)$ \\ \\
+	$(f+(g+h))(x) \underbrace{=}_{def.+}  = f((g+h)(x)) = f( g(h(x))) \not = $\\
+	$((f+g)+h)(x) \underbrace{=}_{def.+} ((f+g)(h(x)) = f(h(x)) + g(h(x))$,
+	¿está bien desarrollado?
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $f,g \in Fc \Rightarrow (f+g)(x) = (g+f)(x) ?$ \\ \\
+	$(f+g)(x) \underbrace{=}_{def.+} f(g(x)) \not = g(f(x)) = (g+f)(x)$ \\
+\end{enumerate}
+Luego no es un espacio vectorial.
+
+\item \textbf{El conjunto de los polinomios a coeficientes reales de grado a lo sumo 2, incluído el polinomio
+nulo, con la suma y producto por escalar habituales.} \\ \\
+Llamemos $P_2$ al conjunto de polinomios de grafo menor o igual que 2, incluyendo el polinomio nulo. \\
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $p,q \in P_2 \Rightarrow p+q \in P_2?$ \\ \\
+	Sea $p(x) = a_1x^2 + b_1x +c_1$ y $q(x) = a_2x^2 + b_2x + c_2$ \\ \\
+	$(p+q)(x) = p(x) + q(x) = (a_1 + a_2)x^2 + (b_1 + b_2)x + c_1 + c_2\in P_2$
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $p,q,r \in P_2 \Rightarrow p+(q+r) = (p+q)+r?$ \\ \\
+	Sea $p(x) = a_1x^2 + b_1x +c_1$, $q(x) = a_2x^2 + b_2x + c_2$ y $r(x) = a_3x^2 + b_3x + c_3$ \\ \\
+	$(p+(q+r))(x) = (a_1x^2 + b_1x +c_1) + ((a_2x^2 + b_2x + c_2) + a_3x^2 + b_3x + c_3) = 
+	(a_1 + a_2 + a_3)x^2 + \\ (b_1 + b_2 + b_3) x + (c_1 + c_2 + c_3) $ \\ \\
+	$((p+q)+r)(x) = ((a_1x^2 + b_1x +c_1) + (a_2x^2 + b_2x + c_2)) + a_3x^2 + b_3x + c_3) = 
+	(a_1 + a_2 + a_3)x^2 + \\ (b_1 + b_2 + b_3) x + (c_1 + c_2 + c_3) $
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $p,q \in P_2 \Rightarrow p+q = q+p?$ \\ \\
+	$(p+q)(x) = a_1x^2 + b_1x + c_1 + a_2x^2 + b_2x + c_2 = a_2x^2 + b_2x + c_2 + a_1x^2 + b_1x + c_1 = (q+p)(x)$
+\item
+	Elemento neutro de la suma: \\ \\
+	Sea $p \in P_2 \Rightarrow \exists s \in P_2 / p+s = p?$ \\ \\
+	Tomando a $s = 0x^2 + 0x + 0$ , tenemos que: \\ \\
+	$(p+s)(x) \underbrace{=}_{def.s} p(x)+(0x^2+0x+0) = p(x)$
+\item
+	Elemento opuesto de la suma: \\ \\
+	Sea $p \in P_2 \Rightarrow \exists t \in P_2 / p+t = 0x^2+0x+0?$\\ \\
+	Tomando a $t = (-1)p$, tenemos que: \\
+	$p+t = (1)p + (-1)p = (1-1)p = 0p = 0ax^2+0bx+0c = 0$
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $p \in P_2$ y $\alpha \in \mathbb{R} \Rightarrow \alpha p \in P_2?$ \\ \\
+	$(\alpha p)(x) = \alpha p(x) =\alpha (a_1x^2 + b_1x + c_1) = \alpha a_1x^2 + \alpha b_1x + \alpha c_1 \in P_2$
+\item
+	Asociatividad del producto: \\ \\
+	Sea $\alpha,\beta \in \mathbb{R}$ y $p \in P_2 \Rightarrow (\alpha \beta)p = \alpha (\beta p)?$ \\ \\
+	$((\alpha \beta)p)(x) = (\alpha \beta)p(x) = (\alpha \beta) (a_1x^2 + b_1x + c_1) = \alpha \beta a_1x^2 + \alpha \beta b_1x +
+	\alpha \beta c_1 = \alpha ( \beta a_1x^2 + \beta b_1x + \beta c_1) = \alpha \beta ( a_1x^2 + b_1x + c_1) = (\alpha(\beta p))(x)$
+\item
+	Elemento neutro del producto: \\ \\
+	Sea $p \in P_2 \Rightarrow \exists \alpha \in \mathbb{R} / \alpha p = p?$ \\ \\
+	Tomando $\alpha = 1$ \\
+	$(\alpha p)(x) \underbrace{=}_{def. \alpha} (1 \cdot p)(x) = p(x)$
+\item
+	Del producto respecto de la suma de vectores: \\ \\
+	Sea $p,q \in P_2$ y $\alpha \in \mathbb{R} \Rightarrow \alpha(p+q) = \alpha p + \alpha q?$ \\ \\
+	$(\alpha (p+q))(x) = \alpha (p+q)(x) = \alpha(p(x) + q(x)) = \alpha p(x) + \alpha q(x) $
+\item
+	Del producto respecto de la suma de escalares: \\ \\
+	Sea $\alpha , \beta \in \mathbb{R}$ y $p \in P_2 \Rightarrow (\alpha + \beta)p = \alpha p + \beta p?$\\ \\
+	$((\alpha + \beta)p)(x) = (\alpha p + \beta p)(x) = (\alpha p)(x) + (\beta p)(x) = \alpha p(x) + \beta p(x)$
+\end{enumerate}
+
+
+\item \textbf{$\mathbb{R}^2$ con el producto por escalar habitual y la suma de $x = (x_1,x_2)^T$ e $y = (y_1,y_2)^T $
+definida como $x+y = (x_1+y_1+1,x_2+y_2+1)^T$} \\ \\
+
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $x,y \in \mathbb{R}^2 \Rightarrow x+y \in \mathbb{R}^2?$ \\ \\
+	$x+y = (x_1,x_2)^T + (y_1,y_2)^T = (\underbrace{x_1+y_1+1}_{\in \mathbb{R}},\underbrace{x_2+y_2+1}_{\in \mathbb{R}})^T 
+	\in \mathbb{R}^2$
+\item
+	Asociatividad de la suma: \\ \\
+	Sea $x,y,z \in \mathbb{R}^2 \Rightarrow x+(y+z) = (x+y)+z?$\\ \\
+	$x+(y+z) = (x_1,x_2)^T + ((y_1,y_2)^T+(z_1,z_2)^T) = (x_1,x_2)^T + (y_1+z_1+1,y_2+z_2+1)^T = \\ (x_1+y_1+z_1+2,
+	x_2+y_2+z_2+2)^T = (x_1+y_1+1, x_2+y_2+1)^T + (z_1,z_2)^T = ((x_1,x_2)^T + (y_1,y_2)^T) + (z_1,z_2)^T)$
+\item
+	Conmutatividad de la suma: \\ \\
+	Sea $x,y \in \mathbb{R}^2 \Rightarrow x+y = y+x?$\\ \\
+	$x+y = (x_1,x_2)^T + (y_1,y_2)^T = (x_1+y_1+1,x_2+y_2+1)^T = (y_1,y_2)^T + (x_1,x_2)^T = y+x$
+\item
+	Elemento neutro de la suma: \\ \\
+	Sea $x \in \mathbb{R}^2 \Rightarrow \exists n \in \mathbb{R}^2 / x+n = x?$\\ \\
+	Tomando $n = (-1,-1)$, tenemos que: \\ 
+	$x+n = (x_1,x_2) + (-1,-1) = (x_1+(-1)+1,x_2+(-1)+1) = (x_1,x_2)$
+\item
+	Elemento opuesto de la suma: \\ \\
+	Sea $p \in \mathbb{R}^2 \Rightarrow \exists \emptyset \in \mathbb{R}^2 / p+\emptyset = (-1,-1)?$ \\ \\
+	Tomando $\emptyset = (-x_1-2,-x_2-2)$ \\ \\
+	$p+\emptyset \underbrace{=}_{def. \emptyset} (x_1,x_2) + (-x_1-2,-x_2-2) = (x_1-x_1-2+1,x_2-x_2-2+1) = (-1,-1)$
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $x \in \mathbb{R}^2$ y $\alpha \in \mathbb{R} \Rightarrow \alpha x \in \mathbb{R}^2?$ \\ \\
+	$(\alpha x) = \alpha x = \alpha (x_1,x_2) = (\underbrace{\alpha x_1}_{\in R} , \underbrace{\alpha x_2}_{\in R}) \mathbb{R}^2 \\$
+\item
+	Asociatividad del producto: \\ \\
+	Sea $x \in \mathbb{R}^2$ y $\alpha,\beta \in \mathbb{R} \Rightarrow (\alpha \beta)x = \alpha (\beta x)?$\\ \\
+	$(\alpha \beta)x = (\alpha \beta)(x_1,x_2) = (\alpha \beta x_1, \alpha \beta x_2) = \alpha ( \beta x_1, \beta x_2) =
+	\alpha (\beta (x_1,x_2)) = \alpha (\beta x)$
+\item
+	Elemento neutro del producto: \\ \\
+	Sea $x \in \mathbb{R}^2 \Rightarrow \exists d \in \mathbb{R}/ d \cdot x = x?$\\ \\
+	Tomando d = 1, s
+	$d \cdot x \underbrace{=}_{def.d} 1 \cdot x = x$
+\item
+	Del producto respecto de la suma de vectores: \\ \\
+	Sea $x,y \in \mathbb{R}^2$ y $\alpha \in \mathbb{R} \Rightarrow \alpha(x+y) = \alpha x+ \alpha y?$ \\ \\
+	$\alpha (x+y) = \alpha ((x_1,x_2)+(y_1,y_2)) = \alpha (x_1+y_1+1,x_2+y_2+1) = (\alpha (x_1+y_1+1),\alpha(x_2+y_2+1)) \not = 
+	(\alpha x_1 + \alpha y_1 + 1, \alpha x_2 + \alpha y_2 +1) = (\alpha x_1, \alpha x_2) + (\alpha y_1, \alpha y_2) = \alpha (x_1,x_2) + \alpha (y_1,y_2) = \alpha x + \alpha y$
+\end{enumerate}
+Luego no es un subespacio.
+\end{enumerate}
+
+\subsubsection{ \textbf{ Sea (V,+,$\cdot$) un espacio vectorial. En particular, sabemos que existe $0 \in V$ tal que $0 + x = x$
+para todo $x \in V$; y que para todo $x \in V$ existe un vector $\overline{x}$ tal que $x+\overline{x} = 0$.}}
+Estas son puras demostraciones que ni siquiera entran en la teoría, y muchas fueron desarrolladas en clases, más
+tarde lo completo. 
+
+
+\subsubsection{ \textbf{ Determinar cuáles de los siguientes conjuntos son un subespacio de $\mathbb{R}^3$}}
+\begin{enumerate}[1.]
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ con $b_1 = 0$.}
+
+$B = \lbrace (b_1,b_2,b_3) \in \mathbb{R}^3 : b_1 = 0 \rbrace$
+
+\begin{enumerate}[(1)]
+\item $(0,0,0) \in B$
+\item
+	Cerrado bajo la producto: \\ \\
+	Sea $\alpha \in \mathbb{R}, v \in B \Rightarrow \alpha v \in B?$ \\ \\
+	$\alpha v = \alpha (0,b_2,b_3) = (0,\alpha b_2, \alpha b_3) \in B$
+\item
+	Cerrado bajo el suma: \\ \\
+	Sea $u,v \in B \Rightarrow u+v \in B?$\\ \\ 
+	Sea $u = (0,a_2,a_3)$ y $v = (0,b_2,b_3)$ \\
+	$u+v = (0,a_2,a_3) + (0,b_2,b_3) = (0,\underbrace{a_2+b_2}_{\in R},\underbrace{a_3+b_3}_{\in R}) \in B$
+\end{enumerate}
+Luego B es un subespacio de $\mathbb{R}^3$
+
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ con $b_1 = 1$.} \\ \\
+$A = \lbrace b_1,b_2,b_3 : b_1 = 1\rbrace$
+\begin{enumerate}[(1)]
+\item
+	$(0,0,0) \not \in B$
+\end{enumerate}
+Luego A no es un subespacio de $R^3$
+
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ con $b_1b_2b_3 = 0$} \\ \\
+$C = \lbrace (b_1,b_2,b_3) : b_1b_2b_3 = 0 \rbrace$
+
+
+\begin{enumerate}[(1)]
+\item
+	$(0,0,0) \in C$, ya que $0 \cdot 0 \cdot 0 = 0$
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $u,v \in C \Rightarrow u+v \in C?$\\ \\
+	No, ya que si tenemos $u = (0,1,1) \in C$ y $v = (1,0,0) \in C$ entonces $u+v = (1,1,1) \not \in C$
+\end{enumerate}
+Luego no es un subespacio de $R^3$.
+
+\item \textbf{El conjunto formado por las 3-uplas (x,y,z) tal que $x+y-2z = 4$.} \\ \\
+$T = \lbrace (x,y,z) \in \mathbb{R}^3 : x+y-2z = 4\rbrace$ \\ 
+
+\begin{enumerate}[(1)]
+\item $0 \not \in T$, pues $0+0-2 \cdot 0 \not = 4$
+\item
+	Cerrado bajo la suma: \\ \\
+	$u = \lbrace (x_1,y_1,z_1) : x_1+y_1-2z_1 = 4 \rbrace $ y $v = \lbrace (x_2,y_2,z_2) : x_2+y_2-2z_2 = 4\rbrace$ \\
+	$u+v = (x_1+y_1-2z_1) + (x_2+y_2-2z_2) \not = 4$
+\end{enumerate}
+Luego T no es subespacio de $R^3$.
+
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ que son combinación lineal de $v=(1,4,0)$ y $w=(2,2,2)$} \\ \\
+
+$S = \lbrace (b_1,b_2,b_3) \in \mathbb{R}^3: (b_1,b_2,b_3) = \alpha(1,4,0) + \beta(2,2,2) \rbrace$
+
+\begin{enumerate}[(1)]
+\item
+	(0,0,0) = 0(1,4,0) + 0(2,2,2), luego $0 \in S$.
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $u,v \in S \Rightarrow u+v \in S$ \\
+	$(a_1,a_2,a_3) = \alpha(1,4,0) + \beta(2,2,2)$ y $(b_1,b_2,b_3) = \alpha_2(1,4,0) + \beta_2(2,2,2) \\
+	(a_1,a_2,a_3) + (b_1,b_2,b_3) = \alpha (1,4,0) + \beta (2,2,2) + \alpha_2(1,4,0) + \beta_2(2,2,2) \in S $
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $v \in S \Rightarrow \alpha v \in S?$\\
+	$\delta v = \delta (\alpha (1,4,0)+\beta(2,2,2)) = (\delta \alpha)(1,4,0) + (\delta \alpha)(2,2,2)$
+\end{enumerate}
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ tal que $b_1+b_2+b_3 = 0$} \\ \\
+\textbf{Preguntar si se puede hacer de otra forma, el conjunto} \\ \\
+$B = \lbrace (b_1,b_2,b_3) \in \mathbb{R}^3: b_1+b_2+b_3 = 0 \rbrace$
+\begin{enumerate}[(1)]
+\item 
+	$(0,0,0) \in B$, pues $0+0+0 = 0$
+\item
+	Cerrado bajo la suma \\ \\
+	Sea $x = (-x_2,-x_3,x_2,x_3)$ e $y = (-y_2-y_3,y_2,y_3)$ \\ \\
+	$x+y = (-x_2-x_3,x_2,x_3) + (-y_2-y_3,y_2,y_3) = (((-x_2-x_3)+(-y_2-y_3)),x_2+y_2,x_3+y_3)$ = \\
+	$(-x_2-x_3-y_2-y_3,x_2+y_2,x_3+y_3) \in B$, ya que $(\cancel{-x_2}-x_3-y_2-y_3) + (\cancel{x_2}+y_2) + (x_3+y_3) = 0$\\
+	ya que se cancenlan todos los términos. \\
+\item
+	Cerrado bajo el producto \\ \\
+	Sea $x \in B, \alpha \in \mathbb{R} \Rightarrow \alpha x \in B?$ \\ \\
+	$\alpha x = \alpha (x_2-x_3,x_2,x_3) = (\alpha (x_2-x_3), \alpha x_2, \alpha x_3) = ( \alpha x_2 - \alpha x_3, \alpha x_2, \alpha x_3)
+	\in B$, \\ ya que $\alpha x_2 - \alpha x_3 + \alpha x_2 + \alpha x_3 = 0$
+\end{enumerate}
+
+\item \textbf{El conjunto formado por las 3-uplas $(b_1,b_2,b_3)$ que verifican $b_1 \leq b_2 \leq b_3$}  \\ \\
+$C = \lbrace (b_1,b_2,b_3) : b_1 \leq b_2 \leq b_3\rbrace$
+\begin{enumerate}[(1)]
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $x \in C, \alpha \in \mathbb{R} \Rightarrow \alpha x \in C?$ \\ \\
+	No, ya que tomando $\alpha = -1$ y $x = (1,2,3) \in C$, tenemos que: \\
+	$\alpha x = (-1) (1,2,3) = (-1,-2,-3) \not \in C$, ya que $-1 \not \leq -2 \not \leq -3$.
+\end{enumerate}
+No es un subconjunto de $R^3$
+\end{enumerate}
+
+\subsubsection{Mostrar que las dos propiedades que definen un subespacio vectorial (i.e. que la suma sea cerrada en el conjunto
+y que el producto por escalar también lo sea) son propiedades independientes una de otra. Para ello buscar un conjunto que sea
+cerrado bajo la suma pero no bajo el producto por escalar y otro conjunto que cumpla lo contrario.}
+COMPLETAR.
+\subsubsection{Determinar cuáles de los siguientes conjuntos son subespacios de $R^{nxm}$}
+\begin{enumerate}[a.]
+\item \textbf{El conjunto de las matrices triangulares.} \\ \\
+Sea T el conjunto de las matrices triangulares.
+\begin{enumerate}[(1)]
+\item
+	La matriz nula es una matriz triangular, por lo tanto $0 \in T$.
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $A,B$ dos matrices triangulares entonces $A+B$ es una matriz triangular? \\
+	Sí, ya que la suma de dos matrices triangulares da una matriz triangular. \\
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea A una matriz triangular y $\alpha \in \mathbb{R}$ entonces $\alpha A$ es una matriz triangular? \\
+	Sí, ya que una matriz triangular multiplicada por un escalar sigue siendo triangular.
+\end{enumerate}
+
+
+\item \textbf{El conjunto de las matrices singulares.} \\ \\
+\begin{enumerate}[(1)]
+\item
+	La matriz nula pertenece al conjunto de las matrices singulares.
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $A,B$ dos matrices singulares entonces $A+B$ es una matriz singular? \\ \\
+	No, ya que tomando 
+	\[
+	A =
+	\begin{bmatrix}
+	1 & 1 \\
+	2 & 2
+	\end{bmatrix} \in MS
+	\]
+	y 
+	\[
+	B =
+	\begin{bmatrix}
+	0 & 0 \\
+	0 & 1
+	\end{bmatrix} \in MS
+	\] 
+
+	resulta:
+	\[
+	A+B =
+	\begin{bmatrix}
+	1 & 1 \\
+	2 & 3
+	\end{bmatrix} \in MS
+	\]
+	que no es una matriz singular. \\ \\
+\end{enumerate}
+
+\item \textbf{El conjunto de las matrices simétricas. } \\ \\
+\begin{enumerate}[(1)]
+\item
+	La matriz nula pertenece al conjunto ya que $\emptyset = \emptyset^T$
+\item
+	Cerrado bajo la suma: \\ \\
+	Sea $A,B$ matrices símetricas entonces $A+B$ es una matriz simétrica? \\ \\
+	$(A+B)^T = A^T + B^T = A + B$
+\item
+	Cerrado bajo el producto: \\ \\
+	Sea $A$ una matriz simétrica y $\alpha \in \mathbb{R} \Rightarrow \alpha A$ es una matriz simétrica? \\ \\
+	$(\alpha A)^T = \alpha (A^T) = \alpha A$  
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Sea $(V,+,\cdot)$ un espacio vectorial y sean U y W subespacios de V. Probar que: \\
+$U+W = \lbrace v \in V : v = u+w, u \in U, w \in W \rbrace$ es un subespacio de V.}
+
+\begin{itemize}
+	\item
+		$0 \in U+W$, ya que como los dos son subespacios entonces los dos conjuntos poseen al 0.
+	\item
+		Sea $x = {(u_1,w_1)},y = (u_2,w_2) \in (U+W) \Rightarrow x+y \in (U+W)?$ entonces tenemos que: \\ \\
+		$x+y = (u_1+w_1) + (u_2+w_2) = ((u_1+w_1)+u_2)+w_2 = ((\underbrace{u_1+u_2}_{\in U})+(\underbrace{w_1+w_2}_{\in W})) \in U+W$\\
+		Vale ya que como U y W son subespacios entonces cumplen la propiedades de cerrado bajo la suma entonces sabemos que $u_1+u_2 \in U$ y
+		$w_1 + w_2 \in W$.
+	\item
+		Sea $x=(u_1,w_1) \in U+W, \alpha \in \mathbb{K} \Rightarrow \alpha x \in U+W?$ \\
+		$\alpha x = \alpha (u_1,w_1) = (\alpha u_1,\alpha w_1) \in U+W$\\
+		Pertenece a $U+W$ porque como U y W son subespacios de V entonces cumplen la condición de cerrado bajo el producto por lo tanto $\alpha u_1 \in U$ y 
+		$\alpha w_1 \in W$.
+\end{itemize}
+\subsubsection{Sean }
+\[
+A =
+\begin{bmatrix}
+1 & 0 \\
+0 & 0
+\end{bmatrix}
+\]
+y
+\[
+B =
+\begin{bmatrix}
+0 & 0 \\
+0 & -1
+\end{bmatrix}
+\]
+\begin{enumerate}
+\item \textbf{Describir un subespacio de $\mathbb{R}^{2x2}$ que contenga a $A$ y no a $B$.}
+	Sea \[
+	R = \Bigg \lbrace
+	\begin{bmatrix}
+	\alpha & \beta \\
+	\delta & 0
+	\end{bmatrix} :
+	\alpha,\beta,\delta \in \mathbb{R}
+	\Bigg\rbrace
+	\]
+
+\item \textbf{Si un subespacio de $\mathbb{R}^{2x2}$ contiene a A y a B, ¿debe contener también a I?} \\ \\
+\textbf{Obs}: Contiene a A y a B por separado no a la suma de A+B. \\ \\
+Armemos una matriz que contenga a A: 
+
+\[
+C = 
+\Bigg\lbrace
+\begin{bmatrix}
+\alpha & 0\\
+0 & 0
+\end{bmatrix} :
+\alpha \in \mathbb{R}
+\Bigg\rbrace
+\]
+
+Ahora armemos una matriz que contenga a B:
+\[
+K = 
+\Bigg\lbrace
+\begin{bmatrix}
+0 & 0\\
+0 & \delta
+\end{bmatrix} :
+\delta \in \mathbb{R}
+\Bigg\rbrace
+\]
+
+
+Y ahora armemos una matriz que contenga a A y a B: \\ \\
+\[
+U = 
+\Bigg\lbrace
+\begin{bmatrix}
+\alpha & 0\\
+0 & \delta
+\end{bmatrix} :
+\alpha, \delta \in \mathbb{R}
+\Bigg\rbrace
+\]
+
+Luego, U contiene a I.
+\end{enumerate}
+
+
+\subsubsection{Explicitar el espacio columna y el espacio nulo de las siguientes matrices: }
+$
+A = 
+\begin{bmatrix}
+1 & 2 \\
+2 & 4
+\end{bmatrix},
+B = 
+\begin{bmatrix}
+1 & 3 \\
+2 & 6
+\end{bmatrix},
+C = 
+\begin{bmatrix}
+1 & 2 \\
+0 & 0 \\
+0 & 0
+\end{bmatrix},
+D = 
+\begin{bmatrix}
+1 & 0 \\
+0 & 2 \\
+0 & 0
+\end{bmatrix},
+E = 
+\begin{bmatrix}
+1 & 0 \\
+2 & 0 \\
+0 & 0
+\end{bmatrix}
+$
+\\ \\
+¿Qué carajo es el espacio columna? \\
+Se denomina \textbf{espacio columna} al subespacio generado por las columnas, es decir el mínimo conjunto (LI):
+\\ \\
+\textbf{Espacio Columna:}
+$\mathcal{C}(A) = \lbrace b \in \mathbb{R}^2 / Ax = b\rbrace = \begin{bmatrix} 1&2 \\ 2&4 \end{bmatrix}  
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \end{bmatrix} \Rightarrow \\
+\left \lbrace
+\begin{array}{rcl}
+	x_1+2x_2 &=& b_1\\
+	2x_1+4x_2 &=& b_2
+\end{array}
+\right.
+$
+\\ \\ \\
+$
+\begin{bmatrix}
+1 & 2 & | & b_1 \\
+2 & 4 & | & b_2 
+\end{bmatrix}
+\longrightarrow 
+\begin{bmatrix}
+1 & 2 & | & b_1 \\
+0 & 0 & | & b_2-2b_1 
+\end{bmatrix}
+$ \\ \\
+$
+A' = 
+\begin{bmatrix}
+1 & 2 \\
+0 & 0  
+\end{bmatrix}
+\hspace*{1.5cm}
+b' = 
+\begin{bmatrix}
+b_1 \\
+b_1 - 2b_2
+\end{bmatrix}
+$
+\\ \\
+$Ax = b \Longleftrightarrow A'x = b'$ \\ \\
+$
+A'x = 
+\begin{bmatrix}
+1 & 2 \\
+0 & 0 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 
+\end{bmatrix} =
+\begin{bmatrix}
+x_1 + 2x_2 \\
+0
+\end{bmatrix}
+$
+\\ \\
+$Ax=b$ tiene solución $\Rightleftarrow A'x = b'$ tiene solución:
+\\ \\
+$
+\begin{bmatrix}
+x_1 + 2x_2 \\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+b_1 \\
+b_2 - 2b_1
+\end{bmatrix}
+\Longleftrightarrow 
+\Bigg\lbrace 0 = b_2 - 2b_1 \Rightarrow b_2 = 2b_1$
+\\ \\ 
+Para que esto de una solución si o si $b_2-2b_1$ tiene que ser 0 \\
+$\mathcal{C}(A) = \Bigg\lbrace \begin{bmatrix} b_1 \\ 2b_1 \end{bmatrix}: b_1 \in \mathbb{R} \Bigg\rbrace$
+\\ \\ \\
+\textbf{Espacio nulo:}
+\\ \\
+$\mathcal{N}(A) = \Big\lbrace x \in \mathbb{R}^2 / Ax = 0 \Big\rbrace$ \\
+Sabemos que $Ax = 0 \Rightarrow A'x = 0$ \\ 
+$
+\\
+\begin{bmatrix}
+x_1 + 2x_2 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\Longrightarrow  x_1+2x_2 = 0 \Rightarrow x_1 = -2x_2
+$
+\\ \\
+$\mathcal{N}(A) = 
+\Bigg\lbrace 
+\begin{bmatrix}
+-2x_2 \\
+x_2 
+\end{bmatrix}
+: x \in \mathbb{R} 
+\Bigg\rbrace$
+\\
+\\
+\\
+\textbf{Espacio Columna: }
+$\mathcal{C}(B) = \lbrace c \in \mathbb{R}^2 : Bx = c\rbrace$
+\\ 
+$
+B = 
+\begin{bmatrix}
+1 & 3 & | & c_1\\
+2 & 6 & | & c_2
+\end{bmatrix} \longrightarrow
+\begin{bmatrix}
+1 & 3 & | & c_1\\
+0 & 0 & | & c_2-2c_1
+\end{bmatrix} 
+$
+\\ \\
+$
+B' =
+\begin{bmatrix}
+1 & 3 \\
+0 & 0 
+\end{bmatrix} 
+\hspace*{1cm}
+c' = 
+\begin{bmatrix}
+c_1 \\
+c_2-2c_1
+\end{bmatrix} 
+$ \\
+$
+B'x = 
+\begin{bmatrix}
+1 & 3 \\
+0 & 0 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 
+\end{bmatrix} = 
+\begin{bmatrix}
+x_1+3x_2 \\
+0
+\end{bmatrix} 
+$
+\\ \\
+Sabemos que $Bx = c$ tiene solución si y sólo si $B'x = c'$, entonces tenemos que: \\ \\
+$
+\begin{bmatrix}
+x_1+3x_2 \\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+c_1 \\
+c_2 - 2c_1
+\end{bmatrix} 
+\Longleftrightarrow 
+\Bigg\lbrace c_2 - 2c_1 = 0 \Rightarrow c_2 = 2c_1 \\
+\mathcal{C}(B) = \Big\lbrace \begin{bmatrix} c_1 \\ 2c_1 \end{bmatrix}: c_1 \in \mathbb{R} \Big\rbrace
+$
+\\ \\
+\textbf{Espacio nulo: } \\ \\
+$\mathcal{N}(B) = \Big\lbrace x \in \mathbb{R}^2 / Bx = 0 \Big\rbrace$ \\
+Sabemos que $Bx = 0 \Rightarrow B'x = 0$ \\ \\
+$\begin{bmatrix}
+x_1 + 3x_2 \\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\ 
+0 
+\end{bmatrix} \Rightarrow \Big\lbrace
+x_1 + 3x_2 = 0 \Rightarrow x_1 = -3x_2
+$ \\ \\ \\
+Luego $\mathcal{N}(B) = \Big\lbrace \begin{bmatrix} -3x_2 \\ x_2 \end{bmatrix}: x_2 \in R \Big\rbrace$
+\\ \\
+\textbf{Espacio columna: } 
+$\mathcal{C}(C) = \Big\lbrace d \in \mathbb{R}^3 : Cx = d\Big\rbrace$ \\
+$
+\begin{bmatrix}
+1 & 2 & | & d_1 \\
+0 & 0 & | & d_2 \\
+0 & 0 & | & d_3
+\end{bmatrix} \longrightarrow
+\begin{bmatrix}
+1 & 0 & | & d_1 \\
+0 & 0 & | & d_2 \\
+0 & 0 & | & d_3
+\end{bmatrix}
+$ \\ \\
+$
+C'x = 
+\begin{bmatrix}
+1 & 0  \\
+0 & 0  \\
+0 & 0 
+\end{bmatrix}
+\begin{bmatrix}
+x_1   \\
+x_2   \\ 
+\end{bmatrix} = 
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix}
+$ \\
+Sabemos que $Cx = d \Rightarrow C'x = d'$ \\
+$
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+d_1 \\
+d_2 \\
+d_3
+\end{bmatrix} \Longrightarrow \Bigg\lbrace d_2 = 0, d_3 = 0
+$
+\\ \\ \\
+Luego, $\mathcal{C}(C) = \Bigg\lbrace \begin{bmatrix} d_1 \\ 0 \\ 0  \end{bmatrix} : d_1 \in \mathbb{R} \Bigg\rbrace$ \\ \\ \\
+\textbf{Espacio nulo: }
+$\mathcal{N}(C) = \Bigg\lbrace x \in \mathbb{R}^2 : Cx = 0 \Bigg\rbrace$ \\ \\
+Sabemos que $Cx = 0 \Rightarrow C'x = 0$ \\ \\
+$ C'x = 
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+0 & 0
+\end{bmatrix} 
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\end{bmatrix} \Rightarrow
+$ \\ \\ \\
+$
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix} \Rightarrow x_1 = 0
+$ \\ \\
+Luego, $\mathcal{N}(C) = \Big\lbrace \begin{bmatrix} 0 \\ x_2 \end{bmatrix} : x_2 \in \mathbb{R} \Big\rbrace$, acordate que estás buscando el $x$, 
+ese es el espacio nulo.
+\\ \\
+\textbf{Espacio Columna: } $\mathcal{C}(E) = \Bigg\lbrace b \in \mathbb{R}^3 / Ex = b\Bigg\rbrace $ \\ \\
+Lo llevamos a una matriz más manejable: \\
+$
+\begin{bmatrix}
+1 & 0 & | & b_1\\
+2 & 0 & | & b_2\\
+0 & 0 & | & b_3 
+\end{bmatrix} \longrightarrow
+\begin{bmatrix}
+1 & 0 & | & b_1 \\
+0 & 0 & | & b_2-2b_1 \\
+0 & 0 & | & b_3
+\end{bmatrix}
+$
+\\
+$
+E'=
+\begin{bmatrix}
+1 & 0   \\
+0 & 0  \\
+0 & 0
+\end{bmatrix}
+\hspace*{1cm}
+b =
+\begin{bmatrix}
+b_1 \\
+b_2 - 2b_1 \\
+b_3
+\end{bmatrix}
+$ \\
+$
+E'x =
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = 
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix}
+$ \\
+Ahora sabemos que $Ex = b$ entonces $E'x = b'$ \\ \\
+$
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+b_1 \\
+b_2 - 2b_1 \\
+b_3
+\end{bmatrix} \Rightarrow \Bigg \lbrace b_2 = 2b_1, b_3 = 0
+$ \\ \\
+Luego $\mathcal{C}(E) = \Bigg\lbrace \begin{bmatrix} b_1 \\ 2b_1 \\ 0 \end{bmatrix}:  b_1 \in \mathbb{R}  \Bigg\rbrace$ \\ \\ \\
+\textbf{Espacio nulo: } 
+$\mathcal{N}(E) = \Bigg\lbrace x \in \mathbb{R}^2: Ex = 0 \Bigg\rbrace$ \\ \\
+Sabemos que $Ex = 0 \Rightarrow E'x = 0$ \\ \\
+$
+\begin{bmatrix}
+x_1 \\
+0 \\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix} \Rightarrow x_1 = 0
+$ \\ \\
+Luego $\mathcal{N}(E) = \Bigg\lbrace \begin{bmatrix} 0 \\ x_2 \end{bmatrix} : x_2 \in \mathbb{R} \Bigg\rbrace$
+
+\subsubsection{¿Para qué vectores $b = (b_1,b_2,b_3)^T$ los siguientes sistemas tienen solución?}
+$
+a.
+\begin{bmatrix}
+1 & 4 & 2 \\
+2 & 8 & 4 \\
+-1 & -4 & -2 \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix} =
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+b_3
+\end{bmatrix}$
+\\ \\ \\ \\
+$
+\left\lbrace
+\begin{array}{rcl}
+x_1 + 4x_2 + 2x_3 & = & b_1 \\
+2x_1 + 8x_2 + 4x_3 & = & b_2 \\ 
+-x_1 -4x_2 -2x_3 & = & b_3
+\end{array}
+\right.$ \\
+Armamos la matriz ampliada: \\ \\
+$
+\begin{bmatrix}
+1 & 4 & 2 & | & b_1 \\
+2 & 8 & 4 & | & b_2 \\
+-1 & -4 & -2 & | & b_3 
+\end{bmatrix} \underbrace{\longrightarrow}_{f_3 = f_3+f_1}
+\begin{bmatrix}
+1 & 4 & 2 & | & b_1 \\
+2 & 8 & 4 & | & b_2 \\
+0 & 0 & 0 & | & b_3+b_1
+\end{bmatrix} \underbrace{\longrightarrow}_{f_2 = f_2 - 2f_1}
+\begin{bmatrix}
+1 & 4 & 2 & | & b_1 \\
+0 & 0 & 0 & | & b_2-2b_1 \\
+0 & 0 & 0 & | & b_3+b_1
+\end{bmatrix}
+$
+\\ \\ \\
+$
+\left\lbrace
+\begin{array}{rcl}
+b_2 - 2b_1 = 0 \\
+b_3 + b_1 = 0
+\end{array}
+\right. \Longrightarrow
+\left\lbrace
+\begin{array}{rcl}
+b_2 = 2b_1 \\
+b_3 = -b_1
+\end{array}
+\right.
+$
+\\ \\ \\
+Conjunto solución $b = \left\lbrace \begin{bmatrix} b_1 \\ 2b_1 \\ -b_1 \end{bmatrix} : b_1 \in \mathbb{R} \right\rbrace$
+\\ \\ \\ \\
+$
+b. \begin{bmatrix}
+1 & 4 \\
+2 & 9 \\
+-1 & -4
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\end{bmatrix} =
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+b_3
+\end{bmatrix}
+$ \\ \\
+$
+\left\lbrace
+\begin{array}{rcl}
+x_1 + 4x_2 = b_1 \\
+2x_1 + 9x_2 = b_2 \\
+-x_1 -4x_2 = b_3
+\end{array}
+\right.
+$ \\ \\
+Armamos la matriz ampliada: \\
+$
+\begin{bmatrix}
+1 & 4 & | & b_1 \\
+2 & 9 & | & b_2 \\
+-1 & -4 & | & b_3
+\end{bmatrix} 
+\underbrace{\longrightarrow}_{f_3 = f_3 + f_1,f_2 = f_2 - 2f_1}
+\begin{bmatrix}
+1 & 4 & | & b_1 \\
+0 & 1 & | & b_2-2b_1 \\
+0 & 0 & | & b_3+b_1
+\end{bmatrix}
+$ \\ \\ \\
+$
+\left\lbrace
+\begin{array}{rcl}
+0 = b_3 + b_1
+\end{array} 
+\right.\longrightarrow
+\left\lbrace
+\begin{array}{rcl}
+-b_3 = b_1
+\end{array}
+\right.
+$ \\ \\ \\
+El conjunto solución entonces es $b = \left\lbrace \begin{bmatrix} -b_3 \\ b_2 \\ b_3 \end{bmatrix} : b_3,b_2 \in \mathbb{R} \right\rbrace$
+
+
+
+\subsubsection{Dadas $A \in \mathbb{R}^{mxn}$ y $B \in \mathbb{R}^{nxp}$ probar que el espacio columna de $AB$ está contenido
+en el espacio columna de A. Dar un ejemplo donde dicha contención sea estricta.}
+COMPLETAR. \\
+\subsubsection{¿Cuáles de los siguientes conjuntos son subespacios de $\mathbb{R}^\infty$?}
+\begin{enumerate}[a.]
+\item
+	$A = \lbrace x = (x_1,x_2,...) \in \mathbb{R}^\infty : | \lbrace i \in \mathbb{N} : x_i \not = 0 \rbrace| $ es finito $ \rbrace.$ \\
+	Un conjunto es un subespacio de $\mathbb{R}^\infty$ si y sólo si cumple: \\
+	Que carajo significa $x_i \not = 0$
+	\begin{itemize}
+		\item $0 \in A$
+		\item Sea $x,y \in A \Rightarrow x+y$
+		\item Sea $x \in A, \alpha \in \mathbb{R} \Rightarrow \alpha x \in A$
+	\end{itemize}
+\item
+	$B = \lbrace x = (x_1,x_2,...) \in \mathbb{R}^\infty : \exists i_0 \in \mathbb{N} / x_i = 0 \forall i \geq i_0 \rbrace$ \\
+	Ejemplo: $x = (1,2,3,0,0,0,...)$
+	\begin{itemize}
+		\item $0 \in B$, vale ya que $(0,0,0,...) \in B$
+		\item 
+			Sea $x,y \in B \Rightarrow x+y \in B?$ \\
+			Sí, se cumple. Supongamos: \\
+			$x = (x_1,x_2,...,\underbrace{x_i}_{=0},0,0,...), y = (y_1,y_2,...,y_{j-1},\underbrace{y_j}_{=0},0,0...)$, con $j>i$, ahora tenemos que \\ \\
+			$x + y = (x_1+y_1,x_2+y_2,...,\underbrace{x_i}_{=0}+\underbrace{y_i}_{\not = 0},\underbrace{x_{i+1}}_{=0}+\underbrace{y_{i+1}}_{\not = 0},...,y_{j-1},\underbrace{y_j}_{=0},0,0,...) \in B$ \\
+
+		\item Sea $x \in A, \alpha \in \mathbb{R} \Rightarrow \alpha x \in A$ \\
+		Sí cumple ya que, si tenemos $x \in A$ entonces sabemos que existe algún elemento $x_i = 0$ que después de ese son todos
+		los demás 0. Si a este elemento lo multiplicamos por un $\alpha \not = 0$ la condición se sigue compliendo y si 
+		lo multiplicamos por $\alpha = 0$ también ya que obtendríamos $x = (0,0,0,...)$ que pertenece a $B$. \\ \\
+		Analicemos los siguientes casos: \\ \\ 
+		$\alpha \not = 0$ \\
+		$\alpha (x_1,x_2,...,\underbrace{x_i}_{= 0},0,0,...) = (\alpha x_1, \alpha x_2, ... , \alpha x_i ,\alpha 0, \alpha 0,... ) \in B$ \\ \\
+		$\alpha = 0$ \\
+		$0 (x_1,x_2,...,\underbrace{x_i}_{= 0},0,0,...) = (0 x_1, 0 x_2, ... , 0 x_i , 0,0,... ) \in B$
+	\end{itemize}
+	Luego B es un subespacio de $R^\infty$
+\item
+	$C = \lbrace x = (x_1,x_2,...) \in \mathbb{R}^\infty : x_i \geq x_{i+1} \forall i \in \mathbb{N} \rbrace$ (conjunto de sucesiones decrecientes)
+	Para ver que es un subespacio probaremos las siguientes cosas: \\
+	\begin{itemize}
+		\item
+			$(0,0,0,...) \in C?$. Sí, ya qué $0 \geq 0 \geq 0  \geq ... \geq 0$
+		\item
+			Cerrado bajo el producto: \\ \\
+			Sea $x \in C, \alpha \in \mathbb{R} \Rightarrow \alpha x \in C?$ \\
+			Supongamos $x = (2,1,0,...,0)$ y $\alpha = -1$, entonces tenemos que: \\ \\
+			$\alpha x = (-1) (2,1,0,...,0) = (-2,-1,0,...,0) \not \in C$, ya que $-2 \not \geq -1 \not \geq 0$
+		\item
+			Cerrado bajo la suma: \\ \\
+			Sea $x = (x_1,x_2,...,x_i,0,...,0)$, donde $x_1 \geq x_2 \geq ... $ e $y = (y_1,y_2,...,y_{j-1},y_j,0,...,0)$,
+			donde $y_1 \geq y_2 \geq ... $ con $j > i$, tenemos que: \\
+			$x+y = (x_1+y_1,x_2+y_2,...,x_i+y_i,0+y_{i+1},...,y_{j-1},y_j,0,...,0) \in B$
+	\end{itemize}
+	Luego C no es un subespacio de $R^\infty$ porque no es cerrado bajo el producto.
+
+\item
+	$D = \lbrace x =(x_1,x_2,...) \in \mathbb{R}^\infty : \exists \displaystyle \lim_{i \to \infty}(x_i) \rbrace$
+\item
+	$E = \lbrace x = (x_1,x_2,...) \in \mathbb{R}^\infty : \exists c \in \mathbb{R} / x_{i+1} = c + x_i \forall i \in \mathbb{N}\rbrace$
+\item
+	$F = \lbrace x = (x_1,x_2,...) \in \mathbb{R}^\infty : \exists c \in \mathbb{R} / x_{i+1} = cx_i \forall i \in \mathbb{N}\rbrace$
+\end{enumerate}
+
+\section{PRÁCTICA 2 CONTINUACIÓN -- }
+A lo largo de esta práctica $(V, \mathbb{K},\cdot)$ es un espacio vectorial sobre el cuerpo de los reales, salvo mención expresa. \\
+\subsubsection{Probar el siguiente enunciado: Sean $U_1,U_2 \subset V$ subespacios. Luego $V = U_1 \bigoplus U_2$ si y sólo si se
+verifican las siguientes condiciones: }
+\begin{itemize}
+	\item $V = U_1 + U_2$
+	\item $U_1 \cap U_2 = \{ 0 \}$
+\end{itemize}
+Vamos a probar que $V = U_1 \bigoplus U_2 \Leftrightarrow V = U_1 + U_2$ y $0 = u_1 + u_2 \Rightarrow u_1 = u_2 = 0$ \\
+\\
+$\Rightarrow$: Supongamos $V = U_1 \bigoplus U_2$. Luego por definición resulta que $V = U_1 + U_2$. Además por la unicidad
+de la representación del 0 tenemos que $0 = u_1+u_2 \Rightarrow u_1 = u_2 = 0$ pues $0 = 0 + 0$. \\ \\
+$\Leftarrow$: Puesto que $V = U_1 + U_2$ tenemos que $\forall v \in V \exists u_1,u_2 / v = u_1 + u_2$. \\
+Sólo nos queda ver la unicidad. Supongamos que $v = w_1 + w_2 = u_1 + u_2$, luego \\
+$0 = v-v = (u_1 + u_2) - (w_1 + w_2) = (u_1 - w_1) - (u_2 - w_2) $ \\ \\
+\\
+Ahora vamos a probar que $V = U_1 \bigoplus U_2 \Longleftrightarrow V = U_1 + U_2$ y $U_1 \cap U_2 = \{ 0\}$ \\ \\
+$\Rightarrow$: Supongamos $V = U_1 \bigoplus U_2$. Luego por definición resulta $V = U_1 + U_2$. Además por la unicidad de la
+representación del 0 tenemos que $0 = u_1 + u_2 \Rightarrow u_1 = u_2 = 0 \Rightarrow U_1 \cap U_2 = \{ 0 \}$.  \\ \\
+$\Leftarrow$: Puesto que $V =  U_1+U_2$ tenemos que $\forall v \in V \exists u_1,u_2 / v = u_1 + u_2.$ \\
+Sólo nos queda ver la unicidad. Supongamos que $v = w_1 + w_2 = u_1 + u_2$, luego: \\ \\
+$0 = v-v = (u_1+u_2) - (w_1+w_2) = \underbrace{(u_1 - w_1)}_{\in U_1} - \underbrace{(u_2 - w_2)}_{\in U_2}$ \\
+y como $0 = u_1 + u_2 \Rightarrow u_1 = u_2 = 0$, sabemos que $u_1 - w_1 = 0 \Rightarrow u_1 = w_1$ \\
+No estoy seguro como comprobar que $U_1 \cap U_2 = \{ 0 \}$ y no puede haber otro elemento en común, pensarlo de nuevo, por ahora paso a otro. \\ \\
+Encontrar un contraejemplo para demostrar que este resultado no puede extenderse a $m$ subespacios.
+\subsubsection{Para cada uno de los siguientes conjuntos determinar si es un subespacio de $\mathcal{C}(\mathbb{R})$ o 
+explica por que no lo es: }
+\begin{enumerate}[a.]
+	\item
+		$A = \{ f \in C(\mathbb{R)} : f(x) \leq 0, \forall x \in \mathbb{R} \}$
+			Para verificar si es un subespacio tenemos que ver lo siguiente:
+			\begin{itemize}
+				\item $0 \in A?$
+				\item
+					Cerrado bajo la suma: \\
+					Sea $f,g \in A \Rightarrow f+g \in A?$ \\ \\
+					$(f+g)(x) = \underbrace{f(x)}_{\leq 0} + \underbrace{g(x)}_{\leq 0} \leq 0 \in A $
+				\item 
+					Cerrado bajo el producto: \\ \\
+					No se cumple, ya que tomando $\alpha = (-1)$ \\ \\
+					$(\alpha f)(x) = \alpha \underbrace{f(x)}_{\leq 0} = \underbrace{(-1)f(x)}_{\geq 0} \not \in A$
+			\end{itemize}
+			A no es un subespacio de $C(\mathbb{R})$
+	\item
+		$B = \{ f \in C(\mathbb{R)} : f(0) = 0 \}$
+		\begin{itemize}
+			\item 
+				$0 \in B?$
+			\item 
+				Cerrado bajo la suma: \\
+				Sean $f,g \in B \Rightarrow f+g \in B?$ \\ \\
+				$(f+g)(0) = \underbrace{f(0)}_{=0} + \underbrace{g(0)}_{=0} = 0+0 = 0 \in B$
+			\item 
+				Cerrado bajo el producto: \\
+				Sea $f \in B, \alpha \in \mathbb{R} \Rightarrow \alpha f \in B?$ \\ \\
+				$(\alpha f)(0) = \alpha f(0) = \alpha 0 = 0 \in B$
+		\end{itemize}
+	\item
+		$C = \{ f \in C(\mathbb{R)} : f(2) = 0 \}$
+		\begin{itemize}
+			\item
+				$0 \in C?$
+			\item
+				Cerrado bajo la suma: \\
+				Sean $f,g \in C \Rightarrow f+g \in C$ \\ \\
+				$(f+g)(2) = f(2) + g(2) = 0 + 0 = 0 \in C$
+			\item
+				Cerrado bajo el producto: \\
+				Sea $f \in C, \alpha \in \mathbb{R} \Rightarrow \alpha f \in C?$ \\ \\
+				$(\alpha f)(2) = \alpha f(2) = \alpha 0 = 0 \in C$
+		\end{itemize}
+	\item
+		El conjunto de funciones constantes. \\
+		$D = \{ f \in C(\mathbb{R}) : f(x) = c, c \in \mathbb{R}\}$
+		\begin{itemize}
+			\item
+				$0 \in D?$
+			\item
+				Cerrado bajo la suma: \\
+				Sean $f,g \in D \Rightarrow f+g \in D?$ \\ \\
+				$(f+g)(x) = f(x) + g(x) = c + c' \in D$
+			\item
+				Cerrado bajo el producto: \\
+				Sea $f \in D, \alpha \in \mathbb{R} \Rightarrow \alpha f \in D?$ \\ \\
+				$(\alpha f)(x) = \alpha f(x) = \underbrace{\alpha c}_{\in R} \in D$
+		\end{itemize}
+	\item
+		No entiendo mucho esta forma de escribir la función: \\
+		$E = \{ \alpha + \beta sen x: \alpha, \beta \in \mathbb{R}\}$
+		\begin{itemize}
+			\item
+				$0 \in E?$
+			\item
+				Cerrado bajo la suma: \\
+				Sean $f,g \in E \Rightarrow f+g \in E?$ \\ \\
+				$(f+g)(x) = f(x) + g(x) = (\alpha + \beta sen x) + (\alpha' + \beta' sen x) = ((\alpha + \beta senx)+\alpha')+\beta' senx =
+				((\alpha + \alpha') + \beta senx) + \beta' senx = (\alpha + \alpha') + \beta senx + \beta' senx = (\alpha + \alpha') +
+				(\beta + \beta') senx $
+ 			\item
+ 				Cerrado bajo el producto: \\
+ 				Sea $f \in E, \alpha \in \mathbb{R} \Rightarrow \alpha f \in E?$ \\ \\
+ 				$(\alpha f)(x) = \alpha f(x) = \alpha (\alpha + \beta senx) = \underbrace{\alpha^2}_{\in R} + \underbrace{\alpha\beta}_{\in R} senx \in E$
+		\end{itemize}
+\end{enumerate}
+\subsubsection{Dar un ejemplo de subespacio no vacío de $U \subset \mathbb{R}^2$ tal que $U$ sea cerrado bajo la multiplicación por 
+escalares, pero que no sea un subespacio de $\mathbb{R}^2$.}
+Tengo que buscar un subespacio de $\mathbb{R}^2$ que cumpla la condición de cerrado bajo el producto, pero no cumpla la condición
+de ser cerrado bajo la suma: \\
+$A = \{ x=(x_1,x_2) \in \mathbb{R}^2: x_i \leq 0, i \in \{ 1,2 \} \}$ \\ \\
+\textbf{Cerrado bajo la suma:} \\
+Sean $x = (x_1,x_2)$ y $y = (y_1,y_2)$ \\
+$x+y = (x_1,x_2) + (y_1,y_2) \underbrace{=}_{suma.R^2} (\underbrace{x_1+y_1}_{\leq 0},\underbrace{x_2+y_2}_{\leq 0}) \in A$ \\
+Es decir la suma de dos números negativos siempre dará un número negativo. \\ \\
+\textbf{Cerrado bajo el producto:} \\
+No cumple, ya que si tomamos $x=(-1,-3)$ y $\alpha = -1$, tenemos que: \\
+$\alpha x \underbrace{=}_{def.\alpha} (-1) x = (-1)(-1,-3) = ((-1)(-1),(-1)(-3)) = (1,3) \not \in A$
+
+\subsubsection{Sea $\mathbb{K}[x]$ el espacio vectorial de los polinomios con coeficientes en $\mathbb{K}$, y sea $U$ el subespacio
+de $\mathbb{K}[x]$ dado por:}
+\[
+U = \{ ax^2 + bx^5 : a,b \in \mathbb{K} \}
+\]
+Encontrar un subespacio $W$ de $\mathbb{K}[x]$ tal que $\mathbb{K}[x] = U \bigoplus W$. \\ \\
+\[
+W = \{ \delta x^4 + \lambda x^3 + \gamma x: \delta,\lambda,\gamma \in \mathbb{K} \}
+\]
+Cualquier polinomio que no comparta las mismas potencias cumple la condición que posee el polinomio $U$, es decir: \\ \\
+$W = \langle \{ x^i : i \in \mathbb{N}_0 - \{ 2,5 \} \} \rangle = \displaystyle \sum_{i \in I}{a_i x_i}$, $I \subseteq \mathbb{N}_0 - \{ 2,5 \}$ \\ \\
+Vemos que: \\
+$\mathbb{K}[x] = U+W$ \\ \\
+$\subseteq/ p \in \mathbb{K}[x] \Rightarrow p(x) = \displaystyle \sum_{i=0}^n{a_i x^i} = \underbrace{(a_2x^2+a_5x^5)}_{\in U}+\underbrace{(a_0 + a_1x + a_3x^3
++a_4x^4 + a_6x^6 + ...)}_{\in W}$ \\
+$\mathbb{K}[x] \subseteq U+W$ \\ \\
+$\supseteq/ p = p_1+p_2, p_1 \in U$ y $p_2 \in W \Rightarrow p = \overbrace{ax^2+bx^5}^{p_1} + \overbrace{\sum_{i \in I}{a_i x_i}}^{p_2}$, 
+$I \subseteq \mathbb{N}_0 - \{ 2,5 \} \Rightarrow p \in \mathbb{K}[x]$
+\\
+\subsubsection{Sea V un espacio vectorial sobre $\mathbb{K}$, y sean $W_1,W_2,W_3$ son subespacios de V. Determinar si son verdaderas
+o falsas las siguientes afirmaciones:}
+Acá nos sirve tomar $V = \mathbb{R}^2$ y pensarlo como vectores en el plano.
+\begin{itemize}
+\item 
+	Si $W_1 + W_3 = W_2 + W_3$ luego $W_1 = W_2.$ \\
+	Sea $W_1 = \langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle$, $W_2 = \langle \begin{pmatrix}0 \\ 1 \end{pmatrix},\begin{pmatrix}1 \\ 0
+	\end{pmatrix} \rangle$,  $W_3 = \langle \begin{pmatrix} 0 \\ 1 \end{pmatrix} \rangle$ \\
+	Vemos que $W_1 \not = W_2$, ahora probaremos que $W_1+W_3 = W_2+W_3$: \\
+	$\subseteq/$ Sea $x \in W_1+W_3 \Rightarrow x = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix}0 \\ 1 \end{pmatrix}$ = 
+	$\underbrace{\alpha\begin{pmatrix}1 \\ 0\end{pmatrix} + \frac{\beta}{2} \begin{pmatrix} 0 \\ 1\end{pmatrix}}_{\in W_2} + 
+	\underbrace{\frac{\beta}{2} \begin{pmatrix} 0 \\ 1\end{pmatrix}}_{\in W_3} \in W_2+W_3$ \\
+	$\supseteq/$ Sea $x \in W_2+W_3 \Rightarrow x = \underbrace{\alpha\begin{pmatrix}0 \\ 1\end{pmatrix}+\beta\begin{pmatrix}1 \\ 0\end{pmatrix}}_
+	{\in W_2} +\underbrace{\gamma \begin{pmatrix}0 \\ 1\end{pmatrix}}_{\in W_3} = \underbrace{(\alpha \gamma) \begin{pmatrix} 0 \\ 1 \end{pmatrix}}_
+	{\in W_3} + \underbrace{\beta \begin{pmatrix} 1 \\0 \end{pmatrix}}_{\in W_1} \in W_1+W_3$
+\item 
+	Si $W_1 \bigoplus W_3 = W_2 \bigoplus W_3$ luego $W_1 = W_2$. \\ \\
+	$V = W_1 \bigoplus W_2 \Leftrightarrow V = W_1 + W_2$ y $W_1 \cap W_2 = \{ 0 \}$ \\ \\
+	Tomando $V = R^2$, $W_1 = \langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle$, $W_2 = \langle \begin{pmatrix} 0 \\ 1\end{pmatrix} \rangle$,
+	$W_3 = \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle$ \\
+	Veamos que $W_1 \not = W_2$: \\
+	Probaremos que $W_1 + W_3 = W_2 + W_3$ \\
+	$\mathbb{R}^2 = \langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle \oplus \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle \underbrace{=}_
+	{?} \langle \begin{pmatrix} 0 \\ 1 \end{pmatrix} \rangle \oplus \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle$ \\ \\ \\
+	$\mathbb{R}^2 = \langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle \oplus \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle
+	\Longleftrightarrow
+	\left \lbrace
+		\begin{array}{rcl}
+		\mathbb{R}^2 = \langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle + \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle \\ \\
+		\langle \begin{pmatrix} 1 \\ 0 \end{pmatrix} \rangle \cap \langle \begin{pmatrix} 1 \\ 1 \end{pmatrix} \rangle = \Big \{ 0 \Big \}
+		\end{array}
+	\right.
+	$ \\ \\ \\
+	$i) \begin{pmatrix} x \\ y\end{pmatrix} \in \mathbb{R}^2 \\ \\
+	\begin{pmatrix} x \\ y \end{pmatrix} = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 1 \\ 1 
+	\end{pmatrix} = \begin{pmatrix} \alpha + \beta \\ \beta \end{pmatrix}$ \\ \\ \\
+	$\left \lbrace
+	\begin{array}{rcl}
+		x = \alpha + \beta \\
+		y = \beta
+	\end{array}
+	\right.
+	\Longrightarrow
+	x = \alpha + y \Rightarrow x - y = \alpha
+	$
+	\\ \\ \\
+	$\begin{pmatrix} x \\ y \end{pmatrix} = (x-y) \begin{pmatrix} 1 \\ 0 \end{pmatrix} + y
+	\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+	\\ 
+	Después sigo con este.
+
+\end{itemize}
+\subsubsection{Sean A y B matrices tales que $AB=0$. Demostrar que el espacio columna de B está contenido en el
+espacio nulo de A. ¿Qué sucede con el espacio fila de A y el espacio nulo de $B^T$?}
+$\mathcal{C}(B) = \Big\{ b \in \mathbb{R}^n : Bx = b \Big \}, \mathcal{N}(A) = \Big \{ x \in \mathbb{R}^n : Ax = 0 \Big\}$ \\
+\\
+\\
+$\mathcal{C}(B) \subseteq \mathcal{N}(A)$
+\\
+\\
+$\mathcal{C}(AB) = \Big\{ b \in R^n : ABx = b \Big\} = \{ b \in R^n : 0x = b\}$
+\\
+\subsubsection{Sean $W_1,W_2$ subespacios de V. Demostrar que $W_1 \cup W_2$ es un subespacio de $V$ si y sólo si
+$W_1 \subset W_2$ o $W_2 \subset W_1$. Comparar con el ejercicio 6 de la primera parte de la práctica.}
+$\Rightarrow:$ Supongamos lo contrario, es decir que $W_1 \not \subset W_2$ y $W_2 \not \subset W_1.$ Esto
+quiere decir que $\exists u \in W_1 / u \not \in W_2$ y $\exists v \in W_2 / u \not \in W_1$. \\ 
+\\
+Consideremos ahora el vector $u+v \in W_1 \cup W_2$, luego $u+v \in W_1$ o $u+v \in W_2$.
+\begin{itemize}
+	\item
+		Si $u+v \in W_1$ entonces por existencia del opuesto y clausura bajo la suma $u+v-u = u \in W_1$.
+		Contradicción.
+	\item
+		Análogamente para $u+v \in W_2$.
+\end{itemize}
+$\Leftarrow:$ Trivial pues si $W_1 \subset W_2$ o $W_2 \subset W_1$ entonces $W_1 \cup W_2 = W_1$ o bien
+$W_1 \cup W_2 = W_2$.
+\\
+\subsubsection{Considere el espacio vectorial $V$ de todas las funciones con dominio y codominio igual a
+$\mathbb{R}$ (con la suma y producto por escalares usuales).}
+Sean $V_i = \{ f \in V : f $ es una función impar$ \}$ y $V_p = \{ f \in V : f $ es una función par$\}$.
+Probar que:
+\begin{itemize}
+	\item
+		$V_i$ y $V_p$ son subespacios de $V$. \\ \\
+		Vamos a probar que $V_i$ es un subespacio, para que esto se de se tienen que verificar 3 condiciones:
+		\begin{itemize}
+		\item
+		        $0 \in V_i$, vale ya que f(-0)=-f(0)
+		\item
+		        Cerrado bajo la suma: \\
+		        Sea $f,g \in V_i \Rightarrow f+g \in V_i ?$ \\ \\
+		        Entonces tenemos que $f(-x) = -f(x)$ y $g(-x) = -g(x)$ por ser funciones impares\\
+		        $(f+g)(-x) = f(-x)+g(-x) = f(-1 \cdot x) + g(-1 \cdot x) = (-1)f(x)+ (-1)g(x) =
+		        (-1)(f+g)(x) = -(f+g)(x)$
+		\item
+		        Cerrado bajo el producto: \\
+		        Sea $f \in V_i, \alpha \in \mathbb{R} \Rightarrow \alpha f \in V_i$? \\ \\
+		        Sea $f$ una función impar entonces tenemos que $f(-x) = -f(x)$ \\
+		        $(\alpha f)(-x) = (\alpha f)(-1 \cdot x) = \alpha (f(-1 \cdot x)) \underbrace{=}_{f.imp} \alpha((-1)f(x)) =
+		        \alpha(-f(x)) = -\alpha f(x) $ \\
+		\end{itemize}
+		Ahora vamos a probar que $V_j$ es un subespacio:
+		\begin{itemize}
+			\item
+			        $0 \in V_j$, vale ya que f(-0)=f(0)
+			\item
+			        Cerrado bajo la suma: \\
+		        	Sea $f,g \in V_j \Rightarrow f+g \in V_j ?$ \\ \\
+			        $(f+g)(-x) = (f+g)(-1 \cdot x)= f(-1 \cdot x)+g(-1 \cdot x) \underbrace{=}_{f.par} f(x) + g(x) \in V_j$
+			\item
+			        Cerrado bajo el producto: \\
+			        Sea $f \in V_j, \alpha \in \mathbb{R} \Rightarrow \alpha f \in V_j$? \\ \\
+			        Sea $f$ una función par entonces tenemos que $f(-x) = f(x)$ \\
+			        $(\alpha f)(-x) = (\alpha f)(-1 \cdot x) = \alpha (f(-1 \cdot x))= \alpha f(x)$
+		\end{itemize}
+
+	\item
+		$V_i + V_p = V$. \\ \\
+		$\subseteq / f \in V_i+V_p \Rightarrow f = f_i + f_p \Rightarrow f = f_i + f_p, f_i \in V_I, f_p \in V_p$
+		\\
+		$f_i,f_p \in V \Rightarrow f \in V.$ \\ \\
+		$\supseteq / f \in V$, ¿$\exists f_i \in V_I,f_p \in V_p / f=f_i+f_p$? \\ \\
+		$f(x) = \displaystyle \frac{f(x)}{2} + \frac{f(x)}{2} = \frac{f(x)}{2} + \frac{f(x)}{2} + \frac{f(-x)}{2}
+		- \frac{f(-x)}{2} = \underbrace{\Big[ \frac{f(x)}{2} + \frac{f(-x)}{2} \Big]}_{f_p(x)} 
+		+ \underbrace{\Big[ \frac{f(x)}{2} - \frac{f(-x)}{2} \Big]}_{f_i(x)}$ \\ \\ \\
+		$f_p(-x) = \displaystyle \Big[ \frac{f(-x)}{2} + \frac{f(-(-x))}{2} \Big] = 
+		\Big[ \frac{f(-x)}{2} + \frac{f(x)}{2} \Big] = \Big[ \frac{f(x)}{2} + \frac{f(-x)}{2} \Big] = f(x)$
+		\\ \\ \\
+		$f_i(-x) = \displaystyle \Big[ \frac{f(-x)}{2} - \frac{f(-(-x))}{2} \Big] = 
+		\Big[ \frac{f(-x)}{2} - \frac{f(x)}{2} \Big] = \Big[ - \Big( \frac{f(x)}{2} - \frac{f(-x)}{2} \Big) \Big]
+		= -f_i(x)$
+	\item
+		$V_i \cap V_p = \Big\{ 0 \Big\}$ \\ \\
+		$\subseteq /$ Sea $f \in V_i \cap V_p \Rightarrow f \in V_i \wedge f \in V_p$ \\ \\
+		Luego \\
+		\hspace*{1cm} $f(-x)=-f(x) \hspace*{0.5cm} \wedge \hspace*{0.5cm} f(-x) = f(x) \forall x \in \mathbb{R}$ \\ \\
+		\hspace*{1cm} $-f(x) = f(x)$ \\
+		\hspace*{1cm} $2f(x) \Rightarrow f(x) = 0$ \\ \\
+		\\
+		$\supseteq /$ $\overline{0} \in V_I \wedge \overline{0} \in V_p$ pues son sub.e.v. 
+		$\Rightarrow \overline{0} \in V_I \cap V_p$ 
+\end{itemize}
+\subsubsection{En el espacio vectorial de las matrics reales de orden 3, describir el subespacio generado por cada
+uno de los siguientes conjuntos: }
+\[
+A =
+\Bigg \{ 
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\Bigg \} 
+\]
+
+\[
+B =
+\Bigg \{
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & -1 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1 & 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+-1 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & -1 \\
+0 & 0 & 2 \\
+1 & -2 & 0
+\end{bmatrix}
+\Bigg \}
+\]
+\\ \\
+El espacio generado por la matriz A es: 
+\\
+$\Bigg\langle
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\Bigg\rangle$
+$ = \alpha A_1 + \beta A_2 + \gamma A_3 + \delta A_4 + \epsilon A_5 = \\ \\ \\
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & \alpha \\
+0 & 0 & 0
+\end{bmatrix} +
+\begin{bmatrix}
+\beta & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix} +
+\begin{bmatrix}
+0 & \gamma & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix} +
+\begin{bmatrix}
+0 & 0 & \delta \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix} +
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \epsilon & 0 \\
+0 & 0 & 0
+\end{bmatrix} =
+\begin{bmatrix}
+\beta & \gamma & \delta \\
+0 & \epsilon & \alpha \\
+0 & 0 & 0
+\end{bmatrix}
+$ \\ \\ \\ 
+$\Big\langle A \Big\rangle = $ 
+$\Bigg\lbrace
+\begin{bmatrix}
+\beta & \gamma & \delta \\
+0 & \epsilon & \alpha \\
+0 & 0 & 0
+\end{bmatrix} : \alpha,\beta,\gamma,\delta,\epsilon \in \mathbb{R}
+\Bigg\rbrace$
+\\ \\ \\
+El espacio generado por la matriz B es: \\
+$\Big\langle
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & -1 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1& 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0&0&1 \\
+0&0&0 \\ 
+-1&0&0
+\end{bmatrix},
+\begin{bmatrix}
+0&0&-1 \\
+0&0&2 \\
+1&-2&0
+\end{bmatrix}
+\Big\rangle
+ = \beta_1 B_1 + \beta_2 B_2 + \beta_3 B_3 + \beta_4 B_4 \\ \\ \\
+\begin{bmatrix}
+0&0&0 \\
+0&0&\beta_1 \\
+0&-\beta_1&0
+\end{bmatrix} +
+\begin{bmatrix}
+0&\beta_2&0 \\
+-\beta_2&0&0 \\
+0&0&0
+\end{bmatrix} +
+\begin{bmatrix}
+0&0&\beta_3 \\
+0&0&0 \\
+-\beta_3&0&0
+\end{bmatrix} +
+\begin{bmatrix}
+0&0&-\beta_4 \\
+0&0&2\beta_4 \\
+\beta_4&-2\beta_4&0
+\end{bmatrix} =
+\begin{bmatrix}
+0 & \beta_2 & \beta_3-\beta_4 \\
+-\beta_2 & 0 & \beta_1+2\beta_4 \\
+-\beta_3+\beta_4& -\beta_1-2\beta_4& 0
+\end{bmatrix}
+$ \\ \\ \\
+$\Big\langle B \Big\rangle =
+\Bigg\lbrace
+\begin{bmatrix}
+0 & \beta_2 & \beta_3-\beta_4 \\
+-\beta_2 & 0 & \beta_1+2\beta_4 \\
+-\beta_3+\beta_4& -\beta_1-2\beta_4& 0
+\end{bmatrix} : \beta_1,\beta_2,\beta_3,\beta_4 \in \mathbb{R}
+\Bigg\rbrace
+$
+\subsubsection{Sea $\langle S\rangle$ el subespacio generado por un subconjunto S de V. Demostrar las siguientes
+propiedades: }
+\begin{enumerate}[a.]
+	\item
+		Si $S \subset T$, entonces $\langle S\rangle \subset \langle T\rangle$. \\ \\
+		Sea $S = \displaystyle \sum_{i=0}^{n}{s_i}$ y $T = \displaystyle \sum_{i=0}^{n}{t_i}$
+	\item
+		$S \subset \langle S \rangle$ \\ \\
+		$S = \lbrace s_1,s_2,...,s_n \rbrace$,
+		$\langle S \rangle = \lbrace \alpha_1 s_1, \alpha_2 s_2, ..., \alpha_n s_n : \alpha_1,...,\alpha_n \in \mathbb{K} \rbrace$ \\ \\
+		Tengo que probar que cada elemento de S se puede escribir como una combinación lineal de S. \\
+		En particular si tomo: $\alpha_i = 1$ y
+		$\alpha_1 = \alpha_2 = ... = \alpha_{i-1} = \alpha_{i+1} = ... = \alpha_n = 0$ \\
+		$s_i = \displaystyle \sum_{i=1}^{n}{\alpha_i s_i}$ \\
+		Es decir cada elemento del conjunto, se puede escribir como una combinación lineal de cada elemento de S.
+	\item
+		Si $S \subset T$ y $T$ es un subespacio de $V$, entonces $\langle S \rangle \subset T$. Es decir que $\langle S \rangle$
+		es el menor subespacio de $V$ que contiene a $S$. \\ \\
+		Primero de todo, sabemos que $T$ es un subespacio entonces se cumplen los 10 axiomas de un espacio vectorial, en particular:
+		\begin{itemize}
+		\item
+			Cerrado bajo la suma: 
+			$u,v \in \mathbb{T} \Rightarrow u+v \in \mathbb{T}$
+		\item 
+			Cerrado bajo el producto: 
+			$u \in \mathbb{T}, \alpha \in \mathbb{R} \Rightarrow \alpha u \in \mathbb{T}$
+		\end{itemize}
+	
+		Sabemos que $S = \lbrace s_1,s_2,...,s_n\rbrace \subset T$ \\
+		Tenemos que probar que $\langle S \rangle = \lbrace \alpha_1 s_1,\alpha_2 s_2,...,\alpha_n s_n : \alpha_1,...,\alpha_n \in
+		\mathbb{R} \rbrace \subset T$ \\ \\
+		$\subset/ $ Sea $x \in \langle S\rangle \Rightarrow x = \alpha_1 s_1 + \alpha_2 s_n + ... + \alpha_n s_n \underbrace{=}_{S \subset T} 
+		\alpha_1 t_1 + \alpha_2 t_2 + ... + \alpha_n t_n \subset \mathbb{T}$, ya que T es un subespacio por lo tanto se cumple que es cerrado bajo
+		el producto.
+\item
+	$S$ es un subespacio de $V$ si y sólo si $\langle S \rangle = S$.  \\ \\
+	$\Rightarrow/$ Suponemos que S es un subespacio de V entonces sabemos que se cumple que:
+	\begin{itemize}
+		\item
+			$0 \in S$
+		\item
+			$s,r \in S \Rightarrow s+r \in S$
+		\item
+			$s \in S, \alpha \in \mathbb{R} \Rightarrow \alpha s \in S$
+	\end{itemize}
+	Ahora tenemos que probar que 
+	$\langle S \rangle = \lbrace \alpha_1 s_1,\alpha_2 s_2,...,\alpha_n s_n : \alpha_1,...,\alpha_n \in \mathbb{K}\rbrace$ = S \\ \\
+	$\subset /$ 
+		Sea $x \in \langle S\rangle \Rightarrow x = \alpha_1 s_1 + \alpha_2 s_2 + ... + \alpha_n s_n \in S$, ya que
+		$\alpha_i s_i \in S$ por ser S un subespacio de V y la suma de dos elementos pertenecientes a S también pertenecen a S. \\ \\
+	$\supset /$
+		Sea $x \in S$ entonces tenemos que $\alpha_i s_i \in S$ y $s_i+s_j \in S$, luego $S \subset \langle S\rangle$  \\ \\
+	$\Leftarrow /$ Ahora tenemos que $\langle S \rangle = S$ y queremos llegar a que S es un subespacio. \\
+	Si $\langle S \rangle = S$ entonces tenemos verificar si se cumplen las siguientes condiciones:
+	\begin{itemize}
+		\item
+			¿$0 \in S$? Si se cumple ya que si tomamos $\alpha_1 = \alpha_2 = ... = \alpha_n = 0$ entonces
+			$0 = \displaystyle \sum_{i=1}^{n}{\alpha_i s_i}$ \\
+		\item
+			Sea $u,v \in \langle S \rangle \Rightarrow u+v \in \langle S\rangle?$ \\
+			Sea $u = \displaystyle \sum_{i=1}^{n}{\alpha_i s_i}$ y $v = \displaystyle \sum_{i=1}^{n}{\beta_i s_i}$, entonces
+			tenemos que: \\ \\ \\
+			$u+v = \displaystyle \sum_{i=1}^{n}{\alpha_i s_i} + \sum_{i=1}^{n}{\beta_i s_i} =
+			\sum_{i=1}^{n}{(\alpha_i s_i + \beta_i s_i)} = \sum_{i=1}^{n}{\underbrace{(\alpha_i \beta_i)}_{\in \mathbb{R}} s_i}
+			\in \langle S \rangle$.
+		\item
+			Sea $u = \sum_{i=1}^{n}{\alpha_i s_i}$ y $\gamma \in \mathbb{R}$ entonces $\alpha u \in S?$ \\ \\
+			$\gamma u = \gamma \sum_{i=1}^{n}{\alpha_i s_i} = \sum_{i=1}^{n}{\gamma \alpha_i s_i} = \sum_{i=1}^{n}{(\gamma \alpha_i) s_i }
+			\in \langle S\rangle$
+	\end{itemize}
+	Luego $\langle S\rangle$ es un subespacio de V.
+
+	\item
+		Si $\langle S\rangle = U \Longrightarrow \langle U\rangle = U$ \\ \\
+		$\Rightarrow /$
+		Supongamos que $\langle S \rangle = U$ \\
+		Entonces U es un subespacio generado por S, ahora tenemos que probar $\langle U \rangle = U$.
+		\begin{itemize}
+			\item
+				$\supset/$ Tenemos que probar que todo elemento de U se puede escribir como una
+				combinación lineal de U. \\
+				En particular tomando $\alpha_1 = \alpha_2 = ... = \alpha_{i-1} = \alpha_{i+1} = ...
+				= \alpha_n = 0$ y $\alpha_i = 1$, tenemos que:
+				$u_i = \displaystyle \sum_{i=1}^{n}{\alpha_i u_i}$
+			\item
+				$\subseteq/$
+				Ahora tenemos que probar que $\langle U \rangle \subseteq U$ \\
+				Ahora tomamos $\alpha_1 = \alpha_2 = ... = \alpha_{i-1} = \alpha_{i+1} = ... = \alpha_n = 0$ 
+				y $\alpha_i = 1$, tenemos que: \\
+				Sea $x \in \langle U\rangle \Rightarrow \sum_{i=1}^{n}{\alpha_i u_i} \Rightarrow$
+				$\alpha_1 u_1 + \alpha_2 u_2 + ... + \alpha_n u_n = u_i \in U$
+		\end{itemize}
+	\item
+		Sea $W \subset S$. Entonces \\
+		i. $\langle S \cup W \rangle \subset \langle S \rangle \cup \langle W \rangle$ \\
+		ii. $\langle S \cap W \rangle \subset \langle S \rangle + \langle W \rangle$ \\
+		\\ \\
+		i. Supongamos $W \subset S \Rightarrow \langle S \cup W\rangle \subset \langle S \rangle \cup \langle W \rangle$ \\
+		Si $W \subset S$ entonces $S \cup W = S$ y también $\langle S \rangle \cup \langle W \rangle = \langle S \rangle$ \\
+		Entonces tenemos que probar $\langle S \rangle \subset \langle S \rangle$ que es trivial.
+		\\ \\
+		ii. Sabemos que como $W \subset S \Rightarrow W \cap S = W$, por lo tanto $\langle W \cap S\rangle = \langle W \rangle$ \\
+		Entonces tenemos que probar que: $\langle W \rangle \subset \langle S \rangle + \langle W \rangle$ \\ \\
+		$W = \lbrace w_1,w_2,...,w_n\rbrace$ \\
+		Sea $x \in \langle W \rangle \Rightarrow x = \alpha_1 w_1 + \alpha_2 w_2 + ... + 
+		\alpha_n w_n = 0s_1+0s_2+...+0s_n + \alpha_1 w_1 + \alpha_2 w_2 + ... + \alpha_n w_n \in \langle S \rangle + \langle W \rangle$
+
+	\item
+		Valen las contenciones inversas en los ítems a) y f). \\
+		Es decir: \\
+		\begin{itemize}
+		\item 
+			Si $S \supset T$, entonces $\langle S \rangle \subset \langle T \rangle$ o \\
+		 	Si $S \subset T$, entonces $\langle S \rangle \supset \langle T \rangle $
+		\item
+			WTF
+		\end{itemize}
+\end{enumerate}
+\subsubsection{Describir el menor subespacio vectorial de $\mathbb{R}^{2x2}$ que contenga a}
+Tenemos que comprobar que los conjuntos sean linealmente independientes, si son linealmente dependientes entonces
+debemos remover elementos del conjunto hasta que el conjunto resultante sea linealmente independiente.
+\begin{itemize}
+	\item
+		$\begin{bmatrix}1 & 0 \\ 0 & 0 \end{bmatrix}$ y $\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$ \\ \\
+		El menor subespacio que contiene a estas dos matrices es el generado por las dos matrices: \\
+		$\Bigg \langle\begin{bmatrix}1&0\\0&0 \end{bmatrix}, \begin{bmatrix} 0&1 \\0&0\end{bmatrix}\Bigg\rangle 			= \Big \lbrace\alpha \begin{bmatrix} 1&0 \\ 0&0\end{bmatrix} + \beta \begin{bmatrix} 0&1 \\ 0&0\end{bmatrix} :
+		\alpha,\beta \in \mathbb{R} \Big\rbrace = \Big\lbrace \begin{bmatrix} \alpha&\beta \\ 0&0 \end{bmatrix} :
+		\alpha,\beta \in \mathbb{R} 
+		\Big\rbrace$
+  	\item
+		$\begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$ \\
+		El menor subespacio es: 
+		$\Big \langle \begin{bmatrix} 1&1 \\ 0&0 \end{bmatrix} \Big \rangle = \Big\lbrace \begin{pmatrix}
+		\alpha & \beta \\ 0&0 \end{pmatrix} : \alpha,\beta \in \mathbb{R} \Big\rbrace$
+
+	\item
+		$\begin{bmatrix} 1&0 \\ 0&0 \end{bmatrix}$ y $\begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}$ \\ \\ \\
+		$\Big\langle \begin{bmatrix} 1&0 \\ 0&0 \end{bmatrix}, \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix} \Big\rangle
+		= \Big\lbrace \alpha \begin{bmatrix} 1&0 \\ 0&0 \end{bmatrix} + \beta \begin{bmatrix}1&0 \\ 0&1 \end{bmatrix}
+		: \alpha,\beta \in \mathbb{R}\Big\rbrace = \Big\lbrace \begin{bmatrix} \alpha+\beta & 0 \\ 0 & \beta \end{bmatrix} 
+		: \alpha,\beta \in \mathbb{R}\Big\rbrace$
+\end{itemize}
+\subsubsection{Sea $V$ el espacio vectorial de los polinomios de $\mathbb{R}[x]$ de grado menor o igual a 3. Considere lo siguientes
+polinomios: }
+
+\hspace*{2cm} $p_1(x) = x^3+2x^2+4$, \hspace*{2.1cm} $p_4(x) = 3x^3+6x^2+9x+12$ \\
+\hspace*{2cm} $p_2(x) = 2x^3+5x^2+11x+8$, \hspace*{1cm} $p_5(x) = x^3+3x^2+8x+13$\\
+\hspace*{2cm} $p_3(x) = x^2+5x$
+\\ \\
+Para $j \in \{ 4,5 \}$ determinar si $p_j \in \langle \{ p_1,p_2,p_3 \} \rangle$ \\
+\\
+Vamos a ver si $p_4$ se puede escribir como combinación lineal de $p_1,p_2$ y $p_3$. \\
+$\lbrace \alpha p_1 + \beta p_2 + \gamma p_3 : \alpha,\beta,\gamma \in \mathbb{R} \rbrace
+=\lbrace \alpha (x^3+2x^2+4) + \beta (2x^3+5x^2+11x+8) + \gamma(x^2+5x): \alpha,\beta,\gamma \in \mathbb{R} \rbrace$
+\\
+$= (\alpha+2\beta)x^3 + (2\alpha+5\beta+\gamma)x^2 + (11\beta + 5\gamma)x + 4\alpha + 8\beta$
+\\ \\
+Ahora para ver si $p_4$ se puede escribir como una combinación lineal de $p_1,p_2$ y $p_3$, tenemos que:  \\
+$
+\left \{
+\begin{array}{rcl}
+	\alpha+2\beta &=& 3 \\
+	2\alpha+5\beta+\gamma &=& 6 \\
+	11\beta + 5\gamma &=& 9 \\
+	4\alpha + 8\beta &=& 12
+\end{array}
+\right.
+$
+\\
+$\alpha = 3-2\beta \\
+2(3-2\beta)+5\beta + \gamma = 6 \Longrightarrow 6-4\beta+5\beta + \gamma = 6 \Longrightarrow 6 + \beta + \gamma = 6 
+\Longrightarrow \beta+\gamma = 0 \Longrightarrow \beta = -\gamma \Longrightarrow \beta = \frac{3}{2}
+\\
+11(-\gamma) + 5\gamma = 9 \Longrightarrow -6\gamma = 9 \Longrightarrow \gamma = \frac{-3}{2}
+\\
+\alpha = 3-2(\frac{3}{2}) \Longrightarrow \alpha = 3-3 \Longrightarrow \alpha = 0 \\
+$ \\
+Luego existe una combinación lineal de $\alpha,\beta,\gamma$ tal que da como resultado $p_4$.
+\\ \\ \\ 
+Ahora hagamos lo mismo con $p_5$: \\
+$
+\left \{
+\begin{array}{rcl}
+	\alpha+2\beta &=& 1 \\
+	2\alpha+5\beta+\gamma &=& 3 \\
+	11\beta + 5\gamma &=& 8 \\
+	4\alpha + 8\beta &=& 13
+\end{array}
+\right.
+\Longrightarrow
+\begin{cases}
+	\alpha = 1-2\beta \\
+	4(1-2\beta)+8\beta = 13 \Rightarrow 4\cancel{-8\beta + 8\beta} = 13 \Rightarrow  4=13
+\end{cases}
+$ \\ \\
+Luego no existe una combinación lineal que de como resultado al polinomio $p_5$.
+\\
+\subsubsection{Analizar si los siguientes vectores son linealmente independientes}
+\begin{itemize}
+	\item
+		$(1,1,0,0);(1,0,1,0);(0,0,1,1);(0,1,0,1) \\ \\
+		\alpha(1,1,0,0) + \beta(1,0,1,0) + \gamma(0,0,1,1) + \epsilon(0,1,0,1) =
+		(\alpha+\beta,\alpha+\epsilon,\beta+\gamma,\gamma+\epsilon) = (0,0,0,0)
+		\\
+		\begin{cases}
+			\alpha+\beta = 0 \\
+			\alpha+\epsilon = 0 \\
+			\beta + \gamma = 0 \\
+			\gamma + \epsilon = 0
+		\end{cases}
+		\Rightarrow
+		\begin{cases}
+			\beta = -\alpha \\
+			\epsilon = -\alpha \\
+			\gamma = \alpha
+		\end{cases}
+		 \alpha \in \mathbb{R}$ \\
+		\\
+		Luego es linealmente independiente.
+	\item
+		$(1,1,0);(1,0,0);(0,1,1);(x,y,z)$ para $x,y,z$ cualquiera. \\
+		$\alpha(1,1,0)+\beta(1,0,0)+\gamma(0,1,1)+\delta(x,y,z) = (\alpha+\beta+\underbrace{\delta x}_{\omega},
+		\alpha+\gamma+\underbrace{\delta y}_{\omega'}, \gamma + \delta z)$ \\ \\
+		$
+		\begin{cases}
+			\alpha+\beta+\omega = 0 \Rightarrow \beta = -\omega'' + \omega' - \omega \\
+			\alpha + \gamma + \omega' = 0 \Rightarrow \alpha = \omega'' - \omega' \\
+			\gamma + \omega'' = 0 \Rightarrow \gamma = -\omega''
+		\end{cases}
+		\\ \\
+		$Sea $\delta=1, \omega'' = 1, \omega' = 2, \omega=3 \\ \\
+		\begin{cases}
+			\gamma = -1 \\
+			\alpha = 1-2 \Rightarrow \alpha = -1 \\
+			\beta = -1 + 2 - 3 \Rightarrow \beta = -1 - 3 \Rightarrow \beta = -2
+		\end{cases}
+		$
+		\\ \\
+		$-1(1,1,0)-2(1,0,0)-1(0,1,1)+1(3,2,1) = (-1,-1,0)+(-2,0,0)+(0,-1,-1)+(3,2,1)
+		= (-3,-1,0) + (3,1,0) = (0,0,0)$ \\ \\
+		Luego es linealmente dependiente ya que existe una combinación de escalares que hacen que
+		dan el vector nulo. \\
+		Si $x,y,z$ toma cualquier valor entonces nunca será un vector li.
+\end{itemize}
+\subsubsection{Sea $P = \{ (x,y,z,t) \in \mathbb{R}^4 : x-2y+z-t = 0\}.$ Verificar que $P$ es un espacio vectorial
+y hallar 3 vectores linealmente independientes en $P$.}
+Para verificar que $P$ es un espacio vectorial deberíamos comprobar los 10 axiomas pero podemos verificar si
+$P$ es un subespacio de $\mathbb{R}^4$ que para eso sólo deberíamos verificar 3 axiomas. \\
+\begin{itemize}
+	\item
+		$0 \in P?$. \\
+		Sí, ya que $0-2 \cdot 0+0-0=0$
+	\item
+		Cerrado bajo la suma: \\
+		Sea $p = (2y-z+t,y,z,t)$ y $q = (2y'-z'+t',y',z',t')$ \\
+		$p+q = \underbrace{(2y-z+t,y,z,t)}_{0} + \underbrace{(2y'-z'+t',y',z',t')}_{0} = (2y-z+t+2y'-z'+t',y+y',z+z',t+t') = 0
+		\in P$
+	\item
+		Cerrado bajo el producto:
+		Sea $\alpha \in \mathbb{R}$ y $p \in P \Rightarrow \alpha p \in P?$\\
+		Sea $p=(2y-z+t,y,z,t), 
+		\alpha p = \alpha \underbrace{(2y-z+t,y,z,t)}_{0} = (\alpha(2y-z+t),\alpha y, \alpha z, \alpha t) = 0\in P $
+\end{itemize}
+\subsubsection{Probar que}
+\begin{itemize}
+	\item
+		Todo conjunto de vectores que contenga al vector nulo es $l.d.$
+	\item
+		Si $S$ es $l.i.$ entonces $T$ es $l.i. \forall T \subset S$.
+	\item
+		Si $S$ es $l.d.$ entonces $T$ es $l.d. \forall T \supset S$. 
+\end{itemize}
+\subsubsection{Si $\{ v_1,v_2,v_3 \} \subset V$ es un conjunto $l.i.$, probar que $\{ v_1+v_2,v_1+v_3,v_2+v_3 \}$ también es
+$l.i.$}
+COMPLETAR.
+\section{PRÁCTICA 3 -- TRANSFORMACIONES LINEALES}
+\subsubsection{Para cada una de las siguientes funciones $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ determinar si se trata
+de una transformación lineal y en caso afirmativo: obtener $nul(T)$ y $img(T)$, calcular su dimensión y determinar si $T$
+es inversible.}
+\begin{enumerate}[a.]
+	\item
+		$T((x,y)^t) = (y,x)^t$ \\ \\
+		\textbf{Cerrado bajo la suma}: \\
+		Sea $u,v \in \mathbb{R}^2$ \\
+		$T(u+v) = T((x,y)^t+(x',y')^t )=T((x+x',y+y')^t)=(y+y',x+x')^t=(y,x)^t+(y',x')^t =T((x,y)^t)+T((x',y')^t)
+		= T(u)+T(v)$
+		\\ \\
+		\textbf{Cerrado bajo el producto}:
+		Sea $u \in \mathbb{R}^2, \alpha \in \mathbb{R}$ \\
+		$T(\alpha u) = T( \alpha (x,y)^t) = T ( (\alpha x,\alpha y)^t ) = (\alpha y,\alpha x)^t = \alpha(y,x)^t =
+		\alpha T(u)$ \\ \\
+		Luego es una transformación lineal.
+		\\ \\
+		Ahora vamos a obtener $nul(T) = \{ (0,0)^t \in \mathbb{R}^2 : T((x,y)^t) = (0,0)^t \}$ \\
+		$T((x,y)^t) = (y,x)^t = (0,0)^t \Rightarrow \begin{cases} x=0 \\ y=0  \end{cases} \\
+		\mathcal{N}(T) = (0,0), dim(\mathcal{N}(T)) = 0$ \\ \\
+		$img(T) = \{ (a,b)^t \in \mathbb{R}^2 : T((x,y)^t) = (a,b)^t, (x,y) \in \mathbb{R}^2  \} $
+		\\ \\
+		$T((x,y)^t) = (y,x)^t = (a,b)^t \Rightarrow \begin{cases} y=a \\ x=b \end{cases}  \\
+		img(T)=\mathbb{R}^2 \Rightarrow dim(img(T))=2\\$
+		La imágen es $\mathbb{R}^2$ ya que para cada y existe un a y para cada x existe un b, supongo.
+
+
+
+	\item
+		$T((x,y)^t) = (x^2,y^2)^t$ \\
+		\textbf{Cerrado bajo la suma}: \\
+		No vale, ya que tomando $u=(-1,3)^t$ y $v=(-1,-1)^t \in \mathbb{R}^2$, tenemos que: \\ \\
+		$
+		\left.
+		\begin{array}{rlc}
+		T((-1,3)^t+(-1,-1)^t) &=& T((-2,2)^t) = (4,4)^t \\
+		T((-1,3)^t) + T((-1,-1)^t) &=& (1,9)^t+(1,1)^t = (2,10)
+		\end{array}
+		\right \} \not =
+		$
+		\\ \\ \\
+		\textbf{Cerrado bajo el producto}: \\
+		Sea $u \in \mathbb{R}^2, \alpha \in \mathbb{R}$ \\
+		No vale ya que tomando, $u=(-1,-1)^t \in \mathbb{R}^2$ y $\alpha=-1 \in \mathbb{R}$ \\ \\
+		$
+		\left.
+		\begin{array}{rlc}
+		T(\alpha u) &=& T(\alpha (-1,-1)^t) = T(-1 \cdot (-1,-1)^t) = T( (1,1)^t ) = (1,1)^t\\
+		\alpha T(u) &=& -1 \cdot T((-1,-1)^t) = -1(1,1) = (-1,-1)
+		\end{array}
+		\right \} \not =
+		$ \\ \\
+ 		No es una transformación lineal. 
+	\item
+		$T((x,y)^t) = (x,-y)^t$ \\
+		\textbf{Cerrado bajo la suma}: \\
+		Sea $u=(x,y)^t$ y $v = (x',y')^t \in \mathbb{R}^2$ \\ \\
+		$
+		\begin{array}{rlc}
+		T(u+v) &=& T((x,y)^t+(x',y')^t) = T((x+x',y+y')^t) = (x+x',-y-y')^t \\
+		T(u)+T(v) &=& T((x,y)^t) + T((x',y')^t) = (x,-y)^t + (x',-y')^t = (x+x',-y-y')^t
+		\end{array}
+		$
+		\\ \\ \\
+		\textbf{Cerrado bajo el producto}: \\
+		Tomando $u=(x,y)^t \in \mathbb{R}^2$ y $\alpha \in \mathbb{R}$ \\ \\
+		$
+		\begin{array}{rlc}
+		T(\alpha \cdot (x,y)^t) &=& T( (\alpha x, \alpha y)^t ) = (\alpha x, - \alpha y)^t \\
+		\alpha \cdot T((x,y)^t) &=& \alpha \cdot (x,y)^t = \alpha \cdot (x,-y)^t = (\alpha x, -\alpha y)^t
+		\end{array}
+		$ \\
+		Es una transformación lineal.
+		\\ \\
+		Ahora calcularemos $\mathcal{N}(T) = \{ (0,0)^t \in \mathbb{R}^2 : T((x,y)^t) = (0,0)^t \}$: \\
+		$T((x,y)^t) = (x,-y)^t \Rightarrow (x,-y)^t = (0,0)^t \Rightarrow \begin{cases} x=0 \\ y=0 \end{cases}$
+		\\
+		$\mathcal{N}(T) = \{ 0,0 \}, dim(\mathcal{N}(T)) = 0$ \\
+		\\
+		Sabemos que $dim(V) = dim(img(T)) + dim(\mathcal{N}(T)) \Rightarrow 2 = dim(img(T)) + 0 \Rightarrow dim(img(T)) = 2$
+		\\ \\
+		$img(T) = \{ (a,b)^t \in \mathbb{R}^2 / T((x,y)^t) = (a,b)^t \}$ \\ \\
+		$T((x,y)^t) = (x,-y)^t \Rightarrow (x,-y)^t = (a,b)^t \Rightarrow \begin{cases} x=a \\ y=-b \end{cases}$
+		\\
+		Luego, dado $(a,b)^t \in \mathbb{R}^2, \exists (x,y) = (a,-b) \in \mathbb{R}^2 / T(x,y) = (a,b)$ \\
+		$img(T) = \mathbb{R}^2, dim(img(T)) = 2$
+	\item
+		$T((x,y)^t) = (x,0)^t$ \\
+		\textbf{Cerrado bajo la suma}: \\
+		Sea $u,v \in \mathbb{R}^2$ \\
+		$
+		\begin{array}{rlc}
+		T(u+v) &=& T((x,y)^t+(x',y')^t) = T( (x+x',y+y')^t) = (x+x',0)^t \\
+		T(u)+T(v) &=& T((x,y)^t) + T((x',y')^t = (x,0)^t + (x',0) = (x+x',0)^t
+		\end{array}
+		$
+		
+		\textbf{Cerrado bajo el producto}: \\
+		Sea $u \in \mathbb{R}^2, \alpha \in \mathbb{R}$ \\ \\
+		$
+		\begin{array}{rlc}
+		T(\alpha u) &=& T(\alpha (x,y)^t) = T( (\alpha x, \alpha y)^t ) = (\alpha x, 0)^t \\
+		\alpha T(u) &=& \alpha T((x,y)^t) = \alpha (x,0)^t = (\alpha x,0)^t
+		\end{array}
+		$ \\
+		Es una transformación lineal.
+		\\ \\
+		$\mathcal{N}(T) = \{ (0,0)^t \in \mathbb{R}^2 : T((x,y)^t) = (0,0)^t \}$ \\
+		$T((x,y)^t) = (x,0)^t = (0,0)^t \Rightarrow \begin{cases} x=0 \\ 0=0 \end{cases}$
+		\\
+		Luego $dim(\mathcal{N}(T)) = 0$
+		\\
+		$dim(V) = dim(\mathcal{N}(T)) + dim(img(T))$ \\
+		\\
+		$img(T) = \{ (a,b)^t \in \mathbb{R}^2 : T((x,y)^t) = (a,b)^t \}$ \\
+		$T((x,y)^t) = (x,0)^t = (a,b)^t \Rightarrow \begin{cases} x=a \\ b=0 \end{cases}$ \\
+		$img(T) \not = \mathbb{R}^2, dim(img(T))=1$
+\end{enumerate}
+
+\subsubsection{Sea $V = \mathbb{R}^n$, fijamos la base canónica $B = \{ e_1,e_2,...,e_n\}$. Para cada $T_i : \mathbb{R}^n \rightarrow
+\mathbb{R}^n$ hallar $A_i$ tal que $A_ix = T_i(x), \forall x \in \mathbb{R}^n, i = 1,...,4$.}
+$e_1 = (1,0,0,...,0), e_2 = (0,1,0,...,0), ..., e_n = (0,0,...,0)$
+
+\begin{enumerate}[a.]
+	\item
+		$A_1x = T_1(x), \forall x \in \mathbb{R}^n$ \\
+		$T_1(x) = x, \forall x \in \mathbb{R}^n$. \\
+		
+	\item
+		$T_2(x) = 0, \forall x \in \mathbb{R}^n$ \\
+		$A_2 = \begin{bmatrix} 0 & 0 & ... & 0 \\ 0 & 0 & ... & 0 \\ \vdotswithin{\ldots} & 
+		\vdotswithin{\ldots} & \vdotswithin{\ldots} & \vdotswithin{\ldots} \\ 0&0 &...& 0 \end{bmatrix}$
+\end{enumerate}
+
+\subsubsection{Consideramos la base canónica de $V = \mathbb{R}^2$ dada por $B = \{ e_1, e_2\}$
+y la transformación lineal $T : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ que aplica los vectores
+$e_1$ y $e_2$ como sigue:}
+
+$\hspace*{3cm}T(e_1) = e_1 + e_2, \hspace*{1cm} T(e_2) = 2\cdot e_1-e_2$
+\\
+Obtener
+\begin{enumerate}[a.]
+	\item
+		$T(3 \cdot e_1 - 4 \cdot e_2)$ y $T^2(3 \cdot e_1 - 4 \cdot e_2)$. \\ \\
+		$T(3 \cdot e_1 - 4 \cdot e_2) \underbrace{=}_{T(u+v)=Tu+Tv} T(3 \cdot e_1) + T(-4 \cdot e_2) 
+		\underbrace{=}_{T(au)=aTu} 3 \cdot T(e_1) + (-4) \cdot T(e_2) \underbrace{=}_{def.T} 3 \cdot (e_1+e_2) - 4 \cdot (2 \cdot e_1 - e_2) 
+		= 3 \cdot e_1 + 3 \cdot e_2 - 8 e_1 + 4 e_2 = 7e_2 - 5e_1 = 7 \cdot (0,1) - 5 \cdot (1,0) = 
+		(0,7) - (5,0) = (-5,7)$
+		\\ \\
+		\\
+		$T^2(3 \cdot e_1 - 4 \cdot e_2) \underbrace{=}_{def.T^2} T(T(3 \cdot e_1 - 4 \cdot e_2))
+		\underbrace{=}_{Clausura} T(T(3 \cdot e_1) + T(-4 \cdot e_2)) 
+		\underbrace{=}_{T(a.u)=aTu} T(3 \cdot T(e_1) - 4 T(e_2)) = 
+		T(7e_2 - 5e_1) = T(7e_2) + T(-5e_1) = 7\cdot T(e_2) + 
+		(-5) \cdot T(e_1) = 7(2 \cdot e_1 - e_2) - 5\cdot (e_1+e_2) = 14\cdot e_1 - 7 e_2
+		-5\cdot e_1 - 5 \cdot e_2 = 9\cdot e_1 - 12\cdot e_2$
+
+	\item
+		Las matrices asociadas a $T$ y $T^2$ en la base $B$. \\ \\
+		Lo que piden son las representaciones matriciales de las transformaciones lineales $T$ y $T^2$. \\
+		\\
+		Para esto hay que recordar, ¿qué significa la representación matricial de una transformación lineal
+		$T: V \rightarrow W$ respecto a una base ordenada $(e_1,e_2,...,e_n)$ para $V$ y $(w_1,w_2,...,w_n)$
+		para $W$? \\
+		Es una matriz tal que su columna i-ésima, son las componentes de $T(e_i)$ respecto a la 
+		base ordenada $(w_1,w_2,...,w_m)$, $i=1,2,...,n$, en este caso $V=W=\mathbb{R}^2$ y se está tomando
+		la misma base B. \\ \\
+		Teniendo $T(e_1) = e_1+e_2$ y $T(e_2) = 2e_1-e_2$ \\ \\
+		Se arma la matriz: $\begin{bmatrix} 1 & 2 \\ 1 & -1 \end{bmatrix}$
+		\\
+		\\
+		Y para $T^2 = T \circ T$, se tiene en cuenta que la compuesta es también lineal y la matriz de la compuesta,
+		es el producto de las matrices de ambas transformaciones $m(T^2) = m(T)m(T)$ \\ \\
+		Entonces calcularemos: $T(T(e_1)) = T (e_1+e_2)$ y $T(T(e_2)) = T(2e_1-e_2)$ \\
+		$T(T(e_1)) = T(e_1+e_2) = T(e_1) + T(e_2) = (e_1+e_2) + (2e_1 -e_2) = 3e_1\\
+		T(T(e_2)) = T(2e_1-e_2) = T(2e_1) + T(-e_2) = 2T(e_1) - T(e_2) = 2(e_1+e_2) - (2e_1-e_2) =
+		\cancel{2e_1} + 2e_2 - \cancel{2e_1} + e_2 = 3e_2$
+
+		Teniendo $T^2(e_1) = 3e_1$ y $T^2(e_2) = 3e_2$ \\ \\
+		Se arma la matriz: $\begin{bmatrix} 3 & 0 \\ 0 & 3 \end{bmatrix}$ \\
+		Tenemos que $m(T)m(T) = m(T^2)$
+
+	\item
+		$T(v), \forall v \in V$. \\
+		Sea $v \in \mathbb{R}^2 \Rightarrow 
+		\begin{cases}
+		v = xe_1 + ye_2 \\
+		[v]_B = (x,y)
+		\end{cases}
+		\\ \\
+		T(v) = T(xe_1 + ye_2) = T(xe_1) + T(ye_2) = xT(e_1) + yT(e_2) = x(e_1+e_2) + y(2e_1-e_2) = \\
+		xe_1+xe_2 + 2ye_1 - ye_2 = (x+2y)e_1 + (x-y)e_2$.
+		\\ \\
+		Luego $[T(v)]_B = \begin{cases} x+2y \\ x-y \end{cases}$
+\end{enumerate}
+
+\subsubsection{Sean $T_{1,2} : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ tal que $T_1((x,y,z)^t) = (x,y,0)^t$ y 
+$T_2((x,y,z)^t) = (x,y,y)^t$. Hallar $T_1 \circ T_2$ y $T_2 \circ T_1$.}
+
+$T_1 \circ T_2((x,y,z)^t) = T_1[ T_2(x,y,z)^t ] =  T_1 [ (x,y,y)^t ] = (x,y,0)^t $ \\ \\
+$T_2 \circ T_1((x,y,z)^t) = T_2[ T_1(x,y,z)^t ] = T_2 [ (x,y,0)^t ] = (x,y,y)^t $. \\
+\\
+Analizar si son epimorfismos, monomorfismos, isomorfismos o ninguna de ellas. \\
+\\
+Una transformación lineal T es \textbf{inyectiva} si y sólo si $\mathcal{N} = \{ 0\}$ \\
+$\mathcal{N}(T_1 \circ T_2) = \{ (0,0,0) \in \mathbb{R}^3 : (T_1 \circ T_2)((x,y,z)^t) = (0,0,0)^t \}$ \\
+$(T_1 \circ T_2)((x,y,z)^t) = T_1 [ T_2 (x,y,z)^t ] = T_1 [ (x,y,y)^t] = (x,y,0)^t \Rightarrow
+(x,y,0)^t = (0,0,0)^t \Rightarrow \begin{cases} x=0 \\ y=0 \\ 0=0 \end{cases}
+$ \\
+Luego $\mathcal{N}(T) = \{0,0,0 \}, dim(\mathcal{N}(T))=0$
+\\ Por lo tanto $(T_1 \circ T_2)$ es inyectiva.
+\\ \\
+Analizamos si $T_1 \circ T_2$ es \textbf{sobreyectiva}: 
+\\
+$img(T_1 \circ T_2)=\{ (a,b,c)^t \in \mathbb{R}^3:(T_1 \circ T_2)((x,y,z)^t) = (a,b,c)^t,(x,y,z)^t
+ \in \mathbb{R}^3 \}$ \\
+$(T_1 \circ T_2)((x,y,z)^t) = (x,y,0)^t \Rightarrow (x,y,0)^t = (a,b,c) \Rightarrow 
+\begin{cases} x=a \\ y=b \\ c=0 \end{cases} \\
+img(T_1 \circ T_2) = \mathbb{R}^2 \not = \mathbb{R}^3, dim(img(T_1 \circ T_2))=2
+$
+\\ Luego no es epimorfo.
+\\ \\
+¿$T_1 \circ T_2$ es \textbf{isomorfo}?, no ya que no es biyectiva. \\
+\\ \\
+\\
+$T_2 \circ T_1$ es \textbf{inyectiva} si $\mathcal{N}(T_2 \circ T_1) = \{ 0 \}$ \\
+$\mathcal{N}(T_2 \circ T_2) = \{ (0,0,0)^t \in \mathbb{R}^3 : (x,y,y)^t = (0,0,0)^t \}$ \\
+\\
+$(x,y,y)^t = (0,0,0)^t \Rightarrow \begin{cases} x=0 \\ y=0 \end{cases}$ \\
+Luego $\mathcal{N}(T_2 \circ T_1) = \{0,0,0\}, dim(\mathcal{N}(T_2 \circ T_1)) = 0$
+\\ \\
+Analizamos si $T_2 \circ T_1$ es \textbf{sobreyectiva}: \\
+$img(T_2 \circ T_1) = \{ (a,b,c)^t \in \mathbb{R}^3 : T_2 \circ T_1((x,y,z)^t) = (a,b,c)^t \}$ \\
+$(T_2 \circ T_1)((x,y,z)^t) = (x,y,y)^t = (a,b,c)^t \Rightarrow \begin{cases} x=a \\ y=b \\ y=c \end{cases}$
+\\ Pero no te pueden dar dos valores distintos la y, o sea que para que esto valga deberían ser b y c iguales
+\\ Luego $img(T_2 \circ T_1) = \mathbb{R}^2 \not = \mathbb{R}^3, dim(img(T_2 \circ T_1)) = 2$.
+\\ \\ Analizamos si $T_2 \circ T_1$ es \textbf{biyectiva}:
+\\ No, ya que para que sea biyectiva se tiene que cumplir que sea sobreinyectiva e inyectiva al mismo
+tiempo pero en este caso no se da la sobreyectividad por lo tanto no vale.
+\\
+\subsubsection{Definimos $\mathbb{R}_n[x] = \{ \text{p : p polinomio a coeficientes reales grad(p)} \leq n
+, x \in \mathbb{R} \} \cup \{ 0\} $. Sea}
+$T : \mathbb{R}^{2x2} \rightarrow \mathbb{R}_3[x]
+\\ \begin{bmatrix} a&b \\ c&d  \end{bmatrix} \rightarrow T \Big(\begin{bmatrix} a&b \\ c&d\end{bmatrix}\Big)
+= 2dx^3 + (a+b)x^2+(a-c)x+2(c+d).$
+\begin{enumerate}[a.]
+	\item
+		Probar que $T$ es lineal.
+		\\ Cerrado bajo la suma:
+		\\ Sea $u=\begin{bmatrix} a&b \\ c&d \end{bmatrix}$ y 
+		$v = \begin{bmatrix} a'&b' \\ c'&d'\end{bmatrix}
+		\\ T\Big( \begin{bmatrix} a&b \\ c&d  \end{bmatrix} + 
+		\begin{bmatrix} a'&b'\\c'&d' \end{bmatrix}\Big) = T\Big( \begin{bmatrix} 
+		a&b \\ c&d \end{bmatrix}\Big) + T \Big( \begin{bmatrix} a'&b'\\ c'&d' \end{bmatrix} \Big)
+		= 2dx^3+(a+b)x^2+(a-c)x+2(c+d) + 2d'x^3 + (a'+b')x^2 + \\ (a'-c')x + 2(c'+d')
+		= (2d+2d')x^3 + (a+b+a'+b')x^2 + (a-c+a'-c')x + 2(c+d)+2(c'+d')
+		= (2d+2d')x^3 + (a+b+a'+b')x^2 + (a-c+a'-c')x + 2(c+d+c'+d') \in \mathbb{R}_3[x]$ \\
+		\\ Cerrado bajo el producto:
+		\\ Sea $u = \begin{bmatrix} a&b \\ c&d \end{bmatrix}$ y $\alpha \in \mathbb{R}$
+		\\ $T\Big( \alpha \begin{bmatrix} a&b \\ c&d \end{bmatrix} \Big) = 
+		T \Big( \begin{bmatrix} \alpha a & \alpha b \\ \alpha c & \alpha d \end{bmatrix} \Big)
+		= 2(\alpha d)x^3 + (\alpha a+\alpha b)x^2+(\alpha a-\alpha c)x + 2(\alpha c+\alpha d) = 
+		\alpha ( 2dx^3 + (a+b)x^2 + (a-c)x + 2(c+d) ) = \alpha T(u)$ \\
+		\\ $0 \in R_n[x]$
+	\item
+		Hallar una base para $nul(T)$ y una para $img(T)$
+		\\ $\mathcal{N}(T) = \Big\{ \overline{0} \in \mathbb{R}_3[x] : T\Big( \begin{bmatrix} 
+		a&b \\ c&d \end{bmatrix} \Big) = \overline{0} \Big\} = \\
+		T\Big( \begin{bmatrix} a&b \\ c&d \end{bmatrix} \Big) = 2dx^3+(a+b)x^2+(a-c)x+2(c+d) \\ 
+		\Rightarrow 2dx^3+(a+b)x^2+(a-c)x+2(c+d) = 0x^3 + 0x^2 + 0x + 0 \Rightarrow
+		\begin{cases} 2d = 0 \\ a+b=0 \\ a-c=0 \\ 2c+2d=0 \end{cases} \Rightarrow
+		\begin{cases} d=0 \\ a=-b \\ a=c \\ c=-d \end{cases} \Rightarrow
+		\begin{cases} d=0 \\ b = 0 \\ a=0 \\ c=0 \end{cases}$ \\
+		$img(T)=\Big\{\alpha x^3+\beta x^2+\gamma x+\delta \in \mathbb{R}_3[x]:
+		2dx^3+(a+b)x^2+(a-c)x+2(c+d) = \alpha x^3+\beta x^2+\gamma x+\delta \Big\} \\
+		\begin{cases} 2d=\alpha \\ a+b = \beta \\ a-c = \gamma \\ 2c+2d = \delta \end{cases} \Rightarrow
+		\begin{cases} d=\dfrac{\alpha}2 \\ a-b = \beta \\ a = \gamma + c \\ c = \dfrac{\delta}2-d \end{cases}$
+	\item
+		Determinar si $T$ es un isomorfismo.
+		\\ Es isomorfo ya que es inyectiva y sobre.
+\end{enumerate}
+
+\subsubsection{Sea $T_w:\mathbb{C} \rightarrow \mathbb{C} : T_w(z) = z+w\overline{z}$, donde $w = a+ib,
+a,b \in \mathbb{R}$.}
+
+\begin{enumerate}[a.]
+	\item
+		Considerar $w = 1+i$ y calcular $T_w(2+3i)$ \\
+		$T_w(2+3i) = T_w(2)+T_w(3i) = 2+(1+i)\cdot 0i + 3\cdot T_w(i) = 2 + 3\cdot (i+(1+i)\cdot (-i)) 
+		= 2+3\cdot (i -i -i^2 ) \\ = 2+3 \cdot (i-i+1) = 2+3(1)= 2+3 = 5$\\
+	\item
+		Comprobar que $T_w$ es una TL entre espacios vectoriales.
+		\\ 
+	\item
+		Si $B=\{ 1,i \}$ es base de $\mathbb{C}$, hallar la matriz de $T_w$ en dicha base.
+		\\ \\ Sea $B = \{ 1,i \}$ base de $\mathbb{C}$, hallar $[T_w]_B$
+		\\ Cómo $T_w$ es una TL $\Rightarrow \exists A : [T_n(z)]_B = A[z]_B$
+		\\ Si recordamos de los ejercicios anteriores teníamos que la representación matricial de una
+		TL es una matriz tal que su columna i-ésima son las componentes $T(e_i)$ respecto a la base
+		ordenada
+		\\ Obs: $\overline{z} = a - ib \Leftrightarrow z = a+ib$
+		\\ Entonces tenemos que 
+		$A = \begin{bmatrix} |&| \\ [T_w(1)]_B&[T_w(i)]_B \\ |&| \end{bmatrix}$ \\
+		\\ $T_w(1) = 1+(a+ib)\cdot 1 = 1+a+ib \Rightarrow [T_w(1)]_B = \begin{bmatrix} 1+a \\ b \end{bmatrix}$
+		\\
+		\\ $T_w(i) = i+(a+ib)\overline{i} = i-ia-i^2b = i-ia+b = (1-a)i +b \Rightarrow
+		[T_w(i)]_B = \begin{bmatrix} b \\ 1-a \end{bmatrix}$
+		\\
+		\\ Luego $A = \begin{bmatrix} 1+a & b \\ b&1-a \end{bmatrix}$
+	\item
+		Probar que $T_w$ es isomorfo si y sólo si $a^2+b^2 \not = 1$
+		\\ $T_w$ es isomorfo si es biyectiva. \\
+		Supongamos que $a^2+b^2 = 1$ entonces se sigue cumpliendo la inyectividad probada
+		anteriormente.
+		\\ Ahora vamos a probar si $T_w$ es sobreyectiva.
+		\\ $img(T_w) = \{ a+ib \in \mathbb{C} : T_w(z) = a+ib  \}$
+		\\ $T_w(z) = z+w\overline{z} = a+ib \Rightarrow \begin{cases} z=a \\ w\overline{z}=b \end{cases}$
+
+\end{enumerate}
+
+\subsubsection{Sea $T: \mathbb{R}_n[x] \rightarrow \mathbb{R}_n[x]$ tal que $T(a_0+a_1x+...+a_nx^n) = a_0 +
+a_1(x+1)+...+a_n(x+1)^n$. Probar que $T$ es isomorfismo.}
+Tenemos que probar que $T$ es inyectiva y sobreyectiva a la vez entonces lo que tenemos que hacer
+es primero verificar si
+\\
+$\mathcal{N}(T) = \{ 0+0x+...+0x^n \in \mathbb{R}_n[x] : T(a_0+a_1x+...+a_nx^n) = 0 \}$ \\
+$T(a_0+a_1x+...+a_nx^n) = a_0+a_1(x+1)+...+a_n(x+1)^n \Rightarrow a_0+a_1(x+1)+...+a_n(x+1)^n = 0+0x+...+0x^n
+\\ \Rightarrow a_i = 0i$
+\\ Luego $\mathcal{N}(T) = \{ a_i = 0 : a_i \in \mathbb{R} \}$, luego T es inyectiva. \\ 
+\\ Ahora nos quedaría probar si es sobreyectiva: \\  
+$img(T) = \{ b_0+b_1x+...+b_nx^n \in \mathbb{R}_n[x] : T(a_0+a_1x+...+a_nx^n) = b_0+b_1x+...+b_nx^n \}$
+\\ $T(a_0+a_1x+...+a_nx^n) = a_0+a_1(x+1)+...+a_n(x+1)^n \Rightarrow
+a_0 + a_1(x+1) + ... + a_n(x+1)^n =  b_0+b_1x+...+b_nx^n \\ \Rightarrow
+\begin{cases} a_0 = b_0 \\ a_1(x+1) = b_1x \\ a_n(x+1)^n = b_nx^n \end{cases}$
+
+
+\subsubsection{Sea $T:\mathbb{R}_n[x] \Rightarrow \mathbb{R}_n[x]$ tal que $T(a_0+a_1x+....+a_nx^n)
+= a_0+a_1(x+1)+...+a_n(x+1)^n$. Probar que T es isomorfo.}
+Para ver que es isomorfo tenemos que ver que sea inyectiva y sobreyectiva para esto
+ vamos a definir una función f de la siguiente forma: \\ \\
+$f: \mathbb{R}_n[x] \rightarrow \mathbb{R}_n[x]$ \\
+$p(x) \rightarrow f(p(x)) = p(x-1)$
+\\ \\ Primero ver que f es lineal (COMPLETAR).
+\\ \\
+$T \circ f = id_{R_n[x]}$
+\\ $T(f(p(x)) = T(p(x-1)) = p(x-1+1) = p(x) = id(p(x)) $
+\\ \\
+$f \circ T = id_{\mathbb{R}_n[x]}$
+\\ \\ Luego $T^{-1} = f$, T es isomorfo.
+
+\subsubsection{Sea $T: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ tal que $T(v) = (x+y,x+z,\alpha(v))^t$
+donde $v = (x,y,z)^t$ y $\alpha: \mathbb{R}^3 \rightarrow \mathbb{R}$. Determinar, si es posible, $\alpha$
+de modo que $T$ resulte lineal.}
+Tomando $\alpha$:
+\\ $\alpha : \mathbb{R}^3 \rightarrow \mathbb{R}$
+\\ $u \rightarrow \alpha((x,y,z)^t) =  $
+\\ \\ T es lineal si es cerrado bajo la suma y bajo el producto.
+\\ Es decir $T(u+v) = T(u)+T(v)$ y $T(\alpha u) = \alpha T(u)$
+\\ \textbf{Cerrado bajo la suma:}
+\\ Sea $u=(x,y,z)^t,v=(a,b,c)^t \in \mathbb{R}^3 \Rightarrow T(u+v) = T.u+T.v?$
+\\ $T(u+v) = T((x,y,z)^t+(a,b,c)^t)) = T((x+a,y+b,z+c)^t)=T((x+a+y+b,x+a+z+c,\alpha(u+v)^t)$, \\
+esto debería ser igual a:\\  $T(u)+T(v) = (x+y,x+z,\alpha(u)) + (a+b,a+c,\alpha(v))^t = 
+(x+y+a+b,x+z+a+c,\alpha(u)+\alpha(v))^t$
+\\ \\
+\textbf{Cerrado bajo el producto:} \\
+Debería darse que $T(\beta u) = \beta T(u)$ \\
+\\ $T(\beta u) = T(\beta (x,y,z)^t) = T((\beta x, \beta y, \beta z)^t) = T((\beta x + \beta y,
+\alpha x+ \alpha z, \alpha(\beta u))^t)$
+\\ $\beta T(u) = \beta T((x,y,z)^t) = \beta (x+y,x+z,\alpha(u)^t) = (\beta(x+y), \beta(x+z),\beta(\alpha(
+u))^t$
+\\ \\ La conclusión de todo esto es que de la primera ecuación se tiene que $\alpha(u)+\alpha(v) = \alpha(u+v)$.
+Y de la segunda obtenemos que $\beta(\alpha(u)^t) = \alpha(\beta u)^t$
+\\ \\ Entonces $\alpha$ debe ser una transformación lineal.
+
+\subsubsection{Sea $T: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ transformación lineal tal que}
+$T((0,0,1)^t) = (2,3,5)^t$, \hspace*{1cm} $T((0,1,1)^t) = (1,0,0)^t$,\hspace*{1cm} $T((1,1,1)^t)=(0,1,-1)^t$
+\\
+\begin{enumerate}[a.]
+	\item
+		Probar que con esta información es posible obtener $T(v), \forall v \in \mathbb{R}^3$.	
+		\\ Sea $v \in \mathbb{R}^3 \Rightarrow \begin{cases} v = x\cdot ((1,1,1)^t-(0,1,1)^t)
+		+ y \cdot ((0,1,1)^t-(0,0,1)^t) + z \cdot (0,0,1)^t
+		\\ [v]_B = (x,y,z) \end{cases}$ 
+		\\ \\
+		$T(v) = T((x\cdot (1,1,1)^t-(0,1,1)^t)+y\cdot ((0,1,1)^t-(0,0,1)^t)+z \cdot (0,0,1)^t)$
+		\\ $T(x\cdot (1,1,1)^t - (0,1,1)^t) + T(y \cdot ((0,1,1)^t - (0,0,1)^t)) + T(z\cdot (0,0,1)^t) = $
+		\\ $x \cdot T((1,1,1)^t-(0,1,1)^t) + y \cdot T((0,1,1)^t-(0,0,1)^t) + z \cdot T(0,0,1)^t = 
+		\\ x \cdot( T(1,1,1)^t - T(0,1,1)^t) + y \cdot (T(0,1,1)^t - T(0,0,1)^t) + z \cdot T(0,0,1)^t = 
+		\\ x \cdot ( (0,1,-1)^t - (1,0,0)^t ) + y \cdot ( (1,0,0)^t - (2,3,5)^t) + z \cdot (2,3,5)^t =
+		\\ x \cdot (-1,1,-1)^t + y \cdot (-1,-3,-5)^t + z \cdot (2,3,5)^t $
+		\\ \\
+		$(-1,1,-1)^t = (0,0,-1)^t + (0,0,-3) $
+		\\ \\ 
+		\\ En vez de complicarse tanto también podríamos hacerlo de la siguiente manera:
+		\\ En efecto puesto que dichos 3 vectores son linealmente independientes resulta que generan
+		todo el espacio, es decir, que para todo $v$ resulta $v = \alpha(0,0,1)+\beta(0,1,1)+\gamma(1,1,1)$.
+		Además como $T$ es lineal $T(v) = \alpha(2,3,5)+\beta(1,0,0)+\gamma(0,1,-1)$. \\
+		$T(v) = x\begin{bmatrix} -1 \\ 1 \\ -1  \end{bmatrix} + y \begin{bmatrix} -1\\-3\\-5\end{bmatrix} 
+		+ z \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} = \begin{bmatrix}-x-y+2z\\x-3y+3z\\-x
+		-5y+5z \end{bmatrix}$
+		\\ \\ Luego se expresa como combinación lineal de la base canónica B:
+		\\ $T(v) = (-x-y+2z)\begin{bmatrix}1\\0\\0\end{bmatrix}+(x-3y+3z)\begin{bmatrix}0\\1\\0\end{bmatrix}
+		+ (-x-5y+5z)\begin{bmatrix} 0\\0\\1 \end{bmatrix}$
+	\item
+		Observemos que $e_1 = (1,1,1)^t-(0,1,1)^t, e_2=(0,1,1)^t-(0,0,1)^t$ y $e_3=(0,0,1)^t,$ luego $T(e_1)
+		= T(1,1,1)^t-T(0,1,1)^t =(-1,1,-1)^t$	
+		$T(e_2)=(-1,-3,-5)^t$ y $T(e_3) = (2,3,5)^t.$ Finalmente $A = \begin{bmatrix}-1&-1&2\\1&-3&3
+		\\-1&-5&5\end{bmatrix}$.
+	\item
+		Utilizando $(9b)$, obtener $dim(nul(T))$ y $rang(T)$.
+		\\
+		\\ Escribiremos la matriz de la transformación o la matriz del sistema de ecuaciones de la TL
+		\\ $\begin{bmatrix} -1&-1&2\\1&-3&3\\-1&-5&5 \end{bmatrix}
+		\rightarrow \begin{bmatrix} -1&-1&2\\0&-4&5\\0&-4&3 \end{bmatrix} \rightarrow
+		\begin{bmatrix} -1&-1&2\\0&-4&5\\0&0&-2  \end{bmatrix} \Rightarrow \mathcal{N}(T) = \{ 0\} $
+		\\ Esto nos da cero ya que nos quedaría $-2z = 0$,  $5y=0$ y por último $-x=0$.
+	\item
+		Determinar si $T$ es inversible. \\
+		Sí, ya que $\mathcal{N}(T) = \{ 0\}$
+		\\ La matriz asociada a esta transformación es:
+		$A=\begin{bmatrix} -1&-1&2\\1&-3&3\\-1&-5&5    \end{bmatrix}$ como $|A| \not = 0$, resulta
+		A invertible por lo tanto T es invertible también.
+\end{enumerate}
+
+\subsubsection{Determinar, si existe, una transformación lineal $T: \mathbb{R}^3 \rightarrow \mathbb{R}^2$
+que verifique: $T((1,-1,1)^t) = (1,0)^t$ y $T((1,1,1)^t) = (0,1)^t$}
+
+Observaciones:
+\begin{itemize}
+	\item
+		Una aplicación lineal queda inequívocamente determinada si se conocen las imágenes de los 
+		vectores de una base; es decir dada una base y sus imágenes siempre existe una única aplicación
+		lineal con estas características.
+	\item
+		Si se conoce la imagen de ciertos vectores linealmente independientes (pero que no llegan a
+		formar una base) entonces existen infinitas transformaciones lineales en estas condiciones;
+		para construir una basta, por ejemplo, \textbf{completar los vectores independientes hasta
+		una base y elegir las imágenes de los vectores añadidos arbitrariamente}. Luego aplicar 1.
+	\item
+		Si se conoce la imagen de algunos vectores pero estos tienen relaciones de dependencia, sólo
+		existe alguna aplicación lineal con esas características si las imágenes propuestas cumplen
+		exactamente las mismas relaciones de dependencia que los vectores originales.
+		Una forma de comprobar esto (siempre que conozcamos las coordenadas de todos los vectores
+		implicados en alguna base, por ejemplo, las canónicas) es colocar los vectores originales
+		como filas de una matriz; luego los vectores originales y sus imágenes como filas de otra matriz
+		(ampliada). Si los rangos de ambas matrices coinciden, entonces si existe la aplicación lineal
+		propuesta.
+\end{itemize}
+Yo tengo estos dos vectores $(1,-1,1)$ y $(1,1,1)$ lo que pasa es que estos vectores no forman una base
+entonces para quede definida una única transformación lineal lo que debería hacer es buscar un vector
+que sea linealmente independiente con $(1,1,1)$ y $(1,-1,1)$ logrando así crear una base para después elegir
+una imagen cualquiera a ese vector linealmente independiente añadido logrando así crear una base para después elegir
+\\ Entonces, ¿cómo buscamos un vector linealmentei independiente al resto?
+\\ $\alpha(1,-1,1)+\beta(1,1,1)+\gamma(0,5,1) = 0 \Rightarrow \alpha=\beta=\gamma=0$\\
+$\begin{cases} \alpha+\beta=0 \Rightarrow \alpha=-\beta \\ -\alpha+\beta+5\gamma = 0 \Rightarrow 2\beta+5\gamma = 0
+\\ \alpha+\beta+\gamma=0
+\end{cases}$
+\\ Entonces si armamos la matriz ampliada y hacemos reducción por filas tenemos que: \\
+$\begin{bmatrix} 1&1&0&|&0\\-1&1&5&|&0\\1&1&1&|&0 \end{bmatrix} \rightarrow 
+\begin{bmatrix} 1&1&0&|&0\\0&2&5&|&0\\0&0&1&|&0 \end{bmatrix} \Rightarrow \gamma=\beta=\alpha=0$ 
+\\ \\
+Luego de todo esto resulta que $\{(0,5,1),(1,-1,1),(1,1,1)\}$ es un conjunto linealmente independiente.
+\\ Procederemos entonces a buscar una imagen para el mismo.
+\\ $T((0,5,1)^t) = (4,1)$.
+Ahora todo $v \in \mathbb{R}^3$ se debería poder escribir como $v = \alpha(1,-1,1)+\beta(1,1,1)+\gamma(0,5,1)$
+\\ \\ Entonces tenemos $B = \{ (1,-1,1),(1,1,1),(0,5,1) \}$ base ordenada de $\mathbb{R}^3$ luego la TL queda 
+inequívocamente determinada ya que se conocen los vectores de la base y sus imágenes. \\
+La matriz asociada a la transformación es $\begin{bmatrix} 1&0&4\\0&1&1  \end{bmatrix}$.
+
+\subsubsection{Sean V y W espacios vectoriales sobre $\mathbb{K}$. Probar que para $T_{1,2} \in \mathcal{L}
+(V,W)$}
+\begin{itemize}
+	\item
+		$A = \{ v \in V : T_1(v) = T_2(v)\}$ es un subespacio de $V$. \\
+		Para probar que es un subespacio verificaremos los siguientes axiomas: \\ \\
+		\textbf{Cerrado bajo la suma}:
+		\\ \hspace*{0.5cm} Sea $v_1,v_2 \in A \Rightarrow v_1+v_2 \in A?$
+		\\ \hspace*{0.5cm} $T_1(v_1+v_2) = T_1(v_1)+T_1(v_2) = T_2(v_1) + T_2(v_2) = T_2(v_1+v_2)$
+		\\ \textbf{Cerrado bajo el producto}:
+		\\ \hspace*{0.5cm} Sea $\alpha, v_1 \in A \Rightarrow \alpha v_1 \in A?$
+		\\ \hspace*{0.5cm} $T_1(\alpha v_1) = \alpha T_1(v_1) = \alpha T_2(v_1) = T_2(\alpha v_1)\in A$
+
+	\item
+		Si $V = \langle U \rangle$ y $T_1(u)=T_2(u), \forall u \in U$ entonces $T_1(v)=T_2(v),
+		\forall v \in V$ \\ \\
+		Sabemos que cada vector $v \in V$ se puede expresar como
+		$v = a_1u_1+a_2u_2+...+a_nu_n$ y también sabemos que existe una transformación lineal
+		$T_1(u)=T_2(u), \forall u \in U$. \\
+		Entonces $T_1(v) = T_1(a_1u_1+a_2u_2+...+a_nu_n) = T_1(a_1u_1)+T_1(a_2u_2)+...+T_1(a_nu_n) \Rightarrow \\
+		a_1T_1(u_1)+a_2T_1(u_2)+...+a_nT_1(u_n) = a_1T_2(u_1)+a_2T_2(u_2)+...+a_nT_2(u_n) = T_2(a_1u_1)+...
+		+T_2(a_nu_n) = T_2(a_1u_1+a_2u_2+...+a_nu_n) = T_2(v)$
+\end{itemize}
+
+\subsubsection{Sean V y W espacios vectorailes de dimensión finita y $T \in \mathcal{L}(V,W)$. Probar que: }
+\begin{enumerate}[i.]
+	\item
+		Si $T$ inyectiva, entonces $T$ transforma conjuntos l.i. de V en conjuntos l.i. de W.
+	\item
+		Si T sobreyectiva, entonces T transforma conjuntos generadores de V en conjuntos generadores de W.
+	\item
+		T isomorfismo si y sólo si T transforma bases de V en bases de W.
+\end{enumerate}
+
+\subsubsection{Sea V un espacio vectorial sobre $\mathbb{K}$ y supongamos que existe una aplicación lineal
+$T \in \mathcal{L}(V)$ tal que tanto $nul(T)$ como $img(T)$ son subespacios de dimensión finita. Probar que V
+también debe ser de dimensión finita.}
+Trivial utilizando el teo. de $dim(V) = \underbrace{dim(nul(T))}_{n}+\underbrace{dim(img(T))}_{m}$?
+\\ Luego $dim(V)=n+m$
+
+\subsubsection{Sea V un espacio vectorial de dimensión finita sobre $\mathbb{K}$ y $S,T \in \mathcal{L}(V)$. Probar que:}
+\begin{itemize}
+	\item
+		$T \circ S$ es inversible si y sólo si $S$ y $T$ son inversibles.
+		\\ $(T \circ S)^{-1} = T(S(x))^{-1} = $
+		\\ $T^{-1} \circ S^{-1} = (T^{-1}\circ S^{-1}) =   $
+	\item
+		Para $I$ la función identidad en $V$, $T \circ S = I$ si y sólo si $S \circ T=I$.
+\end{itemize}
+
+\subsubsection{Sea $V$ el espacio vectorial de los números complejos y $\mathbb{K}$ el cuerpo de los números
+reales. Con las operaciones usuales, $V$ es un espacio vectorial sobre $\mathbb{K}$. Describir explícitamente
+un isomorfismo de este espacio con $\mathbb{R}^2$}
+
+Sea $T: \mathbb{C} \rightarrow \mathbb{R}^2$ definida como $T(z) = (Re(z),Im(z))$, veamos que es biyectiva:
+\begin{itemize}
+	\item
+		Inyectiva: $T(z_1)=T(z_2) \Longleftrightarrow (Re(z_1),Im(z_1)) = (Re(z_2),Im(z_2)) \Longleftrightarrow
+		Re(z_1) = Re(z_2) \wedge Im(z_1) = Im(z_2) \Longleftrightarrow z_1=z_2$.
+	\item
+		Sobreyectiva: Sea $(a,b) \in \mathbb{R}^2$, luego para $a+b_i \in \mathbb{C}$ resulta
+		$T(a+bi)=(a,b)$.
+\end{itemize}
+Veamos que es lineal: ... \\
+\section{Vamos completando lo anterior y repasando de nuevo esta práctica}
+Sean V y W espacios vectoriales de dimensión finita y $T \in \mathcal{L}(V,W)$. Probar que: \\ \\
+i. Si T inyectiva, entonces T transforma conjuntos l.i. de V en conjuntos l.i. de W. \\
+\\
+Supongamos que T es inyectiva y sea $S \subset V$ un conjunto linealmente independiente, definimos
+$S' = \{ T(s) : s \in s \}$ y supongamos que existe unos vectores y escalares tal que
+$\alpha_1T_1(s)+...+\alpha_nT_n(s)=0$, entonces como T es lineal tenemos que:
+\\
+\\
+$\alpha_1T(s_1)+...+\alpha_nT(s_n) = 0 \Rightarrow$ 
+$T(\alpha_1s_1)+...+T(\alpha_ns_n) = 0 \Rightarrow$
+$T(\alpha_1s_1+...+\alpha_ns_n) = 0$
+\\
+\\ Entonces como T es inyectiva se sigue que $\alpha_1s_1+...+\alpha_ns_n = 0$ y luego como S es
+linealmente independiente tenemos que $\alpha_1=\alpha_2=....=\alpha_n=0$. Luego $S'$ es linealmente
+independiente.
+\\ \\
+ii. Si T es sobreyectiva, entonces T transforma conjuntos generadores de V en conjuntos gneradores de W.
+\\ \\
+Sea $\lbrace v_1,...,v_n \rbrace \subseteq V / \langle \{ v_1,...,v_n  \}  \rangle = V$, nos preguntamos
+si $\langle \{ T(v_1),...,T(v_n) \} \rangle = W$:
+
+\begin{itemize}	
+\item
+	$\subseteq$: $x \in \langle \{ T(v_1),...,T(v_n)  \}\rangle \Rightarrow
+	\displaystyle x = \sum_{i=1}^{n}{\alpha_iT(v_i)} \Rightarrow x \in W$
+\item
+	$\supset$: $x \in W \Rightarrow \exists v \in V / T(v) = x \Rightarrow \exists v =
+	\displaystyle \sum_{i=1}^{n}{\beta_i v_i} / T(v) = x \Rightarrow$ \\
+	$\displaystyle T\Big( \sum_{i=1}^{n}{\beta_i v_i} \Big) =x \Rightarrow 
+	\sum_{i=1}^{n}{\beta_iT(v_i)} = x \Rightarrow x \in \langle \{ T(v_1),...,T(v_n) \} \rangle
+	= W$.
+\end{itemize}
+iii. T es isomorfismo si y sólo si T transforma bases de V en bases de W.
+\\
+Obs.: Decimos que una transformación lineal es un isomorfismo cuando es biyectiva. \\
+$\Rightarrow$: Supongamos que T es un isomorfismo, entonces $V$ y $W$ tienen la misma dimensión.
+Esto es suficiente para demostrar que la imagen de la base de V es linealmente independiente. \\
+$\Leftarrow$: Si T transforma bases de V en bases de W, entonces sus dimensiones son iguales,
+luego T debería ser un isomorfismo.
+\subsubsection{Probar que V es isomorfo a W si y sólo si $dim V = dim W$}
+Si $T:V \rightarrow W$ es una transformación lineal y $\langle\{ v_1,...,v_n\}\rangle=V$
+entonces $\langle \{ T(v_1),...,T(v_n)\}\rangle = W$. Observemos que, si
+$v \in V$ entonces $v = \alpha_1v_1+...+\alpha_nv_n$ entonces $T(v) = \alpha_1T(v_1)+\alpha_2T(v_2)
++...+\alpha_nT(v_n)$. \\ \\
+$\Rightarrow$: 
+Si $T:V \rightarrow W$ es una transformacion lineal inyectiva y $\{ v_1,...,v_n \}$ es un conjunto
+linealmente independiente entonces $\{ T(v_1),...,T(v_n)\}$ es un conjunto linealmente independiente
+de W. Por lo tanto, si 
+\[ 0 = \alpha_1T(v_1)+...+\alpha_nT(v_n) \Rightarrow T(0) = T(\alpha_1v_1 + ... + \alpha_nv_n)
+\]
+y por la inyectividad tenemos que
+$\alpha_1v_1+...+\alpha_nv_n = 0$ entonces $\alpha_1=...=\alpha_n=0$ ya que $\{v_1,..,v_n\}$ es un conjunto
+ l.i.
+\\
+Ahora, sea $T: V \rightarrow W$ una transformación lineal biyectiva. Si $\{ v_1,...,v_n \}$ es una base
+de V, que es a la vez un conjunto generador de V y un conjunto linealmente independiente. Entonces 
+$\langle \{ T(v_1),...,T(v_n)\} \rangle = W$ pues T es sobreyectiva y es linealmente independiente ya que
+T es inyectiva. Luego $dim(V)=dim(W)$.
+\\ \\
+$\Leftarrow$:
+Repaso: Una aplicación lineal queda inequívocamente determinada si se conocen las imágenes de los vectores
+de una base; es decir dada un base y sus imágenes siempre existe una única aplicación lineal con estas
+características. \\
+\\
+Asignando las imágenes para los vectores de la base de V se define inequívocamente una
+transformación lineal. Entonces, si $\{ v_1,...,v_n \}$ y $\{ w_1,...,w_n \}$ son bases de V y W,
+tomamos la única transformación lineal $T: V \rightarrow W$ tal que
+\[ 
+T(v_k) = w_k \quad k=1,2,\dots,n
+\]
+Entonces $T$ es sobreyectiva, porque el conjunto generador para la imagen de $T$ es una base de W.
+Luego aplicando $dim(W) + dim(\mathcal{N}(T)) = dim(V)$, tenemos que $dim(\mathcal{N}(T)) = 0$ ya que
+por hipótesis la $dim(V)=dim(W)$, luego $T$ es inyectiva.
+
+\subsubsection{Sea V un espacio vectorial sobre $\mathbb{K}$ y supongamos que existe una aplicación
+lineal $T \in \mathcal{L}(V)$ tal que tanto $\mathcal{N}(T)$ como $img(T)$ son subespacios de dimensión
+finita. Probar que $V$ también debe ser de dimensión finita.}
+No hay muchas formas de dmostrar que un espacio vectorial tiene dimensión finita. 
+Una es demostrar que existe un conjunto generador finito o probar que el espacio es (isomorfo a) 
+un subespacio que es de dimensión finita (ya que si es isomorfo es porque poseen la misma dimensión).
+\\
+\\ En este caso, lo que haremos será buscar un conjunto de generador finito.
+\\
+\\ Sea $\mathcal{B}_0 = \{ r_1,...,r_n \}$ una base de la imagen de la transformación lineal T
+ (o un conjunto generador si preferís), no habría problema de suponer esto ya que sabemos que la dimensión de la
+imagen de T es finita.
+Ahora consideraremos $\mathcal{B}_1 = \{ v_1,...,v_n \} $ tal que $Tv_i=r_i$. \\
+\\ Ahora, para cada $v \in V$, sabemos que $Tv = \alpha_1r_1+...+\alpha_nr_n$, sea
+$v' = \alpha_1v_1+...+\alpha_nv_n$, entonces $Tv = Tv'$, entonces $v-v'$ pertenece al espacio nulo.
+Si $w_1,...,w_m$ es un conjunto generador para el espacio nulo, entonces tenemos que
+$v-v' = \beta_1w_1+...+\beta_mw_m$, luego
+\[
+v = \alpha_1v_1+...+\alpha_nv_n+\beta_1w_1+...+\beta_mw_m
+\]
+y, como $v$ es un vector cualquiera, concluímos que $\{ v_1,...,v_n,w_1,...,w_m\}$ es un conjunto generador
+finito de V.
+\subsubsection{Sea $V$ un espacio vectorial de dimensión finita sobre $\mathbb{K}$, y $S,T \in \mathcal{L}(V)$.
+Probar que:}
+i. $T \circ S$ es inversible si y sólo si $S$ y $T$ son inversibles. \\
+\\
+Supongamos que $TS$ es inversible. Sea $S(v) = 0$. $TS(v) = T(S(v)) = T(0) = 0$, esto implica que $v = 0$, entonces
+$S$ es inyectiva, luego S es inversible. 
+\\ \\
+($\Rightarrow$). Supongamos que $ST$ es invertible y $S(v_1)=S(v_2)$ donde $v_1$ y $v_2$ son vectores
+cualquiera de V, entonces se sigue de que $TS(v_1)=TS(v_2)$ pero como $TS$ es invertible entonces por un teorema
+sabemos que es inyectiva luego $v_1 = v_2$ (inyectividad: $f(a)=f(b) \Rightarrow a=b$) lo que implica que 
+$S$ es inyectiva y por el teo. inversible. \\ \\
+($\Leftarrow$). Supongamos que $v \in V$, como $T$ es sobreyectiva, $\exists b \in V$ tal que $v = Tb$. Como
+$b \in V$, entonces por sobreyectividad de $S$, $\exists a \in V$ tal que $b = Sa$. Por lo tanto vemos que
+para cada $v \in V$ existe $a \in V$ tal que $v = Tb = TSa$. \\
+\\ \\ \\ \\ 
+ii. Para $I$ la función identidad en $V,T \circ S = I$ si y sólo si $S \circ T = I$. \\
+\\
+Si $T \circ S = I$ entonces $T \circ S$ es inversible, entonces $S,T$ son invertibles. Por lo tanto $T = S^{-1}$
+entonces $S \circ T = S \circ S^{-1} = I$. Igualmente, si $S \circ T = I$ entonces $S \circ T$ es invertible 
+por lo que $S$ y $T$ son invertibles y $T=S^{-1}$.
+\subsubsection{Sea V el espacio vectorial de los números complejos y $\mathbb{K}$ el cuerpo de los números reales.
+Con las operaciones usuales, $V$ es un espacio vectorial sobre $\mathbb{K}$. Describir explícitamente un isomorfismo
+de este espacio con $\mathbb{R}^2$.}
+Sea $T: \mathbb{C} \rightarrow \mathbb{R}^2$, definida como $T(z) = (Re(z),Im(z))$, veamos que es biyectiva:
+\begin{itemize}
+\item
+	Inyectividad definición: \\
+	$f(a) = f(b) \Rightarrow a=b$ \\ \\
+	Inyectividad: $T(z_1)=T(z_2) \Rightarrow (Re(z_1),Im(z_1)) = (Re(z_2),Im(z_2)) \Rightarrow
+	Re(z_1) = R(z_2) \wedge Im(z_1) = Im(z_2) \Rightarrow z_1 = z_2$ \\
+	Sobreyectividad: 
+	Sea $(a,b) \in \mathbb{R}^2 \Rightarrow a+bi \in \mathbb{C} \Rightarrow T(a+bi) = (a,b)$
+\item
+	Ahora probaremos que T es lineal. \\
+	$T((a+bi)+(c+di)) = T(a+bi+c+di) = T(a+c+(b+d)i) = (a+c,b+d) = (a,b)+(c,d) = T(a+bi)+T(c+di)$ \\
+	$T(\alpha (a+bi)) = T(\alpha a + \alpha bi) = (\alpha a, \alpha b) = \alpha (a,b) = \alpha T(a+bi)$
+\end{itemize}
+
+\subsubsection{Mostrar que $\mathbb{K}^{m \times n}$ es isomorfo a $\mathbb{K}^{mn}$.}
+Sea $T : \mathbb{K}^{m \times x} \rightarrow \mathbb{K}^{mn}$,
+$T\Bigg( \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n}
+	\\ \dots & \dots & \dots & \dots \\ a_{m1} & a_{m2} & \dots & a_{mn}  \end{bmatrix} \Bigg) =
+(a_{11},a_{12},\dots,a_{1n},a_{21},a_{22},\dots,a_{2n},\dots,a_{m1},...,a_{mn})$ \\ \\
+Ahora tenemos que verificar que es biyectiva a $K^{mn}$
+\\ \\
+\begin{itemize}
+\item
+	Verificamos que es \textbf{inyectiva}: \\
+	$T(a) = T(b) \Rightarrow T\begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n}
+        \\ \dots & \dots & \dots & \dots \\ a_{m1} & a_{m2} & \dots & a_{mn}  \end{bmatrix} = 
+	T \begin{bmatrix} b_{11} & b_{12} & \dots & b_{1n} \\ b_{21} & b_{22} & \dots & b_{2n}
+        \\ \dots & \dots & \dots & \dots \\ b_{m1} & b_{m2} & \dots & b_{mn}  \end{bmatrix} \Rightarrow \\ \\
+	(a_{11},a_{12},\dots,a_{1n},a_{21},a_{22},\dots,a_{2n},\dots,a_{m1},...,a_{mn}) =
+	(b_{11},b_{12},\dots,b_{1n},b_{21},b_{22},\dots,b_{2n},\dots,b_{m1},...,b_{mn}) \Rightarrow
+	a_{11} = b_{11} \wedge \dots \wedge a_{1n} = b_{1n} \wedge \dots a_{2n} = b_{2n} \wedge \dots a_{m1} = b_{m1} \wedge
+	\dots \wedge a_{mn} = b_{mn}
+	$
+	\\ \\
+	Verificamos ahora que es \textbf{sobreyectiva}: \\
+	COMPLETAR.
+\item
+	Ahora deberíamos verificar que $T$ es lineal. \\
+	COMPLETAR.
+\end{itemize}
+
+\subsubsection{Sea $T$ la transformación lineal de $\mathbb{R}^3$ en $\mathbb{R}^2$ definida por}
+\[
+T(x_1,x_2,x_3) = (x_1+x_2,2x_3-x_1)
+\]
+i. Si $\mathcal{B}$ es la base ordenada estándar de $\mathbb{R}^3$ y $\mathcal{B}'$ es la base ordenada estándar para
+$\mathbb{R}^2$, determinar la matriz de T relativa al par $(\mathcal{B},\mathcal{B}')$. \\
+$T = \begin{bmatrix} 1&1&0 \\ -1&0&2\end{bmatrix}$
+\\ \\
+ii. Si $\mathcal{B} = \{ (1,0,-1),(1,1,1),(1,0,0) \}$ y $\mathcal{B}' = \{ (0,1),(1,0) \}$. ¿Cuál es la matriz de T relativa
+al par $(\mathcal{B},\mathcal{B'})$?
+
+\subsubsection{Sea $T$ un operador lineal sobre $\mathbb{K}^n$ y sea $A$ la matriz de $T$ relativa a la base estándar de
+$\mathbb{K}^n$. Sea $W$ el subespacio de $\mathbb{K}^n$ generado por los vectores columnas de $A$. ¿Qué relación existe
+entre $W$ y $T$?}
+Recordemos que $img(T) = \{ Ax / x \in \mathbb{K}^n \}$. Veremos que $\mathcal{C}(A) = img(T)$:
+\begin{itemize}
+\item
+	($\subseteq$): $v \in \mathcal{C}(A) \Rightarrow v = x_1A_1+\dots+x_nA_n =
+	A \underbrace{\begin{bmatrix} x_1\\ \vdots \\ x_n \end{bmatrix}}_{\in \mathbb{K}^n} \in img(T)$.
+\item
+	($\supset$): $v \in img(T) \Rightarrow v = Ax = 
+	A \underbrace{\begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}}_{\in \mathbb{K}^n} = x_1A_1+\dots+x_nA_n \in
+	\mathcal{C}(A)$
+\end{itemize}
+
+
+\subsubsection{Sea V un espacio vectorial de dimensión finita sobre el campo $\mathbb{K}$ y sean $S$ y $T$ operadores
+lineales sobre $V$. Probar que existen dos bases ordenadas $\mathcal{B}$ y $\mathcal{B}'$ en $V$ tales que 
+$[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$ si y sólo si existe un operador lineal inversible $U$ sobre $V$ tal que 
+$T=\mathcal{USU}^{-1}$}
+\begin{itemize}
+\item
+	($\Rightarrow$): Sean $\mathcal{B} = \{ v_1,\dots,v_n \}$ y $\mathcal{B}' = \{ w_1,\dots,w_n\}$ las bases de la 
+	hipótesis. Recordemos que un operador lineal queda completamente definido por como actúa sobre los vectores
+	de una base. Sea entonces $U: V \rightarrow V$ dado por $U(v_i) = w_i$. Como $U$ lleva base en base, sabemos que
+	es isomorfo, luego $U(v_i)=w_i \Longleftrightarrow U^{-1}(w_i)=v_i$. Como por hipótesis 
+	$[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$ entonces la i-ésima columna de $S(S_i)$ ha de ser igual a la i-ésima
+	columna de $T$ $(T_i)$ para todo i, es decir:
+	\[
+		S_i = [S(v_i)]_\mathcal{B} = [T(w_i)]_{\mathcal{B}'} = T_i = (x_1,\dots,x_n)
+	\]
+	Tenemos $S(v_i) = \sum_{j=1}^{n}{x_jv_j}$ y $T(w_i) = \sum_{j=1}^{n}{x_jw_j}$, luego: \\ \\
+	a) $T(w_i) = T(U(v_i)) = \sum_{j=1}^{n}{x_jw_j}$. \\ \\
+	b) $US(v_i) = U\Big( \sum_{j=1}^{n}{x_jv_j} \Big) = \sum_{j=1}^{n}{x_jU(v_j)} = \sum_{j=1}^{n}{x_jw_j}$ \\
+	\\ De lo anterior se sigue que $US(v_i) = TU(v_i)$ por lo tanto $US = TU \Longleftrightarrow {USU}^{-1} = T$
+	\item
+	($\Leftarrow$): COMPLETAR.
+\end{itemize}
+
+\subsubsection{En $\mathcal{R}^3$, sean $v_1=(1,0,1)$, $v_2=(0,1,2)$ y $v_3=(-1,-1,0)$.}
+\begin{enumerate}[i.]
+\item
+	Si $f$ es un funcional lineal sobre $\mathbb{R}^3$ tal que $f(v_1) = 1, f(v_2) = -1$ y $f(v_3) = 3$ y si
+	$v=(a,b,c)$, hallar $f(v)$. \\ \\
+	Sea $f(a,b,c) = \alpha a + \beta b + \gamma c$, luego resulta $f(v_1) = \alpha + \gamma = 1$,
+	$f(v_2) = \beta + 2 \gamma = -1$ y $f(v_3) = -\alpha - \beta= 3$. Resolviendo el sistema:
+	$\begin{bmatrix}1&0&1&|&1 \\ 0&1&2&|&-1 \\ -1&-1&0&|&3 \end{bmatrix} \rightarrow
+	\begin{bmatrix}1&0&1&|&1 \\ 0&1&2&|&-1 \\ 0&-1&1&|&4 \end{bmatrix} \rightarrow
+	\begin{bmatrix}1&0&1&|&1 \\ 0&1&2&|&-1 \\ 0&0&3&|&3 \end{bmatrix}$ \\
+	resulta $\gamma = 1, \beta = -3$ y $\alpha = 0$. Luego $f(v) = -3b + c$.
+
+\item 
+	Describir explícitamente un funcional lineal $f$ sobre $\mathbb{R}^3$ tal que $f(v_1)=f(v_2)=0$ pero
+	$f(v_3) \not = 0$. \\ \\
+	Sea $f(x,y,z) = \alpha x + \beta y + \gamma z$, luego $f(v_1) = \alpha + \gamma = 0$,
+	$f(v_2) = \beta + 2 \gamma = 0$ y $f(v_3) = -\alpha - \beta \not = 0$ \\ \\
+        $\begin{bmatrix} 1&0&1&|&0 \\ 0&1&2&|&0 \\ -1&-1&0&|&\omega \end{bmatrix} \\  \\
+	\left \lbrace
+	\begin{array}{rlc}
+	\alpha + \gamma = 0 \Rightarrow \alpha = - \gamma \\
+	\beta + 2 \gamma = 0 \Rightarrow  \beta = -2\gamma \\
+	- \alpha - \beta \not = 0 \Rightarrow  -\beta \not = \alpha \Rightarrow -2\alpha \not = \alpha \Rightarrow \alpha \not = 0
+	\end{array}
+	\right.
+	$ \\ \\
+	resulta $f(v) = -x-2y+z$	
+	
+\item
+	Sea $f$ cualquier funcionar lineal tal que $f(v_1)=f(v_2)=0$ pero $f(v_3) \not = 0$. Si $v = (2,3,-1)$, muestre
+	que $f(v) \not = 0$. \\ \\
+	Notemos que $v = -v_1-3v_3$, luego $f(v) = \cancel{-f(v_1)} - 3f(v_3) \Rightarrow -3f(v_3) \not = 0$.
+\end{enumerate}
+
+
+\subsubsection{Sea $\mathcal{B} = \{ (1,0,-1),(1,1,1),(2,2,0) \}$ una base de $\mathcal{C}^3$. Hallar la base dual de
+$\mathcal{B}$.}
+Observemos primero que $V = (\mathcal{C}^3,\mathcal{C},+,.)$ y sea $v = (z_1,z_2,z_3) = \alpha b_1 + \beta b_2 + \gamma b_3$,
+luego $z_1 = \alpha + \beta + 2\gamma$, $z_2 = \beta + 2\gamma$ y $z_3 = -\alpha + \beta$.
+\begin{itemize}
+\item
+	$f_1(v) = \alpha = z_1-z_2$
+\item
+	$f_2(v) = \beta = z_1-z_2+z_3$
+\item
+	$f_3(v) = \gamma = \dfrac{1}2 ( -z_1+2z_2-z_3)$
+
+\end{itemize}
+
+\subsubsection{Sean $v_1 = \{ (1,0,-1,2) \}$ y $v_2 = (2,3,1,1)$ y sea $W = \langle \{ v_1,v_2 \}
+\rangle$. ¿Qué funcionales lineales de la forma $f(x_1,x_2,x_3,x_4)=c_1x_1+c_2x_2+c_3x_3+c_4x_4$
+están en el anulador de $W$?.}
+Buscamos $f/f(1,0,-1,2) = f(2,3,1,1) = 0$, es decir: \\
+\[
+c_1-c_3+2c_4 = 0 = 2c_1+3c_2+c_3+c_4
+\]
+Resolviendo el sistema: \\ \\
+$\begin{bmatrix} 1&0&-1&2 \\ 3&2&1&1 \end{bmatrix} \rightarrow \begin{bmatrix} 1&0&-1&2 \\ 0&3&3&-3 \end{bmatrix}
+\rightarrow \begin{bmatrix} 1&0&-1&2 \\ 0&1&1&-1\end{bmatrix}$
+\\ \\
+luego $c = \alpha(-2,1,0,1)+\beta(1,-1,1,0)$, por lo tanto:
+\[
+W^0 = \{ f(x) = x \cdot c/c \in \langle \{ (-2,1,0,1),(1,-1,1,0) \} \rangle
+\]
+\subsubsection{Sea $V = M_{2x2}(\mathbb{R})$ y sean}
+\[ 
+B = \begin{bmatrix} 2&-2\\-1&1 \end{bmatrix}, \quad C = \begin{bmatrix} 0&0\\0&1 \end{bmatrix}
+\]
+Sea $W$ el subespacio de $V$ que consiste en todas las matrices $A$ tales que $AB = 0$. Sea $f$ un funcional lineal sobre
+$V$ que está en el anulador de $W$. Supongamos que $f(I) = 0$ (I matriz identidad) y $f(C)=3$. Hallar $f(B)$.
+\\ \\
+Observemos primero que $W = \Bigg \{ \begin{bmatrix} a&b \\ c&d \end{bmatrix} : \begin{bmatrix}a&b\\c&d\end{bmatrix}
+\begin{bmatrix} 2&-2\\-1&1\end{bmatrix} = 0 \Bigg \} = \Bigg \{ \begin{bmatrix} a&b\\c&d\end{bmatrix} :
+\begin{bmatrix} 2a-b&-2a+b \\ 2c-d & -2c+d \end{bmatrix} = 0 \Bigg \} = 
+\Bigg \{ \begin{bmatrix} a&b\\c&d : 2a=b \wedge 2c=d \end{bmatrix}   \Bigg \} = \Bigg \{ \begin{bmatrix} 
+a&2a \\ c&2c \end{bmatrix} : a,c \in \mathbb{R} \Bigg \}$. Luego $B = \begin{bmatrix}  -1&-2\\-1&-2\end{bmatrix}+3I$ \\ \\
+por lo tanto $f(B)=f(x)+3f(I)=0$.
+
+\subsubsection{Sean $W_1$ y $W_2$ subespacios de un espacio vectorial V de dimensión finita: }
+a. Probar que $(W_1 + W_2)^0 = {W_1}^0 \cap {W_2}^0$ \\
+b. Probar que $(W_1 \cap W_2)^0 = {W_1}^0 + {W_2}^0$
+
+\subsubsection{Sea $V$ un espacio vectorial de dimensión finita sobre $\mathbb{K}$ y sea $W$ un subespacio de V. Si $f$
+es un funcional lineal sobre $W$, pruebe que existe un funcional lineal $g$ sobre $V$ tal que $g(v)=f(v), \quad 
+\forall v \in W$.}
+Sea $B_V$ una base de $V$ y $B_W$ una base de $W$ tales que $B_W \subseteq B_V$. Toda transformación lineal 
+(en particular los funcionales lineales) queda determinada por como actúa sobre los vectores de la base, luego podemos
+definir a $g(v) = f(v)$ para cada vector $B_W$ y $g(v) = 0$ para cada vector en $B_V - B_W$.
+\section{Actovectores y autovalores}
+\subsubsection{i. Sea $T \in \mathcal{L}(\mathbb{K}^2,\mathbb{K}^2)$ definida por $T(u,v)=(v,u)$ para $u,v \in \mathbb{K}$.
+Calcular los autovalores y los autovectores asociados para T.}
+$A = \begin{bmatrix} 0&1 \\ 1&0\end{bmatrix}. B = A - \lambda I = \begin{bmatrix} -\lambda&1 \\ 1&-\lambda\end{bmatrix}$ \\ \\
+$|B| = \lambda^2 - 1 = (\lambda - 1)(\lambda + 1) = 0 \Longleftrightarrow \lambda = 1 \vee \lambda = -1.$ \\
+\begin{itemize}
+\item
+	$\lambda = 1: B = \begin{bmatrix} -1&1\\1&-1\end{bmatrix}. Bx = 0 \Longleftrightarrow x \in \langle \{ (1,1) \} \rangle$.
+\item
+	$\lambda -1: B = \begin{bmatrix} 1&1\\1&1 \end{bmatrix}. Bx = 0 \Longleftrightarrow x \in \langle \{ (1,-1) \}\rangle$.
+\end{itemize}
+\subsubsection{Sea $T \in \mathcal{L}(\mathbb{K}^3,\mathbb{K}^2)$ definida por $T(u,v,w) = (2v,0,5w)$ para $u,v,w \in \mathbb{K}$.
+Calcular los autovalores y sus autovectores asociados para $T$.}
+$A = \begin{bmatrix} 2&0&0\\ 0&0&0 \\ 0&0&5\end{bmatrix}. B = A - \lambda I =  \begin{bmatrix}2-\lambda&0&0\\0&-\lambda&0\\0&0&5-\lambda
+\end{bmatrix}. \\ \\
+|B| = (2-\lambda)(-\lambda)(5-\lambda)=0 \Longleftrightarrow \lambda = 2 \vee \lambda = 0 \vee \lambda = 5.$ \\ \\
+\begin{itemize}
+\item
+	$\lambda = 2: B = \begin{bmatrix} 0&0&0\\0&-2&0\\0&0&3 \end{bmatrix}. 
+	\quad Bx = 0 \Longleftrightarrow x \in \langle \{ (1,0,0 )\} \rangle$
+\item
+	$\lambda = 0: B =  \begin{bmatrix} 2&0&0\\0&0&0\\0&0&5 \end{bmatrix}. B = \begin{bmatrix}2&0&0\\0&0&0\\0&0&5.\end{bmatrix}
+	\quad Bx = 0 \Longleftrightarrow x \in \langle \{ (0,1,0 )\} \rangle$
+\item
+	$\lambda = 5: B = \begin{bmatrix} -3&0&0\\0&-5&0\\0&0&0 \end{bmatrix}. Bx = 0 \Longleftrightarrow x \in \langle \{ (0,0,1) \} \rangle$
+\end{itemize}
+
+\subsubsection{Para $n \in \mathbb{N}$ sea $T \in \mathcal{L}(\mathbb{K}^n,\mathbb{K}^n)$ definida por}
+\[
+T(x_1,\dots,x_n) = (x_1+\dots+x_n,\dots,x_1+\dots+x_n)
+\]
+Calcular los autovalores y sus autovectores asociados para $T$.
+
+\subsubsection{Encontrar los autovalores y autovectores asociados para los operadores lineales sobre $\mathbb{K}^2$ dados por las
+siguientes matrices}
+$A = \begin{bmatrix} 3&0\\8&-1\end{bmatrix}$ \\
+$H = A - \lambda I = \begin{bmatrix} 3-\lambda & 0 \\ 8 & -1-\lambda \end{bmatrix}.
+\quad |H| = (3-\lambda)(-1-\lambda) = 0 \Longleftrightarrow \lambda = 3 \vee \lambda = -1.$
+\begin{itemize}
+\item
+	$\lambda = 3: H = \begin{bmatrix} 0&0\\8&-4 \end{bmatrix}. Hx = 0 \Longleftrightarrow x \in \langle \{ (1,2) \} \rangle$.
+\item
+	$\lambda = -1: H = \begin{bmatrix} 4&0\\8&0\end{bmatrix}. Hx = 0 \Longleftrightarrow x \in \langle \{ (0,1) \} \rangle$.
+\end{itemize}
+$B = \begin{bmatrix} 10&-9\\4&-2 \end{bmatrix}$ \\ \\ \\
+$H = B - \lambda I =  \begin{bmatrix} 10-\lambda&-9\\4&-2-\lambda \end{bmatrix}.\quad |H| = (-20-10\lambda+2\lambda+\lambda^2)+
+36 = \lambda^2-8\lambda+16 = (\lambda -4)^2 = 0 \Longleftrightarrow \lambda = 4$.
+\begin{itemize}
+\item
+	$\lambda = 4: H = \begin{bmatrix} 6&-9\\4&-6\end{bmatrix}. \quad Hx = 0 \Longleftrightarrow x \in \langle \{ (3/2,1) \} \rangle$.
+\end{itemize}
+$C = \begin{bmatrix} 1&0\\0&1\end{bmatrix}$ \\ \\
+$H = C - \lambda I = \begin{bmatrix} 1-\lambda&0 \\ 0 & 1-\lambda \end{bmatrix}. \quad |H| = (1-\lambda) = 0 \Longleftrightarrow \lambda = 1$. \\
+\begin{itemize}
+\item
+	$\lambda = 1: H = \begin{bmatrix} 0&0\\0&0\end{bmatrix}. \quad Hx = 0 \Longleftrightarrow x \in \langle \{ (1,0),(0,1) \} \rangle$.
+\end{itemize}
+$D = \begin{bmatrix} 0&0\\0&0\end{bmatrix}$ \\ \\
+$H = D - \lambda I = \begin{bmatrix} -\lambda&0\\0&-\lambda \end{bmatrix}. \quad |H| = \lambda^2 = 0 \Longleftrightarrow \lambda = 0$.
+\begin{itemize}
+\item
+	$\lambda = 0: H = \begin{bmatrix} 0&0\\0&0 \end{bmatrix}. \quad Hx = 0 \Longleftrightarrow x \in \langle \{ (1,0),(0,1) \} \rangle$
+\end{itemize}
+\subsubsection{Encontrar el autoespacio correspodiente de cada autovalor}
+$A = \begin{bmatrix} 4&-2\\-3&9 \end{bmatrix}, \lambda = 10$ \\ \\ \\
+$A - \lambda I = \begin{bmatrix} -6&-2\\-3&-1\end{bmatrix}. \quad Hx = 0 \Longleftrightarrow x \in \langle \{ (\dfrac{-1}3,1) \} \rangle$. \\ \\ \\
+$B = \begin{bmatrix} 4&2&3\\-1&1&-3\\2&4&9, \lambda = 3 \end{bmatrix}$ \\ \\ \\
+$B - \lambda I = \begin{bmatrix} 1&2&3\\-1&-2&-3\\2&4&6 \end{bmatrix}. \quad Hx = 0 \Longleftrightarrow x \in 
+\langle \{ (-3,0,1),(-2,1,0) \} \rangle$.
+\subsubsection{Para cada matriz dada, encontrar los autovalores para el operador T sobre $\mathbb{K}^n$ sin realizar cálculos. Describir los
+autovectores $v \in \mathbb{K}^n$ asociados a cada autovalor $\lambda$ analizando las soluciones de la ecuación mastricial $(A - \lambda I)v=0$.}
+$A = \begin{bmatrix} \dfrac{-1}3&0&0&0 \\ 0&\dfrac{-1}3&0&0 \\ 0&0&1&0 \\ 0&0&0&\dfrac{1}2 \end{bmatrix}$. \\ \\ \\
+$\lambda_1 = \dfrac{-1}3, \lambda_2 = 1, \lambda_3 = \dfrac{1}2. \quad v_1 = (x_1,x_2,0,0), v_2 = (0,0,x_3,0), v_3 = (0,0,0,x_4)$. \\ \\ \\
+$B = \begin{bmatrix} 1&3&7&11 \\ 0&\dfrac{1}2&3&8 \\ 0&0&0&4 \\ 0&0&0&2 \end{bmatrix} $ \\ \\ \\
+$\lambda_1 = 1, \lambda_2=\dfrac{1}2, \lambda_3 = 0, \lambda_4=2. \quad v_1 = (x_1,0,0,0), v_2=(-6x_2,x_2,0,0), v_3=(11x_3,-6x_3,x_3,0),
+v_4=(53x_4,\dfrac{28}3x_4,2x_4,x_4)$
+\subsubsection{Sea $V$ un espacio vectorial de dimensión finita sobre $\mathbb{K}$ y $T \in \mathcal{L}(V)$. Un espacio vectorial
+$\mathcal{U}$ se dice invariante bajo $T$ si $T(\mathcal{U}) \subset \mathcal{U}$. Supongamos que $\mathcal{U}_1,\mathcal{U}_2$ son dos subespacios
+invariantes bajo $T$. Probar que $\mathcal{U}_1\cap\mathcal{U}_2$ también es invariante bajo $T$.}
+
+\subsubsection{Sea $V$ un espacio de dimensión finita sobre $\mathbb{K}, T \in \mathcal{L}(V)$ inversible y $\lambda \in \mathbb{K}-\{0 \}$.
+Probar que $\lambda$ es autovalor de $A$ si y sólo si $\lambda^{-1}$ es autovalor de $T^{-1}$.} 
+Sea $x \in V / T(x) = \lambda x \Longleftrightarrow Ax = \lambda x \Longleftrightarrow A^{-1}Ax = A^{-1}\lambda x \Longleftrightarrow
+x = A^{-1}\lambda x \Longleftrightarrow \lambda^{-1}x = A^{-1}x.$
+\subsubsection{Sea $V$ un espacio de dimensión finita sobre $\mathbb{K}, A \in \mathbb{M}(\mathbb{K})$ matriz inversible y $\lambda \in 
+\mathbb{K}.$ Probar que $\lambda$ es autovalor de A si y sólo si $\lambda$ es autovalor de $A^t$.}
+Notemos que $(A-\lambda I)^t = A^t - \lambda I$ luego como $|X| = |X|^t$ resulta:
+\[
+|A-\lambda I| = |(A - \lambda I)^t | = |A^t - \lambda I|
+\]
+\subsubsection{Sea $V$ un espacio de dimensión finita sobre $\mathbb{K}$ y sea $T \in \mathcal{L}(V)$ con la propiedad de que todo 
+$v \in V - \{0\}$ es un autovector asociado al mismo autovalor para $T$. Probar que $T$ debe ser igual a un escalar por la identidad
+en V.}
+\subsubsection{Considerar a una matriz $n \times n$ con la propiedad de que todas las sumas de sus filas son iguales a un mismo
+número $\beta$. Mostrar que $\beta$ es un autovalor de $A$.}
+COMPLETAR
+\subsubsection{Considerar una matriz $n \times n$ con la propiedad de que todas las sumas de sus columnas son iguales a un mismo número
+$\beta$. Mostrar que $\beta$ es un autovalor de $A$.}
+Trivial, por el ejercicio 5.0.9. \\ \\ \\
+\textbf{Sea $A = \begin{pmatrix}5&-2&6&-1\\0&3&h&0\\0&0&5&4\\0&0&0&1\end{pmatrix}$. Encontrar h tal que el autoespacio
+correspondiente a $\lambda = 5$ sea bidimensional.}
+\\ \\ \\
+\subsubsection{sd}
+
+
+
+
+
+
+
+}
+\end{document}

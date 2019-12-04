@@ -3031,7 +3031,7 @@ considerada como operador lineal sobre
 
  con 
 \begin_inset Formula $A=\begin{pmatrix}2 & -5\\
-\text{\ensuremath{1}} & \text{\ensuremath{-2}}
+1 & -2
 \end{pmatrix}$
 \end_inset
 
@@ -3048,7 +3048,7 @@ Por (1)
 \end_layout
 
 \begin_layout Itemize
-Por otro lado, los vectores propios de un operador lineal 
+Por otro lado, los autovectores de un operador lineal 
 \begin_inset Formula $T:V\rightarrow V$
 \end_inset
 
@@ -3192,6 +3192,133 @@ Por lo tanto, los únicos subespacios invariantes de A son
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Agrego un ejemplo en donde existe un subespacio invariante de dimensión
+ 1.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Supongamos que v es el autovector respondiente al autovalor 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, entonces
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $T(v)=\lambda v$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Entonces, el espacio generado por el autovector 
+\begin_inset Formula $v$
+\end_inset
+
+ va a ser invariante.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\begin{bmatrix}1 & 1\\
+0 & 1
+\end{bmatrix}\begin{pmatrix}v_{1}\\
+v_{2}
+\end{pmatrix}=\lambda\begin{pmatrix}v_{1}\\
+v_{1}
+\end{pmatrix}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Si buscamos el autoespacio de esa matriz 
+\begin_inset Formula $\Bigg(\begin{bmatrix}1 & 1\\
+0 & 1
+\end{bmatrix}\Bigg)$
+\end_inset
+
+ del autovalor correspondiente a 1 nos da 
+\begin_inset Formula $\langle(1,0)^{t}\rangle$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mid A-\lambda I\mid=\mid\begin{bmatrix}1-\lambda & 1\\
+0 & 1-\lambda
+\end{bmatrix}\mid=0\Longrightarrow(1-\lambda)(1-\lambda)=0\Longrightarrow(1-\lambda)^{2}=0\Rightarrow\lambda=1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+: 
+\begin_inset Formula $\begin{bmatrix}0 & 1\\
+0 & 0
+\end{bmatrix}\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}=\begin{bmatrix}0\\
+0
+\end{bmatrix}\Longrightarrow x\in\langle\begin{pmatrix}1\\
+0
+\end{pmatrix}\rangle$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_deeper

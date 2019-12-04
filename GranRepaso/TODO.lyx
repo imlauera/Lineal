@@ -3331,13 +3331,65 @@ x_{2}
 \begin_inset Newline newline
 \end_inset
 
+
+\begin_inset Newline newline
+\end_inset
+
 Luego 
 \begin_inset Formula $W=\Big\{\begin{bmatrix}a\\
 0
 \end{bmatrix}:a\in\mathbb{R}\Big\}$
 \end_inset
 
- es un subespacio invariante por T.
+ es un 
+\series bold
+subespacio invariante
+\series default
+ por 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Por lo tanto, los subespacios invariantes del operador lineal 
+\begin_inset Formula $T$
+\end_inset
+
+ son 
+\begin_inset Formula $\{\},W$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Fuente:
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.chegg.com/homework-help/find-invariant-subspaces-real-linear-operator-
+whose-matrix-chapter-4.s4-problem-5e-solution-9780134689609-exc
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 

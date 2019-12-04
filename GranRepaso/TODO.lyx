@@ -2459,7 +2459,18 @@ https://www.wolframalpha.com/input/?i=%28inverse+%7B%7B-8%2C6%2C1%7D%2C%7B1%2C0%
 \end_inset
 
 Para matrices en donde tengas que a partir de 2 vectores en el último subespacio
- generar dos imágenes tenés éste video https://www.youtube.com/watch?v=k-ILtVBFn-Y
+ generar dos imágenes tenés éste video 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.youtube.com/watch?v=k-ILtVBFn-Y
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -3618,8 +3629,8 @@ Probar que
 \begin_inset Newline newline
 \end_inset
 
-Consideremos
-\begin_inset Formula $\alpha_{0}v+a_{1}T(v)+\cdots+a_{t-1}T^{k-1}(v)=0$
+Consideremos 
+\begin_inset Formula $a_{0}v+a_{1}T(v)+\cdots+a_{t-1}T^{k-1}(v)=0$
 \end_inset
 
 

@@ -3362,7 +3362,7 @@ Por lo tanto, los subespacios invariantes del operador lineal
 \end_inset
 
  son 
-\begin_inset Formula $\{\},W$
+\begin_inset Formula $\{0\},W$
 \end_inset
 
  y 

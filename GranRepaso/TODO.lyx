@@ -3294,7 +3294,7 @@ Si buscamos el autoespacio de esa matriz
 \end_inset
 
 
-\begin_inset Formula $\mid A-\lambda I\mid=\Big|\begin{bmatrix}1-\lambda & 1\\
+\begin_inset Formula $|A-\lambda I|=\Big|\begin{bmatrix}1-\lambda & 1\\
 0 & 1-\lambda
 \end{bmatrix}\Big|=0\Longrightarrow(1-\lambda)(1-\lambda)=0\Longrightarrow(1-\lambda)^{2}=0\Rightarrow\lambda=1$
 \end_inset

@@ -3203,9 +3203,18 @@ Por lo tanto, los únicos subespacios invariantes de A son
 \begin_inset Newline newline
 \end_inset
 
-Agrego un ejemplo en donde existe un subespacio invariante de dimensión
- 1.
+
+\series bold
+Caso en que donde existe un subespacio invariante de dimensión 1
+\series default
+:
 \begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $A=\begin{bmatrix}1 & 1\\
+0 & 1
+\end{bmatrix}$
 \end_inset
 
 
@@ -3216,7 +3225,7 @@ Supongamos que v es el autovector respondiente al autovalor
 \begin_inset Formula $\lambda$
 \end_inset
 
-, entonces
+, tenemos que
 \begin_inset Newline newline
 \end_inset
 
@@ -3236,11 +3245,15 @@ Supongamos que v es el autovector respondiente al autovalor
 \begin_inset Newline newline
 \end_inset
 
-Entonces, el espacio generado por el autovector 
+Entonces, 
+\series bold
+el espacio generado por el autovector 
 \begin_inset Formula $v$
 \end_inset
 
- va a ser invariante.
+ va a ser invariante
+\series default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -3281,9 +3294,9 @@ Si buscamos el autoespacio de esa matriz
 \end_inset
 
 
-\begin_inset Formula $\mid A-\lambda I\mid=\mid\begin{bmatrix}1-\lambda & 1\\
+\begin_inset Formula $\mid A-\lambda I\mid=\Big|\begin{bmatrix}1-\lambda & 1\\
 0 & 1-\lambda
-\end{bmatrix}\mid=0\Longrightarrow(1-\lambda)(1-\lambda)=0\Longrightarrow(1-\lambda)^{2}=0\Rightarrow\lambda=1$
+\end{bmatrix}\Big|=0\Longrightarrow(1-\lambda)(1-\lambda)=0\Longrightarrow(1-\lambda)^{2}=0\Rightarrow\lambda=1$
 \end_inset
 
 
@@ -3311,6 +3324,20 @@ x_{2}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Luego 
+\begin_inset Formula $W=\Big\{\begin{bmatrix}a\\
+0
+\end{bmatrix}:a\in\mathbb{R}\Big\}$
+\end_inset
+
+ es un subespacio invariante por T.
 \begin_inset Newline newline
 \end_inset
 

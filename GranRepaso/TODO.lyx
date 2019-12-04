@@ -3205,7 +3205,8 @@ Por lo tanto, los únicos subespacios invariantes de A son
 
 
 \series bold
-Caso en que donde existe un subespacio invariante de dimensión 1
+Ejemplo de un caso en que donde existe un subespacio invariante de dimensión
+ 1
 \series default
 :
 \begin_inset Newline newline

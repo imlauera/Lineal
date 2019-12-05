@@ -4111,29 +4111,12 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
 0 & -2 & 1 & 0 & 0\\
-0 & 0 & -2 & 0 & 0\\
-0 & 0 & 0 & 7 & 0\\
-0 & 0 & 0 & 0 & 7
-\end{bmatrix}$
-\end_inset
-
- 
-\begin_inset Formula $m(t)=(t+2)^{3}(t-7)$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
-0 & -2 & 0 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
 0 & 0 & 0 & 7 & 1\\
 0 & 0 & 0 & 0 & 7
@@ -4154,28 +4137,7 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 
 
 \begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
-0 & -2 & 0 & 0 & 0\\
-0 & 0 & -2 & 0 & 0\\
-0 & 0 & 0 & 7 & 0\\
-0 & 0 & 0 & 0 & 7
-\end{bmatrix}$
-\end_inset
-
- 
-\begin_inset Formula $m(t)=(t+2)^{2}(t-7)$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $\begin{bmatrix}-2 & 0 & 0 & 0 & 0\\
-0 & -2 & 0 & 0 & 0\\
+0 & -2 & 1 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
 0 & 0 & 0 & 7 & 1\\
 0 & 0 & 0 & 0 & 7
@@ -4183,7 +4145,7 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
  
-\begin_inset Formula $m(t)=(t+2)(t-7)^{2}$
+\begin_inset Formula $m(t)=(t+2)(t-7)$
 \end_inset
 
 
@@ -4195,10 +4157,10 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
 
-\begin_inset Formula $\begin{bmatrix}-2 & 0 & 0 & 0 & 0\\
-0 & -2 & 0 & 0 & 0\\
+\begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
+0 & -2 & 1 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
-0 & 0 & 0 & 7 & 0\\
+0 & 0 & 0 & 7 & 1\\
 0 & 0 & 0 & 0 & 7
 \end{bmatrix}$
 \end_inset

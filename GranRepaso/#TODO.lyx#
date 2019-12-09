@@ -4037,16 +4037,25 @@ existe al menos un bloque de orden
 \end{bmatrix}$
 \end_inset
 
- o 
+ o
 \begin_inset Formula $\begin{bmatrix}2 & 1 & 0 & 0 & 0\\
 0 & 2 & 0 & 0 & 0\\
-0 & 0 & 2 & 0 & 0\\
+0 & 0 & 2 & 1 & 0\\
 0 & 0 & 0 & 2 & 0\\
 0 & 0 & 0 & 0 & 2
 \end{bmatrix}$
 \end_inset
 
-.
+ (https://www.youtube.com/watch?v=k-ILtVBFn-Y) ejemplo de un caso similar
+ de una matriz de 5x5.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Y todas las matrices que se pueden formar permutando los bloques.
 \begin_inset Newline newline
 \end_inset
 
@@ -4111,12 +4120,29 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
 
+\begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
+0 & -2 & 1 & 0 & 0\\
+0 & 0 & -2 & 0 & 0\\
+0 & 0 & 0 & 7 & 0\\
+0 & 0 & 0 & 0 & 7
+\end{bmatrix}$
+\end_inset
+
+ 
+\begin_inset Formula $m(t)=(t+2)^{3}(t-7)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
 
 \begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
-0 & -2 & 1 & 0 & 0\\
+0 & -2 & 0 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
 0 & 0 & 0 & 7 & 1\\
 0 & 0 & 0 & 0 & 7
@@ -4137,7 +4163,28 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 
 
 \begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
-0 & -2 & 1 & 0 & 0\\
+0 & -2 & 0 & 0 & 0\\
+0 & 0 & -2 & 0 & 0\\
+0 & 0 & 0 & 7 & 0\\
+0 & 0 & 0 & 0 & 7
+\end{bmatrix}$
+\end_inset
+
+ 
+\begin_inset Formula $m(t)=(t+2)^{2}(t-7)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\begin{bmatrix}-2 & 0 & 0 & 0 & 0\\
+0 & -2 & 0 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
 0 & 0 & 0 & 7 & 1\\
 0 & 0 & 0 & 0 & 7
@@ -4145,7 +4192,7 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
  
-\begin_inset Formula $m(t)=(t+2)(t-7)$
+\begin_inset Formula $m(t)=(t+2)(t-7)^{2}$
 \end_inset
 
 
@@ -4157,10 +4204,10 @@ Los posibles formas canónicass de Jordan con sus polinomios minimales son:
 \end_inset
 
 
-\begin_inset Formula $\begin{bmatrix}-2 & 1 & 0 & 0 & 0\\
-0 & -2 & 1 & 0 & 0\\
+\begin_inset Formula $\begin{bmatrix}-2 & 0 & 0 & 0 & 0\\
+0 & -2 & 0 & 0 & 0\\
 0 & 0 & -2 & 0 & 0\\
-0 & 0 & 0 & 7 & 1\\
+0 & 0 & 0 & 7 & 0\\
 0 & 0 & 0 & 0 & 7
 \end{bmatrix}$
 \end_inset
@@ -9781,7 +9828,7 @@ Simplemente tomo los funcionales lineales que me dieron 0 en el anterior
 \end_inset
 
 
-\begin_inset Formula $S=\langle\{f_{3}\}\rangle$
+\begin_inset Formula $S^{0}=\langle\{f_{3}\}\rangle$
 \end_inset
 
  ya que cumple 

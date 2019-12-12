@@ -90,6 +90,75 @@
 \begin_body
 
 \begin_layout Subsection*
+Práctica 1: 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $EA=U,A=\underbrace{E^{-1}}_{L}\cdot U$
+\end_inset
+
+,
+\begin_inset Formula $\quad Lc=b,Ux=c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A^{t}=(LD\overline{U})^{t}=\overline{U}^{t}D^{t}L^{t}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $L=\overline{U^{t}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $D=D^{t}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\overline{U}=L^{t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E=E_{22}(-a)E_{31}(-b)E_{32}(-c)=L^{-1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $E_{32}^{-1}(-c)E_{31}^{-1}(-b)E_{22}^{-1}(-a)=L$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Práctica 4: Autovectores y Autovalores
 \end_layout
 
@@ -10014,12 +10083,12 @@ Por otro lado:
 0 & -1 & 0\\
 0 & 0 & 1
 \end{bmatrix}\begin{bmatrix}-4\\
+-10\\
+-2
+\end{bmatrix}=\begin{bmatrix}-6\\
 10\\
 -2
-\end{bmatrix}=\begin{bmatrix}4\\
-10\\
--2
-\end{bmatrix}\Rightarrow T(2,0)_{B_{2}}=\begin{bmatrix}4\\
+\end{bmatrix}\Rightarrow T(2,0)_{B_{2}}=\begin{bmatrix}-6\\
 -10\\
 2
 \end{bmatrix}$
